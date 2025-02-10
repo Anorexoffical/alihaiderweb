@@ -1,0 +1,77 @@
+.powertosellmainheading {
+    background-image: url("../assets/power2sell.jpg");
+    width: 100%;    
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.powerheading {
+   
+    font-size: 4.7rem;
+    font-weight: 900;
+    text-align: left;
+    padding-left: 50%;
+    padding-top: 9%;
+    line-height: 1.1;
+    color: #000000;
+}
+
+.power2sellparg {
+    padding-left: 50%;
+    color: #000000;
+    font-size: 1.3rem;
+}
+.mainword2{
+color: #3fbb2b;
+}
+.iconcolor{
+    color:#3fbb2b;
+}
+.cardspower{
+    background-color: #ebebeb;
+    border: #3fbb2b 0.5px solid;
+}
+
+.applybtn{
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    background-color: #46e12f;
+}
+.applybtn:hover{
+
+        transition: 0.3s;
+        background-color: #3fbb2b;
+        color: white;
+ 
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .powerheading {
+        margin-top: 200px;
+        text-align: center;
+        padding-left: 0;
+        font-size: 3rem;
+        padding: 5% 5%;
+    }
+
+    .power2sellparg {
+        text-align: center;
+        padding-left: 0;
+        font-size: 1rem;
+        margin-top: -10px;
+    }
+
+    .btn-danger {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+.section-heading, .work-heading {
+    text-align: center;
+    font-weight: 900;
+}

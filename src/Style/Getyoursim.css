@@ -1,0 +1,144 @@
+
+
+
+/* this is for the service  container */
+
+
+.carousel-container {
+
+    
+  width: 100vw;
+  height: 150vh;
+  margin: 0 auto;
+  background-color: rgb(246, 246, 246);
+  margin-top: 200px;
+  position: relative; /* Needed for positioning custom buttons */
+}
+
+.mainclass{
+  color: rgb(0, 0, 0);
+  font-size: 6000px;
+  font-weight: 900;
+}
+.mainback{
+  background-color: rgb(18, 18, 18);
+}
+
+.carousel-card {
+  margin-top: 150px;
+  position: relative;
+  padding: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.serviceheading{
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+
+.add-to-cart-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color:green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carousel-card:hover .add-to-cart-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+
+.carousel-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.discount-badge {
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 500px 10px;
+  background-color: red;
+  color: white;
+  top: 10px; /* Adjust distance from top */
+  left: 10px; /* Adjust distance from left */
+  z-index: 2; /* Ensure it stays above the image */
+}
+/* Custom Buttons */
+.custom-arrow {
+  position: absolute;
+  bottom: -40px; /* Place below the cards */
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-arrow:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.custom-arrow.left {
+  right: 100px; /* Position the left button */
+}
+
+.custom-arrow.right {
+  right: 20px; /* Position the right button */
+}
+
+@media (max-width: 400px) {
+  .serviceheading {
+    font-size: 2.1rem;
+  }
+
+}
+
+
+

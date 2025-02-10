@@ -1,0 +1,681 @@
+
+/* General Styles */
+/* .border {
+  border: 2px solid black;
+} */
+
+.main-container {
+  height: 100vh;
+  width: 100%;
+  background: 
+    url("../assets/bgimg.png") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-heading {
+  font-weight: 1000;
+  font-size: 2.9rem;
+  padding: 16% 8% 0;
+  line-height: 1.1;
+  color: rgb(0, 0, 0);
+}
+
+.mainImage {
+  margin-top: 5%;
+  margin-right: 5%;
+  padding: 0 5%;
+}
+
+.main-paragraph {
+  margin: 1rem 10%;
+  color: rgb(0, 0, 0);
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.mainword {
+
+  font-size: 4.9rem;
+
+  background: linear-gradient(to right,#272727, #42cd2c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.startbutton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 9%;
+  height: 60px;
+  border-radius: 60px;
+  color: white;
+
+}
+
+.startbutton {
+  background-color: #42cd2c;
+}
+
+
+.startbutton:hover{
+  background-color:#33a122;
+  color: rgb(255, 255, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ourpartner{
+  font-size: 4.5rem;
+  margin-top: 250px;
+}
+
+
+/* Infinite Scroll Styles */
+.scroller {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.scroller__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.scroller__inner img {
+  max-height: 60px;
+  margin-right: 30px;
+}
+.sliderbtn{
+  background-color:#42cd2c;
+  color: rgb(0, 0, 0);
+  border-radius: 60px;
+  font-weight: 500;
+}
+.sliderbtn:hover{
+  background-color:#42cd2c;
+  color: rgb(255, 255, 255);
+
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.infinite-card{
+margin-top: 15%;
+}
+
+
+
+/* ceo image  */
+
+.ceo-heading{
+  line-height:1;
+    font-size: 2.9rem;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.brandname{
+  background: linear-gradient(to right, #000000, #42cd2c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+.ceoheading2{
+  margin-top: 40px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.highlight1{
+  font-weight: 800;
+  color: #000000;
+}
+
+
+.packgheading{
+  line-height:1;
+    font-size: 3.9rem;
+  font-weight: 600;
+  margin-top: 40px;
+
+}
+.packheading2{
+
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+
+}
+
+
+
+
+
+
+/* Feature List */
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  padding-left: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+/* Round Bullet Instead of Tick */
+.features-list li::before {
+  content: "●"; /* Round bullet */
+  color: #545151;
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Button Styling */
+.btn-danger {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #1fcb50;
+}
+
+/* Image Section */
+.image-section {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .text-section {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .features-list li {
+    text-align: left;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ceo-heading {
+    font-size: 1.8rem;
+  }
+
+  .ceoheading2 {
+    font-size: 1.2rem;
+  }
+
+  .features-list li {
+    font-size: 1rem;
+    padding-left: 30px;
+  }
+}
+
+
+
+
+
+/* card desing slider */
+.carousel-img {
+  margin-top: 30px;
+  width: 98%;
+  margin-left: 1%;
+  border-radius: 25px;
+  height: 85vh;
+  object-fit: cover;
+}
+
+.text-container {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-caption {
+  bottom: 20%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 10%;
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+}
+.bundle-card {
+  background: linear-gradient(135deg, #000000, #000000);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  height: 300px;
+}
+
+.bundle-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.bundle-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bundle-card:hover .bundle-image {
+  transform: scale(1.1);
+}
+
+.plus-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plus-button:hover {
+  transform: rotate(90deg) scale(1.2);
+}
+
+.viewmorebtn {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .bundle-card {
+    margin-bottom: 20px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bundle-card {
+    margin-bottom: 1000px;
+    height: 300px;
+  }
+
+  .bundle-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bundle-card {
+    margin-bottom: 15px;
+    height: 230px;
+  }
+
+  .bundle-image {
+    height: 180px;
+  }
+  .main-heading {
+    font-size: 1.9rem;
+  }
+}
+
+
+/* this is for the card desinging  */
+
+
+/* SIM Packages Styling */
+
+/* SIM Packages Styling */
+.bundle-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0; /* Removed padding */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  height: 400px;
+}
+
+.bundle-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.bundle-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px; /* Matched card's border-radius */
+  transition: transform 0.3s ease-in-out;
+}
+
+.bundle-card:hover .bundle-image {
+  transform: scale(1.1);
+}
+
+.plus-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plus-button:hover {
+  transform: rotate(90deg) scale(1.2);
+}
+
+.bundle-text{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+}
+.connectivity{
+  color: black!important;
+  font-weight: 800!important;
+  font-size: 4.5rem!important;
+}
+
+
+.cardcolor{
+  background: linear-gradient(135deg, #f1f1f1, #cfcfcf);
+}
+
+
+
+
+
+.hero-image {
+  object-fit: cover;
+  width: 100%;
+  height: 70vh;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.highlight {
+  color: #4e9af1;
+}
+
+
+
+
+
+
+/* add to cart */
+
+
+
+.content-container {
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}.product-image {
+  border-radius: 50px;
+  height: 700px;
+}
+
+.product-title {
+  margin-left: 60px;
+  font-size: 2.5rem;
+  font-weight: bold;
+
+}
+
+.price-container {
+  margin-top: 15px;
+}
+
+.discounted-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d32f2f;
+}
+.text-center{
+
+}
+
+.original-price {
+  font-size: 1.5rem;
+  color: #757575;
+  text-decoration: line-through;
+}
+.custombtn {
+    border: 2px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quantity-controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .add-to-cart {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+  }
+  .quantity-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+.quantity-controls button {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.quantity-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  width: 100%;
+  background-color: black;
+  border-radius: 25px;
+  color: white;
+}
+.add-to-cart:hover{
+  background-color: rgb(29, 29, 29);
+  color: white;
+
+
+}
+
+.divider {
+  margin: 20px 0;
+}
+
+.whatsappbtn {
+  color:  #25D366;
+  font-size: 2rem;  /* Adjust the size */
+  border: none;
+  border-radius: 50px;
+  display: flex;
+}
+
+.view-detail {
+  font-size: 1.2rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+
+.custombtn {
+  border: 2px solid black;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.quantity-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+/* use mobile application */
+.gheading{
+  text-align: center;
+  margin-top: 100px;
+  font-size: 4.4rem;
+  font-weight: 700;
+
+}
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.mobilecontianer{
+  border: 0.5px solid rgb(124, 124, 124);
+  border-radius: 25px;
+  padding: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 2rem;
+  }
+  .quantity-controls button {
+    width: 40px;
+    height: 40px;
+  }
+  .discounted-price {
+    font-size: 1.8rem;
+  }
+  .original-price {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bundle-image {
+    height: 150px; /* Adjusted height for medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .bundle-image {
+    height: 120px; /* Adjusted height for small screens */
+  }
+  .connectivity{
+    color: black!important;
+    font-weight: 800!important;
+    font-size: 2.5rem!important;
+  }
+  .gheading{
+    
+    font-size: 2.5rem!important;
+
+  }
+}
+
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .bundle-card {
+    margin-bottom: 20px;
+    height: 390px;
+  }
+}
+
