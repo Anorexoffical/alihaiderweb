@@ -3,7 +3,7 @@ import { FaHeadset, FaShippingFast, FaUsers, FaLock } from "react-icons/fa";
 import Navbar from "./Navbar";
 import power2sell2 from "./assets/power2sell2.png";
 import { useNavigate } from "react-router-dom";
-import "./Style/Power2Sell.css";
+import "./Style/Power2sell.css";
 import Footer from "./Footer.jsx"
 
 const Power2Sell = () => {

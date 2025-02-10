@@ -5,7 +5,7 @@ import axios from "axios";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import AdminNavbar from "./AdminNavbar";
-import "../Style/BlogPost.css"
+import "../Style/Blogpost.css"
 function EditBlogPost() {
   const { id } = useParams();
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import "../Style/BlogPost.css";
+import "../Style/Blogpost.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReactQuill from "react-quill";
