@@ -7,10 +7,10 @@ import "./Style/Getyoursim.css"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import eSIM from "./assets/eSIM4.png"
+import eSIM from "./assets/esim4.png"
 import eSIM5 from "./assets/esim5.png"
 import eSIM4 from "./assets/esim3.png"
-import eSIM6 from "./assets/eSIM6.png"
+import eSIM6 from "./assets/esim6.png"
 import getyoursimmain from "./assets/getyoursimmain.jpg"
 
 
