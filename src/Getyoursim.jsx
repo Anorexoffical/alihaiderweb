@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import "./Style/getyoursim.css"
+import "./Style/Getyoursim.css"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

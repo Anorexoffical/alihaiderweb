@@ -4,17 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import sim3g from "./assets/sim3g.png";
 import "./Style/Esim.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "./Footer.jsx";
-import imag1 from "./assets/esim2.png";
 import sim3g2 from "./assets/sim3g2.png";
 import sim10g from "./assets/sim10g.png";
 import sim6g from "./assets/sim6g.png";
-import checkass from "./assets/checkass.png";
-import checkass2 from "./assets/checkass2.png";
-import checkass3 from "./assets/checkass3.png";
 
 const ESIM = () => {
   const navigate = useNavigate();

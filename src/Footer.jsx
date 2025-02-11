@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import logobackless from "./assets/logobackless.png"
-import googlelogo from "./assets/google-logo.webp"
+import googlelogo from "./assets/googlelogo.webp"
 import qrcode from "./assets/qrcode.png"
 
 const Footer = () => {

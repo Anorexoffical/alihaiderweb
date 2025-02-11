@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
-import ESIM from "./ESIM"; // Import the ESIM component
 
 const ProductList = () => {
   const [cart, setCart] = useState([]);

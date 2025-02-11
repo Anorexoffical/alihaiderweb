@@ -7,8 +7,8 @@ import Footer from "./Footer.jsx"
 import slide1 from "./assets/slider1.png";
 import slide2  from "./assets/slider2.png";
 import slide3 from "./assets/slider3.png";
-import eSIM from "./assets/eSIM.png"
-import eSIM2 from "./assets/eSIM2.png"
+import eSIM from "./assets/esim.png"
+import eSIM2 from "./assets/esim2.png"
 import productimg from "./assets/productimg.png"
 import mainbackgroundimg from "./assets/mainbackgroundimg.png"
 import mainpackg1 from "./assets/mainpackg1.png"
