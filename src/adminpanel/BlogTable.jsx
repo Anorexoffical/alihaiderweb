@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AdminNavbar from "./AdminNavbar";
-import "../style/Blogpost.css"
+import "../Style/Blogpost.css"
 
 function BlogTable() {
   const [blogs, setBlogs] = useState([]);
