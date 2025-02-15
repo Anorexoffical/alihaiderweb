@@ -9,7 +9,7 @@ const Footer = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '+270769675814';
-    const message = encodeURIComponent('Hello, testing from website ');
+    const message = encodeURIComponent('Hi! I m interested in your services. Can you provide more details?');
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, '_blank');
   };

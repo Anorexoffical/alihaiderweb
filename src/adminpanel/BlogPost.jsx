@@ -122,11 +122,10 @@ function BlogPost() {
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
                     />
+                  
                     <datalist id="categories">
-                      <option value="Sale" />
-                      <option value="Marketing" />
-                      <option value="Frontend" />
-                      <option value="Salesman" />
+                      <option value="Activate my SIM" />
+                      <option value="Top up" />
                     </datalist>
                   </div>
 
@@ -147,16 +146,18 @@ function BlogPost() {
                     <input
                       className="form-control"
                       placeholder="Enter Occupation"
-                      list="categories"
+                      list="blogcategories"
                       required
                       value={occupation}
                       onChange={(e) => setOccupation(e.target.value)}
                     />
-                    <datalist id="categories">
-                      <option value="Sale" />
-                      <option value="Marketing" />
-                      <option value="Frontend" />
-                      <option value="Salesman" />
+                <datalist id="blogcategories">
+                      <option value="Telecom Network Engineer" />
+                      <option value="SIM Card Engineer " />
+                      <option value="Electronics Engineer" />
+                      <option value="VoLTE & IMS Engineer" />
+                      <option value="Embedded Systems Enginee" />
+
                     </datalist>
                   </div>
 

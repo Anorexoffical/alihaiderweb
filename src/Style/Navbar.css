@@ -125,3 +125,36 @@ nav ul li a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.cart-badge {
+ color: red; /* Ensure red color for cart badge */
+font-size: 1.3rem;
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.pop-effect {
+  animation: pop-in 0.3s ease-in-out;
+}
+
+.reminder-msg {
+  z-index:3000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

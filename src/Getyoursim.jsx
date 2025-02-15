@@ -12,6 +12,7 @@ import eSIM5 from "./assets/esim5.png"
 import eSIM4 from "./assets/esim3.png"
 import eSIM6 from "./assets/esim6.png"
 import getyoursimmain from "./assets/getyoursimmain.jpg"
+import { useNavigate } from "react-router-dom"; // Add this at the top
 
 
 const IMG_PADDING = 12;
@@ -131,21 +132,29 @@ const CustomArrow = ({ className, style, onClick, direction }) => {
 const getyoursim = () => {
 
 
+//add to cart 
 
-  const handleAddToCart = (product) => {
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const navigate = useNavigate(); // Ensure useNavigate is used correctly
+
+    const handleAddToCart = (product) => {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    
+      const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
+    
+      if (existingItemIndex !== -1) {
+        cartItems[existingItemIndex].quantity += 1;
+      } else {
+        cartItems.push({
+          ...product,
+          quantity: 1,
+          price: parseFloat(product.subtitle.replace("R ", "")) || 0, // Ensure price is a valid number
+        });
+      }
+    
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      navigate("/productlist");
+    };
   
-    const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
-  
-    if (existingItemIndex !== -1) {
-      cartItems[existingItemIndex].quantity += quantity;
-    } else {
-      cartItems.push({ ...product, quantity, price: parseFloat(product.subtitle.replace("R ", "")) });
-    }
-  
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    navigate("/productlist");
-  };
 
   // about silder 
 

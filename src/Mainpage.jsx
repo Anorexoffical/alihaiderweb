@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Style/Mainpage.css"; // Import custom CSS
 import Footer from "./Footer.jsx"
+import gsap from "gsap";
+import { useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 
 
 import slide1 from "./assets/slider1.png";
@@ -41,8 +44,6 @@ import { useState } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import { FaPlus } from "react-icons/fa";
 
-import { FaChevronDown } from "react-icons/fa";
-
 
 
 const dataBundles = [
@@ -71,6 +72,28 @@ const dataBundlesvoice = [
 
   
 const Mainpage = () => {
+
+
+
+// about the animation 
+
+  const panelsRef = useRef([]);
+
+  useEffect(() => {
+      panelsRef.current.forEach((panel) => {
+          gsap.fromTo(
+              panel,
+              { scale: 1, opacity: 0.7 },
+              { scale: 0.9, opacity: 1, scrollTrigger: {
+                      trigger: panel,
+                      scrub: true,
+                      start: "top bottom",
+                      end: "top top",
+                  },
+              }
+          );
+      });
+  }, []);
 
 
   const [quantity, setQuantity] = useState(1);
@@ -133,6 +156,10 @@ const aboutnav = () =>{
 }
 
 
+// add to cart 
+
+
+
 const handleAddToCart = (product) => {
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -148,6 +175,33 @@ const handleAddToCart = (product) => {
   navigate("/productlist");
 };
 
+ const cards = [
+    {
+      id: 1,
+      title: "6GB SIM Card Starter Pack",
+      subtitle: "R 209.00",
+      quantity: 1,
+      image: eSIM2,
+      
+    }
+  ];
+
+
+
+
+
+// whatps
+
+
+const handleWhatsAppClick = () => {
+  const phoneNumber = '+270769675814';
+  const message = encodeURIComponent('Hi! I m interested in your services. Can you provide more details?');
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+  window.open(whatsappURL, '_blank');
+};
+
+
+
 
     
   return (
@@ -157,6 +211,8 @@ const handleAddToCart = (product) => {
 
 <div className="container-fluid border main-container">
       <Navbar />
+      <Fade direction="left" duration={500}>
+      
       <div className="row">
         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
             <div>
@@ -176,6 +232,7 @@ const handleAddToCart = (product) => {
             </div>
         </div>
       </div>
+      </Fade>
 
     
 
@@ -188,14 +245,20 @@ const handleAddToCart = (product) => {
 
       
       <div className="container my-5">
+
+
       <div className="row align-items-center">
         {/* Text Section */}
+
         <div className="col-lg-6 text-section">
+
+        <Fade direction="left" duration={1500}>
+
           <h2 className="ceo-heading">
             Why Switch to <span className="brandname">ICELL Mobile?</span>
           </h2>
           <h5 className="ceoheading2">
-            Where Connectivity Meets Champions: Amandla Mobile!
+            Where Connectivity Meets Champions: Icell Mobile!
           </h5>
           <ul className="features-list">
             <li>
@@ -210,17 +273,27 @@ const handleAddToCart = (product) => {
             <li> <span className="highlight1">No contracts! No Monthly fees! No credit checks!</span></li>
           </ul>
           <button className="btn mt-4 startbutton" onClick={getursim} >Get your sim </button>
+          </Fade>
+
         </div>
+
 
         {/* Image Section */}
         <div className="col-lg-6 text-center">
+
+        <Fade direction="right" duration={500}>
+
           <img
             src={eSIM}
             alt="Creative Design"
             className="img-fluid rounded shadow image-section"
           />
+
+          </Fade>
         </div>
+
       </div>
+
       </div>
 
 
@@ -252,11 +325,11 @@ const handleAddToCart = (product) => {
             <img src={slide} className="carousel-img" alt={`Slide ${index + 1}`} />
 
             
-            <div className="carousel-caption text-container">
+            {/* <div className="carousel-caption text-container">
               <h2>Icell Mobile </h2>
               <p>About us click here </p>
               <button className="btn sliderbtn" onClick={aboutnav}>LEARN MORE</button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
@@ -274,15 +347,20 @@ const handleAddToCart = (product) => {
 
 
       <Container className="py-5 text-center">
+      <Fade direction="down" duration={1000}>
+
       <h1 className="packgheading">Don't Januworry!</h1>
       <h2 className="packheading2">30-day Data Deals!</h2>
       <p>Only available in-app or on USSD: *136#</p>
+</Fade>
+
+<Fade direction="top" duration={1000}>
 
       <Row className="justify-content-center">
         {dataBundles.map((bundle) => (
           <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
             <Card className="bundle-card text-white text-center" onClick={() => handleShow(bundle)}>
-              <img src={bundle.image} alt={bundle.text} className="bundle-image no-padding" />
+              <img src={bundle.image} alt={bundle.text} className=" no-padding" />
               <div className="overlay">
                 <div className="bundle-text">30-Days</div>
                 <div className="plus-button">
@@ -293,6 +371,7 @@ const handleAddToCart = (product) => {
           </Col>
         ))}
       </Row>
+      </Fade>
 
       {/* Popup Modal */}
       <Modal show={show} onHide={() => setShow(false)} centered>
@@ -315,11 +394,17 @@ const handleAddToCart = (product) => {
 
 
     <Container className="py-5 text-center">
+    <Fade direction="down" duration={1000}>
+
       <h1 className="packgheading">Score Big with Our NEVER-EXPIRING BUNDLES      </h1>
       <p>Stay connected longer with data that never runs out! #UntilUntil</p>
+</Fade>
+
+    <Fade direction="top" duration={1000}>
 
       <Row className="justify-content-center">
         {dataBundles1gb.map((bundle) => (
+
           <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
             <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
               <img src={bundle.image} alt={bundle.text} className="" />
@@ -328,8 +413,11 @@ const handleAddToCart = (product) => {
               </div>
             </Card>
           </Col>
+
         ))}
       </Row>
+      </Fade>
+
 
       {/* Popup Modal */}
       <Modal show={show} onHide={() => setShow(false)} centered>
@@ -348,7 +436,6 @@ const handleAddToCart = (product) => {
 
 
 
-
     {/* this is about data in voice */}
 
 
@@ -356,8 +443,13 @@ const handleAddToCart = (product) => {
 
 
     <Container className="py-5 text-center">
+    <Fade direction="down" duration={1000}>
+
       <h1 className="packgheading">Our Voice & SMS Rate      </h1>
       <p>You no longer need to buy voice/SMS bundles. With us, it gets charged directly from your airtime at a flat rate!</p>
+</Fade>
+
+<Fade direction="top" duration={500}>
 
       <Row className="justify-content-center">
         {dataBundlesvoice.map((bundle) => (
@@ -374,6 +466,7 @@ const handleAddToCart = (product) => {
           </Col>
         ))}
       </Row>
+      </Fade>
 
       {/* Popup Modal */}
       <Modal show={show} onHide={() => setShow(false)} centered>
@@ -397,12 +490,16 @@ const handleAddToCart = (product) => {
 
           <div id="hero-section" className="container-fluid px-0 position-relative">
   <div className="row g-0">
+
     <div className="col-lg-12">
+    <Fade direction="left" duration={2000}>
+
       <img 
         src={mainbackgroundimg} 
         alt="5G Network" 
         className="hero-image img-fluid" 
       />
+      </Fade>
       <div className="hero-overlay">
         <div className="hero-content text-center">
           <h1 className="hero-title connectivity">
@@ -418,18 +515,26 @@ const handleAddToCart = (product) => {
 
 <div className="container-fluid content-container py-5">
   <div className="row product-container align-items-center">
+    
     <div className="col-xl-6 col-md-6 col-sm-12 text-center">
+    <Fade direction="left" duration={2000}>
+
       <img src={eSIM2} className="product-image img-fluid" alt="Product" />
+      </Fade>
     </div>
 
     <div className="col-xl-6 col-md-6 col-sm-12 product-info">
+    <Fade direction="right" duration={2000}>
+
       <h1 className="product-title">6GB SIM Card Starter Pack</h1>
-      
+      </Fade>
+      <Fade direction="right" duration={2000}>
+
       <div className="price-container d-flex flex-column text-center">
         <span className="discounted-price">R 209.00</span>
         <span className="original-price">R 314.00</span>
       </div>
-
+</Fade>
 
 
 
@@ -448,8 +553,8 @@ const handleAddToCart = (product) => {
       <hr className="divider" />
 
       <div className="action-buttons d-flex justify-content-between align-items-center">
-      <button className="btn whatsappbtn"> <FaWhatsapp /></button>        
-      <p className="view-detail m-0" onClick={() => navigate("/details-page")} >View Detail →</p>
+      <button className="btn whatsappbtn" onClick={() => handleWhatsAppClick()}> <FaWhatsapp /></button>        
+      <p className="view-detail m-0" onClick={() => navigate("/Getyoursim")} >View Detail →</p>
       </div>
     </div>
   </div>
@@ -465,11 +570,14 @@ const handleAddToCart = (product) => {
 <div id="hero-section" className="container-fluid px-0 position-relative">
   <div className="row g-0">
     <div className="col-lg-12">
+    <Fade direction="up" duration={1500}>
+
       <img 
         src={productimg} 
         alt="5G Network" 
         className="hero-image img-fluid" 
       />
+      </Fade>
       <div className="hero-overlay">
         <div className="hero-content text-center">
         

@@ -90,8 +90,8 @@ const Login = () => {
                   Log in
                 </button>
               </div>
-              <a href="#" className="text-decoration-none text-primary d-block text-center mb-3">
-                Forgotten password?
+              <a href="./" className="text-decoration-none text-primary d-block text-center mb-3">
+                Home page
               </a>
               <hr className="text-secondary" />
               <div className="d-grid">

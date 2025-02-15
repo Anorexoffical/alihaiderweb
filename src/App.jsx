@@ -1,12 +1,14 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import NotFound from './NotFound';
 import './App.css';
-import Mainpage from './Mainpage'; // Default landing page
 
 // Lazy load components
-const Navbar = lazy(() => import('./Navbar'));
+
 const Contactus = lazy(() => import('./Contactus'));
 const Footer = lazy(() => import('./Footer'));
 const Support = lazy(() => import('./adminpanel/Support'));
@@ -16,6 +18,8 @@ const Topupdeal = lazy(() => import('./Topupdeal'));
 const Aboutus = lazy(() => import('./Aboutus'));
 const ESIM = lazy(() => import('./ESIM'));
 const Productlist = lazy(() => import('./Productlist'));
+const Mainpage = lazy(() => import('./Mainpage'));
+const Checkout = lazy(() => import('./Checkout'));
 
 const Login = lazy(() => import('./Login '));
 
@@ -25,15 +29,21 @@ const Blogtable = lazy(() => import('./adminpanel/BlogTable'));
 const EditBlogPost = lazy(() => import('./adminpanel/EditBlogPost'));
 const BlogDetail = lazy(() => import('./adminpanel/BlogDetail'));
 
-
-
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = sessionStorage.getItem('userName'); // Check session storage
   return isAuthenticated ? children : <Navigate to="/login" replace />;
 };
 
-function App() {
+// Skeleton Loader Component
+const SkeletonLoader = () => (
+  <div className="skeleton-container">
+    <Skeleton height={40} width="80%" />
+    <Skeleton height={20} width="60%" style={{ marginTop: 10 }} />
+    <Skeleton height={300} width="90%" style={{ marginTop: 20 }} />
+  </div>
+);
 
+function App() {
   const addToCart = (item) => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(item);
@@ -41,10 +51,9 @@ function App() {
     console.log("Item added to cart:", item);
   };
 
-  
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<SkeletonLoader />}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Mainpage />} />
@@ -53,14 +62,15 @@ function App() {
           <Route path="/Power2Sell" element={<Power2Sell />} />
           <Route path="/Topupdeal" element={<Topupdeal />} />
           <Route path="/Getyoursim" element={<Getyoursim />} />
-         <Route path="/BlogDetail/:id" element={<BlogDetail />} />
-         <Route path="/Aboutus" element={<Aboutus />} />
-         <Route path="/Productlist" element={<Productlist />} />
+          <Route path="/BlogDetail/:id" element={<BlogDetail />} />
+          <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path="/Productlist" element={<Productlist />} />
+          <Route path="/Checkout" element={<Checkout />} />
 
-        {/* Pass addToCart as a prop to ESIM */}
-        <Route path="/ESIM" element={<ESIM addToCart={addToCart} />} />
-         
-         
+          checkout
+          {/* Pass addToCart as a prop to ESIM */}
+          <Route path="/ESIM" element={<ESIM addToCart={addToCart} />} />
+
           <Route path="/Login" element={<Login />} />
 
           {/* Private Routes */}
@@ -68,7 +78,8 @@ function App() {
           <Route path="/Blogtable" element={<PrivateRoute><Blogtable /></PrivateRoute>} />
           <Route path="/EditBlogPost/:id" element={<PrivateRoute><EditBlogPost /></PrivateRoute>} />
 
-          
+          {/* 404 Not Found Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>

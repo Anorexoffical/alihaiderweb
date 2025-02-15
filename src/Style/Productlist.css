@@ -1,0 +1,21 @@
+.container {
+    margin: auto;
+  }
+
+ .prouctlist{
+    height: 80vh;
+
+ } 
+  .table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+.checkout{
+  background-color: black;
+  color: white;
+}
+.checkout:hover{
+    background-color: rgb(33, 31, 31);
+    color: white;
+}
