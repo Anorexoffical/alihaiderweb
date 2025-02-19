@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import sim3g from "./assets/sim3g.png"; // Ensure correct import
-import "./style/Esim.css";
+import "./Style/Esim.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -215,7 +215,7 @@ const ESIM = ({ addToCart }) => {
           </div>
         </div>
       </div>
-      
+
 
       {/* Other SIM Container */}
       <div className="carousel-container container-fluid py-5">
