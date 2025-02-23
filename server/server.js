@@ -5,7 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require('fs');
 const BlogPostModel = require("./models/BlogPostModel");
-const UserModels = require("./models/UserModels");
+const UserModels = require("./models/userModels");
 
 const app = express();
 
@@ -24,6 +24,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Handles form-urlencoded data
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -41,9 +42,11 @@ const upload = multer({ storage: storage });
 mongoose.connect("mongodb://127.0.0.1:27017/icellmobile", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-})
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB connection error:", err));
+}).then(() => console.log("MongoDB connected")).catch(err => console.error("MongoDB connection error:", err));
+
+// mongoose.connect("mongodb://localhost:27017/icellmobile")
+//   .then(() => console.log("MongoDB connected successfully"))
+//   .catch(err => console.error("MongoDB connection error:", err));
 
 // POST endpoint with file upload and blog 
 app.post("/Blogpost", upload.single("blogImage"), (req, res) => {
@@ -58,9 +61,7 @@ app.post("/Blogpost", upload.single("blogImage"), (req, res) => {
     title,
     body,
     blogImage,
-  })
-    .then(result => res.status(201).json(result))
-    .catch(err => res.status(400).json(err));
+  }).then(result => res.status(201).json(result)).catch(err => res.status(400).json(err));
 });
 
 
@@ -206,6 +207,68 @@ app.post("/user", async (req, res) => {
   
 });
 
+//for payment method 
+const crypto = require("crypto");
+
+const generateSignature = (data, passPhrase = null) => {
+  let pfOutput = "";
+  for (let key in data) {
+    if (data[key] !== "") {
+      pfOutput += `${key}=${encodeURIComponent(data[key].trim()).replace(/%20/g, "+")}&`;
+    }
+  }
+
+  let getString = pfOutput.slice(0, -1);
+  if (passPhrase) {
+    getString += `&passphrase=${encodeURIComponent(passPhrase.trim()).replace(/%20/g, "+")}`;
+  }
+
+  return crypto.createHash("md5").update(getString).digest("hex");
+};
+
+app.post("/payfast/initiate-payment", async (req, res) => {
+  const { firstName, lastName, email, totalAmount, items } = req.body;
+
+  const merchant_id = "10036171";
+  const merchant_key = "731ry9o3bmz2d";
+  const return_url = "https://64f5-118-107-131-143.ngrok-free.app/payfast/success";
+  const cancel_url = "https://64f5-118-107-131-143.ngrok-free.app/payfast/cancel";
+  const notify_url = "https://64f5-118-107-131-143.ngrok-free.app/payfast/notifyurl";
+
+  const paymentData = {
+    merchant_id,
+    merchant_key,
+    return_url,
+    cancel_url,
+    notify_url,
+    name_first: firstName,
+    name_last: lastName,
+    email_address: email,
+    m_payment_id: Math.floor(Math.random() * 1000000).toString(),
+    amount: totalAmount,
+    item_name: "testCartPurchase",
+  };
+
+  // console.log(paymentData);
+
+
+  const passPhrase = ""; // Set your passphrase
+  paymentData.signature = generateSignature(paymentData, passPhrase);
+
+  // let paymentUrl = `https://www.payfast.co.za/eng/process?`;
+  let paymentUrl = `https://sandbox.payfast.co.za/eng/process?`;
+  Object.keys(paymentData).forEach((key) => {
+    paymentUrl += `${key}=${encodeURIComponent(paymentData[key])}&`;
+  });
+
+  res.json({ paymentUrl });
+});
+
+
+
+
+const notifyRoutes = require("./payment/notifyurl");
+app.use(notifyRoutes);
 
 
 

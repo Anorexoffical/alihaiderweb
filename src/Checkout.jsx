@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import payment from "./assets/payment.png";
 
 const Checkout = () => {
+
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -11,6 +12,9 @@ const Checkout = () => {
   const [countries, setCountries] = useState([]);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -28,6 +32,35 @@ const Checkout = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setEmailError(emailRegex.test(emailValue) ? "" : "Invalid email format");
   };
+
+  //for snding to payment route
+  const handlePayment = async () => {
+    const orderDetails = {
+      firstName,
+      lastName,
+      email,
+      totalAmount: total.toFixed(2),
+      items: cart, // all cart items
+    };
+  
+    try {
+      const response = await fetch("http://localhost:30001/payfast/initiate-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderDetails),
+      });
+  
+      const data = await response.json();
+      if (data.paymentUrl) {
+        window.location.href = data.paymentUrl; 
+      } else {
+        alert("Payment initiation failed!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
 
   return (
     <div className="container my-5">
@@ -57,10 +90,15 @@ const Checkout = () => {
                 </select>
               </div>
               <div className="col-md-6">
-                <input type="text" className="form-control mb-3" placeholder="First Name" />
+                <input type="text" className="form-control mb-3" placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)} />
               </div>
               <div className="col-md-6">
-                <input type="text" className="form-control mb-3" placeholder="Last Name" />
+                <input type="text" className="form-control mb-3" placeholder="Last Name" 
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                />
               </div>
             </div>
             <input type="text" className="form-control mb-3" placeholder="Address" />
@@ -119,9 +157,12 @@ const Checkout = () => {
               <p>Total</p>
               <p>R {total.toFixed(2)}</p>
             </div>
-            <button className="callformeeting checkout ">Pay Now</button>
+            {/* <button className="callformeeting checkout ">Pay Now</button> */}
+            <button className="callformeeting checkout" onClick={handlePayment}>Pay Now</button>
           </div>
+          
         </div>
+        
       </div>
     </div>
   );
