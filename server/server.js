@@ -44,10 +44,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/icellmobile", {
   useUnifiedTopology: true,
 }).then(() => console.log("MongoDB connected")).catch(err => console.error("MongoDB connection error:", err));
 
-// mongoose.connect("mongodb://localhost:27017/icellmobile")
-//   .then(() => console.log("MongoDB connected successfully"))
-//   .catch(err => console.error("MongoDB connection error:", err));
-
 // POST endpoint with file upload and blog 
 app.post("/Blogpost", upload.single("blogImage"), (req, res) => {
   const { postDate, category, username, occupation, title, body } = req.body;
@@ -207,7 +203,7 @@ app.post("/user", async (req, res) => {
   
 });
 
-//for payment method 
+//for paymnt method 
 const crypto = require("crypto");
 
 const generateSignature = (data, passPhrase = null) => {
@@ -227,13 +223,17 @@ const generateSignature = (data, passPhrase = null) => {
 };
 
 app.post("/payfast/initiate-payment", async (req, res) => {
-  const { firstName, lastName, email, totalAmount, items } = req.body;
+  const { firstName, lastName, email, totalAmount, items, address, postalCode, phoneNO, selectedCountry } = req.body;
 
   const merchant_id = "10036171";
   const merchant_key = "731ry9o3bmz2d";
-  const return_url = "https://64f5-118-107-131-143.ngrok-free.app/payfast/success";
-  const cancel_url = "https://64f5-118-107-131-143.ngrok-free.app/payfast/cancel";
-  const notify_url = "https://64f5-118-107-131-143.ngrok-free.app/payfast/notifyurl";
+  const return_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/success";
+  const cancel_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/cancel";
+  const notify_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/notifyurl";
+
+  const orderID = `${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
+
+  const filteredItems = items.map(({ id, subtitle, discount, image, ...rest }) => rest);
 
   const paymentData = {
     merchant_id,
@@ -244,28 +244,35 @@ app.post("/payfast/initiate-payment", async (req, res) => {
     name_first: firstName,
     name_last: lastName,
     email_address: email,
-    m_payment_id: Math.floor(Math.random() * 1000000).toString(),
+    m_payment_id: orderID,
     amount: totalAmount,
-    item_name: "testCartPurchase",
+    item_name: `OID-${orderID}`,
+
+    custom_str1: JSON.stringify(filteredItems), 
+    custom_str2: JSON.stringify({address}),
+    // custom_str1: encodeURIComponent(JSON.stringify({filteredItems})), 
+    // custom_str2: encodeURIComponent(JSON.stringify({address})),
+    custom_str3: postalCode,  
+    custom_str4: phoneNO,
+    custom_str5: selectedCountry,
+
   };
 
-  // console.log(paymentData);
+  console.log(paymentData);
 
-
-  const passPhrase = ""; // Set your passphrase
+  const passPhrase = "";
   paymentData.signature = generateSignature(paymentData, passPhrase);
 
   // let paymentUrl = `https://www.payfast.co.za/eng/process?`;
+
   let paymentUrl = `https://sandbox.payfast.co.za/eng/process?`;
   Object.keys(paymentData).forEach((key) => {
     paymentUrl += `${key}=${encodeURIComponent(paymentData[key])}&`;
   });
 
   res.json({ paymentUrl });
+
 });
-
-
-
 
 const notifyRoutes = require("./payment/notifyurl");
 app.use(notifyRoutes);
@@ -276,4 +283,3 @@ app.use(notifyRoutes);
 app.listen(30001, () => {
   console.log("Server is running on port 30001");
 });
-

@@ -215,21 +215,21 @@ const getyoursim = () => {
   const cards = [
     {
       id: 1,
-      title: "5GB SIM Card Starter Pack R 209.00",
+      title: "5GB SIM Card Starter Pack R209",
       subtitle: "R 209.00",
       discount:40,
       image: eSIM,
     },
     {
       id: 2,
-      title: "10GB SIM Card Starter Pack R 259.00",
+      title: "10GB SIM Card Starter Pack R259",
       subtitle: "Product",
       discount:20,
       image: eSIM4,
     },
     {
       id: 3,
-      title: "55GB SIM Card Starter Pack R 659.00",
+      title: "55GB SIM Card Starter Pack R659",
       subtitle: "Product",
 
       discount:70,
@@ -238,7 +238,7 @@ const getyoursim = () => {
     },
     {
       id: 4,
-      title: " 3GB Data (7-Days) R 9.00",
+      title: " 3GB Data 7Days R900",
       subtitle: "Technology",
       discount:50,
 

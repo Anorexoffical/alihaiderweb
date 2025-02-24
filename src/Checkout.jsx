@@ -15,6 +15,13 @@ const Checkout = () => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  // const [apartment, setApartment] = useState("");
+  // const [city, setCity] = useState("");
+  // const [province, setProvince] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [phoneNO, setPhoneNo] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -40,7 +47,16 @@ const Checkout = () => {
       lastName,
       email,
       totalAmount: total.toFixed(2),
+
       items: cart, // all cart items
+      address,
+      // apartment,
+      // city,
+      // province,
+      postalCode,
+      phoneNO,
+      selectedCountry,
+
     };
   
     try {
@@ -71,7 +87,7 @@ const Checkout = () => {
           <form>
             <h4>Contact Information</h4>
             <input
-              type="email"
+              type="email" required
               className={`form-control mb-2 ${emailError ? "is-invalid" : ""}`}
               placeholder="Email"
               value={email}
@@ -82,7 +98,10 @@ const Checkout = () => {
             <h4>Delivery Details</h4>
             <div className="row">
               <div className="col-md-12">
-                <select className="form-control mb-3">
+                <select className="form-control mb-3" required
+                value={selectedCountry}
+                onChange={(e) => setSelectedCountry(e.target.value)}
+                >
                   <option>Select Country</option>
                   {countries.map((country, index) => (
                     <option key={index} value={country}>{country}</option>
@@ -90,7 +109,7 @@ const Checkout = () => {
                 </select>
               </div>
               <div className="col-md-6">
-                <input type="text" className="form-control mb-3" placeholder="First Name"
+                <input type="text" className="form-control mb-3" placeholder="First Name" required
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)} />
               </div>
@@ -101,20 +120,39 @@ const Checkout = () => {
                 />
               </div>
             </div>
-            <input type="text" className="form-control mb-3" placeholder="Address" />
-            <input type="text" className="form-control mb-3" placeholder="Apartment, suite (optional)" />
-            <div className="row">
+            <input type="text" className="form-control mb-3" placeholder="Address" required
+            value={address} onChange={(e) => setAddress(e.target.value)} 
+            />
+
+            {/* <input type="text" className="form-control mb-3" placeholder="Apartment, suite (optional)" 
+            value={apartment} onChange={(e) => setApartment(e.target.value)} 
+            /> */}
+            <input type="text" className="form-control mb-3" placeholder="Postal Code" 
+            value={postalCode} onChange={(e) => setPostalCode(e.target.value)} 
+            />
+
+            {/* <div className="row">
               <div className="col-md-4">
-                <input type="text" className="form-control mb-3" placeholder="City" />
+                <input type="text" className="form-control mb-3" placeholder="City" 
+                value={city} onChange={(e) => setCity(e.target.value)} 
+                />
               </div>
               <div className="col-md-4">
-                <input type="text" className="form-control mb-3" placeholder="Province" />
+                <input type="text" className="form-control mb-3" placeholder="Province" 
+                value={province} onChange={(e) => setProvince(e.target.value)} 
+                />
               </div>
               <div className="col-md-4">
-                <input type="text" className="form-control mb-3" placeholder="Postal Code" />
+                <input type="text" className="form-control mb-3" placeholder="Postal Code" 
+                value={postalCode} onChange={(e) => setPostalCode(e.target.value)} 
+                />
               </div>
-            </div>
-            <input type="text" className="form-control mb-3" placeholder="Phone (Optional)" />
+
+            </div> */}
+
+            <input type="text" className="form-control mb-3" placeholder="Phone Number" required
+              value={phoneNO} onChange={(e) => setPhoneNo(e.target.value)} 
+            />
           </form>
           
           {/* Payment Section */}
@@ -169,3 +207,11 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
+
+//takrabal12@gmail.com 
+// firstname 
+// lastname 
+// anorix software house opposite custom house rawalpindi 
+// 15000
+// 03104146002

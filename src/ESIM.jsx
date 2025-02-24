@@ -95,14 +95,14 @@ const ESIM = ({ addToCart }) => {
   const cards = [
     {
       id: 1,
-      title: "eSIM + 3GB Data (7-Days)",
+      title: "eSIM with 3GB Data 7Days",
       subtitle: "R 9.00",
       discount: 40,
       image: sim3g2,
     },
     {
       id: 2,
-      title: "eSIM + 10GB Data (7-Days)",
+      title: "eSIM with 10GB Data 7Days",
       subtitle: "R 99.00",
       discount: 20,
       image: sim10g,
