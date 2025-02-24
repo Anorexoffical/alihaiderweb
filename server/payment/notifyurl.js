@@ -77,6 +77,7 @@ router.post("/payfast/notifyurl", async (req, res) => {
                 const newOrder = new Order({
                   firstName: pfData["name_first"],
                   lastName: pfData["name_last"],
+                  orderID: pfData["item_name"],
                   email: pfData["email_address"],
                   address: addressData.address,
                   postalCode: pfData["custom_str3"],
@@ -85,6 +86,7 @@ router.post("/payfast/notifyurl", async (req, res) => {
                   totalAmount,
                   payFastTax: payFastTax,
                   totalAmountAfterTax: totalAmountAfterTax,
+                  pf_payment_id: pfData["pf_payment_id"],
                   items: formattedItems,
                 });
         
