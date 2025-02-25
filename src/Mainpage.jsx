@@ -5,6 +5,9 @@ import Footer from "./Footer.jsx"
 import gsap from "gsap";
 import { useEffect } from "react";
 import { Fade } from "react-awesome-reveal";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 import slide1 from "./assets/slider1.png";
@@ -24,8 +27,6 @@ import mainpackg4 from "./assets/mainpackg4.png"
 import mainpackg6 from "./assets/maingpackg6.png"
 import mainpackg7 from "./assets/maingpackg7.png"
 import mainpackg8 from "./assets/maingpackg8.png"
-
-
 
 
 
@@ -158,22 +159,32 @@ const aboutnav = () =>{
 
 // add to cart 
 
+  const itamlimitnotification = () => {
+      toast.warn("You can only have 4 unique items in your cart at a time!", {
+        autoClose: 2000,
+      });
+    };
 
-
-const handleAddToCart = (product) => {
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-
-  const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
-
-  if (existingItemIndex !== -1) {
-    cartItems[existingItemIndex].quantity += quantity;
-  } else {
-    cartItems.push({ ...product, quantity, price: parseFloat(product.subtitle.replace("R ", "")) });
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cartItems));
-  navigate("/productlist");
-};
+    const handleAddToCart = (product) => {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    
+      const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
+    
+      if (existingItemIndex !== -1) {
+        cartItems[existingItemIndex].quantity += quantity;
+      } else {
+        // Prevent adding more than 4 unique items
+        if (cartItems.length >= 4) {
+          itamlimitnotification();
+          return;
+        }
+        
+        cartItems.push({ ...product, quantity, price: parseFloat(product.subtitle.replace("R ", "")) });
+      }
+    
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      navigate("/productlist");
+    };
 
  const cards = [
     {
@@ -206,6 +217,7 @@ const handleWhatsAppClick = () => {
     
   return (
     <>  
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
 
     {/* this is the main page  main container  */}
 

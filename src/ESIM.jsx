@@ -17,6 +17,9 @@ import sim6g from "./assets/sim6g.png";
 import checkass from "./assets/checkass.png";
 import checkass2 from "./assets/checkass2.png";
 import checkass3 from "./assets/checkass3.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const CustomArrow = ({ className, style, onClick, direction }) => {
   return (
@@ -116,14 +119,26 @@ const ESIM = ({ addToCart }) => {
     },
   ];
 
+  const itamlimitnotification = () => {
+      toast.warn("You can only have 4 unique items in your cart at a time!", {
+        autoClose: 2000,
+      });
+    };
+
   const handleAddToCart = (product) => {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  
     const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
   
     if (existingItemIndex !== -1) {
+      // If item exists, increase quantity
       cartItems[existingItemIndex].quantity += quantity;
     } else {
+      // Prevent adding more than 4 unique items
+      if (cartItems.length >= 4) {
+        itamlimitnotification();
+        return;
+      }
+  
       cartItems.push({ ...product, quantity, price: parseFloat(product.subtitle.replace("R ", "")) });
     }
   
@@ -133,6 +148,8 @@ const ESIM = ({ addToCart }) => {
 
   return (
     <>
+          <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
+    
       <div className="container-fluid maincontainer2">
         <Navbar />
 

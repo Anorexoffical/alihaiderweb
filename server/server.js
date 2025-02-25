@@ -225,11 +225,17 @@ const generateSignature = (data, passPhrase = null) => {
 app.post("/payfast/initiate-payment", async (req, res) => {
   const { firstName, lastName, email, totalAmount, items, address, postalCode, phoneNO, selectedCountry } = req.body;
 
-  const merchant_id = "10036171";
-  const merchant_key = "731ry9o3bmz2d";
+  // const merchant_id = "10036171";
+  // const merchant_key = "731ry9o3bmz2d";
+
+  const merchant_id = "26879017";
+  const merchant_key = "l6ylebkxwezf5";
+
   const return_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/success";
   const cancel_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/cancel";
-  const notify_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/notifyurl";
+  const notify_url = "http://icellmobile.co.za/payfast/notifyurl";
+  
+  // http://icellmobile.co.za/
 
   const orderID = `${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
 
@@ -263,9 +269,9 @@ app.post("/payfast/initiate-payment", async (req, res) => {
   const passPhrase = "";
   paymentData.signature = generateSignature(paymentData, passPhrase);
 
-  // let paymentUrl = `https://www.payfast.co.za/eng/process?`;
+  let paymentUrl = `https://www.payfast.co.za/eng/process?`;
 
-  let paymentUrl = `https://sandbox.payfast.co.za/eng/process?`;
+  // let paymentUrl = `https://sandbox.payfast.co.za/eng/process?`;
   Object.keys(paymentData).forEach((key) => {
     paymentUrl += `${key}=${encodeURIComponent(paymentData[key])}&`;
   });

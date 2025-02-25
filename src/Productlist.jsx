@@ -20,7 +20,9 @@ const ProductList = () => {
   };
 
   const changeQuantity = (index, amount) => {
+    
     const updatedCart = cart.map((item, i) =>
+      
       i === index ? { ...item, quantity: Math.max(1, (item.quantity || 1) + amount) } : item
     );
     updateCart(updatedCart);

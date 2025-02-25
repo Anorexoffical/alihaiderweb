@@ -7,7 +7,7 @@ const Order = require("../models/orderModel");
 
 
 const passPhrase = "";
-const testingMode = true;
+const testingMode = false;
 const pfHost = testingMode ? "sandbox.payfast.co.za" : "www.payfast.co.za";
 
 

@@ -13,7 +13,8 @@ import eSIM4 from "./assets/esim3.png"
 import eSIM6 from "./assets/esim6.png"
 import getyoursimmain from "./assets/getyoursimmain.jpg"
 import { useNavigate } from "react-router-dom"; // Add this at the top
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const IMG_PADDING = 12;
 
@@ -131,19 +132,35 @@ const CustomArrow = ({ className, style, onClick, direction }) => {
 
 const getyoursim = () => {
 
-
+const itamlimitnotification = () => {
+    toast.warn("You can only have 4 unique items in your cart at a time!", {
+      autoClose: 2000,
+    });
+  };
 //add to cart 
 
     const navigate = useNavigate(); // Ensure useNavigate is used correctly
 
+
     const handleAddToCart = (product) => {
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     
+      // Check if the item already exists in the cart
       const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
     
       if (existingItemIndex !== -1) {
+        // If item exists, increase quantity
         cartItems[existingItemIndex].quantity += 1;
       } else {
+        // Prevent adding more than 4 unique items
+        if (cartItems.length >= 4) {
+          itamlimitnotification()
+          return;
+        }
+
+      
+    
+        // Add new unique item
         cartItems.push({
           ...product,
           quantity: 1,
@@ -151,9 +168,14 @@ const getyoursim = () => {
         });
       }
     
+      // Save the updated cart
       localStorage.setItem("cart", JSON.stringify(cartItems));
       navigate("/productlist");
     };
+
+
+    
+    
   
 
   // about silder 
@@ -223,14 +245,14 @@ const getyoursim = () => {
     {
       id: 2,
       title: "10GB SIM Card Starter Pack R259",
-      subtitle: "Product",
+      subtitle: "R 259.00",
       discount:20,
       image: eSIM4,
     },
     {
       id: 3,
       title: "55GB SIM Card Starter Pack R659",
-      subtitle: "Product",
+      subtitle: "R 659.00",
 
       discount:70,
 
@@ -238,8 +260,8 @@ const getyoursim = () => {
     },
     {
       id: 4,
-      title: " 3GB Data 7Days R900",
-      subtitle: "Technology",
+      title: "6GB SIM Card Starter Pack",
+      subtitle: " R 209.00",
       discount:50,
 
       image: eSIM6,
@@ -247,8 +269,12 @@ const getyoursim = () => {
   
   ];
 
+
+
     return (
       <>
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
+
       <div className="mainback">
       <h1 style={{ paddingTop: "1px" }}></h1>
       <Navbar />
