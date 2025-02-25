@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import "../Style/Support.css";
 import { Avatar } from "@mui/material";
-import Footer from "../Footer.jsx"
+import Footer from "../Footer.jsx";
 
 const BlogsList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -19,8 +19,13 @@ const BlogsList = () => {
     axios
       .get(`http://localhost:30001/Blogposts?page=${page}&limit=4`)
       .then((response) => {
-        setBlogs(response.data.blogs);
-        setTotalPages(response.data.totalPages);
+        console.log("API Response:", response.data); // Debugging API Response
+        if (response.data && Array.isArray(response.data.blogs)) {
+          setBlogs(response.data.blogs);
+          setTotalPages(response.data.totalPages || 1);
+        } else {
+          throw new Error("Invalid response structure");
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -42,10 +47,11 @@ const BlogsList = () => {
     if (page > 1) setPage(page - 1);
   };
 
-  const filteredBlogs =
-    filteredCategory === "All"
+  const filteredBlogs = Array.isArray(blogs)
+    ? filteredCategory === "All"
       ? blogs
-      : blogs.filter((blog) => blog.category === filteredCategory);
+      : blogs.filter((blog) => blog.category === filteredCategory)
+    : [];
 
   const truncateHTML = (html, maxLength) => {
     const div = document.createElement("div");
@@ -68,8 +74,7 @@ const BlogsList = () => {
   return (
     <>
       <div className="mainblogheading">
-      <h1 style={{ paddingTop: "1px" }}></h1>
-
+        <h1 style={{ paddingTop: "1px" }}></h1>
         <Navbar />
         <h1 className="blogheading">Hi! How can we Help?</h1>
       </div>
@@ -79,15 +84,17 @@ const BlogsList = () => {
           <button className="btn btnoutline mx-2" onClick={() => handleFilter("All")}>
             All
           </button>
-          {[...new Set(blogs.map((blog) => blog.category))].map((category) => (
-            <button
-              key={category}
-              className="btn btnoutline mx-2"
-              onClick={() => handleFilter(category)}
-            >
-              {category}
-            </button>
-          ))}
+          {[...new Set(blogs.map((blog) => blog.category || "Uncategorized"))].map(
+            (category) => (
+              <button
+                key={category}
+                className="btn btnoutline mx-2"
+                onClick={() => handleFilter(category)}
+              >
+                {category}
+              </button>
+            )
+          )}
         </div>
         <div className="container mt-9" style={{ marginTop: "100px" }}>
           {filteredBlogs.map((blog) => (
@@ -106,7 +113,10 @@ const BlogsList = () => {
               <div className="col-md-8 d-flex flex-column justify-content-between">
                 <div>
                   <p className="text-muted mb-1">
-                    {blog.postDate} | <span className="badge bgcolor ms-2">{blog.category}</span>
+                    {blog.postDate} |{" "}
+                    <span className="badge bgcolor ms-2">
+                      {blog.category || "Uncategorized"}
+                    </span>
                   </p>
                   <h2 className="h4 mb-3">{blog.title}</h2>
                   <p className="text-secondary">{truncateHTML(blog.body, 200)}</p>
@@ -119,7 +129,11 @@ const BlogsList = () => {
                 </div>
                 <hr className="my-3" />
                 <div className="d-flex align-items-center">
-                  <Avatar alt={blog.username} src={blog.userImage || "/default-avatar.jpg"} sx={{ width: 40, height: 40 }} />
+                  <Avatar
+                    alt={blog.username}
+                    src={blog.userImage || "/default-avatar.jpg"}
+                    sx={{ width: 40, height: 40 }}
+                  />
                   <div className="ms-2">
                     <p className="mb-0 fw-bold">{blog.username}</p>
                     <p className="mb-0 text-muted">{blog.occupation}</p>
@@ -133,13 +147,15 @@ const BlogsList = () => {
           <button className="pagination-btn" onClick={handlePrevPage} disabled={page === 1}>
             Previous
           </button>
-          <span className="pagination-text">Page {page} of {totalPages}</span>
+          <span className="pagination-text">
+            Page {page} of {totalPages}
+          </span>
           <button className="pagination-btn" onClick={handleNextPage} disabled={page === totalPages}>
             Next
           </button>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };
