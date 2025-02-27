@@ -95,10 +95,10 @@ useEffect(() => {
             {/* Stats Section */}
             <div className="row row-cols-2 mb-4">
               {[
-                { count: '10k+', label: 'Completed Projects' },
-                { count: '15k+', label: 'Satisfied Customers' },
-                { count: '10+', label: 'Years Of Mastery' },
-                { count: '45+', label: 'Worldwide Honors' },
+                { count: '5k+', label: 'Completed Projects' },
+                { count: '3k+', label: 'Satisfied Customers' },
+                { count: '1+', label: 'Years Of Mastery' },
+                { count: '4+', label: 'Worldwide Honors' },
               ].map((stat, index) => (
                 <div key={index} className="col text-center">
                   <h3 className="fw-bold text-black">{stat.count}</h3>

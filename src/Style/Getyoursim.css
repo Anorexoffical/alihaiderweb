@@ -132,6 +132,10 @@
 .custom-arrow.right {
   right: 20px; /* Position the right button */
 }
+.getyoursimcon{
+  background-color: rgb(246, 246, 246);
+ height: 200px;
+}
 
 @media (max-width: 400px) {
   .serviceheading {

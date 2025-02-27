@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -20,7 +19,6 @@ import checkass3 from "./assets/checkass3.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const CustomArrow = ({ className, style, onClick, direction }) => {
   return (
     <button
@@ -32,7 +30,6 @@ const CustomArrow = ({ className, style, onClick, direction }) => {
     </button>
   );
 };
-
 
 const ESIM = ({ addToCart }) => {
   const navigate = useNavigate();
@@ -148,7 +145,7 @@ const ESIM = ({ addToCart }) => {
 
   return (
     <>
-          <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
     
       <div className="container-fluid maincontainer2">
         <Navbar />
@@ -233,9 +230,8 @@ const ESIM = ({ addToCart }) => {
         </div>
       </div>
 
-
       {/* Other SIM Container */}
-      <div className="carousel-container container-fluid py-5">
+      <div className="carousel-container1 container-fluid py-5">
         <div className="text-center mb-5">
           <h1 className="mb-3 display-4 fw-bold serviceheading">Introducing Icell Mobile eSIM</h1>
           <h3>Revolutionize Your Connectivity Experience</h3>
@@ -339,5 +335,3 @@ const ESIM = ({ addToCart }) => {
 };
 
 export default ESIM;
-
-// add the addtocart fun in the main compoent do not change anything , my ui is good resaponsive and work willl , only add the add to cart fun 

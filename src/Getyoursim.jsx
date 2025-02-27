@@ -336,7 +336,8 @@ const itamlimitnotification = () => {
 
     </div>
       </div>
-
+<div className="getyoursimcon">
+</div>
 
 <Footer></Footer>
 </>

@@ -361,29 +361,31 @@ const handleWhatsAppClick = () => {
       <Container className="py-5 text-center">
       <Fade direction="down" duration={1000}>
 
-      <h1 className="packgheading">Don't Januworry!</h1>
+      <h1 className="packgheading">Don't worry!</h1>
       <h2 className="packheading2">30-day Data Deals!</h2>
       <p>Only available in-app or on USSD: *136#</p>
 </Fade>
 
-<Fade direction="top" duration={1000}>
 
-      <Row className="justify-content-center">
-        {dataBundles.map((bundle) => (
-          <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
-            <Card className="bundle-card text-white text-center" onClick={() => handleShow(bundle)}>
-              <img src={bundle.image} alt={bundle.text} className=" no-padding" />
-              <div className="overlay">
-                <div className="bundle-text">30-Days</div>
-                <div className="plus-button">
-                  <FaPlus />
-                </div>
-              </div>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-      </Fade>
+
+      <Fade direction="top" duration={1000}>
+
+<Row className="justify-content-center">
+  {dataBundles.map((bundle) => (
+
+    <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
+      <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
+        <img src={bundle.image} alt={bundle.text} className="" />
+          <div className="plus-button">
+            <FaPlus />
+        </div>
+      </Card>
+    </Col>
+
+  ))}
+</Row>
+</Fade>
+      
 
       {/* Popup Modal */}
       <Modal show={show} onHide={() => setShow(false)} centered>
@@ -461,24 +463,28 @@ const handleWhatsAppClick = () => {
       <p>You no longer need to buy voice/SMS bundles. With us, it gets charged directly from your airtime at a flat rate!</p>
 </Fade>
 
-<Fade direction="top" duration={500}>
 
-      <Row className="justify-content-center">
-        {dataBundlesvoice.map((bundle) => (
-          <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
-            <Card className="bundle-card text-white text-center cardcolor"   onClick={() => handleShow(bundle)}>
-              <img src={bundle.image} alt={bundle.text} className="bundle-image" />
-              <div className="overlay">
-                <div className="bundle-text">voice packages</div>
-                <div className="plus-button">
-                  <FaPlus />
-                </div>
-              </div>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-      </Fade>
+
+
+
+
+      <Fade direction="top" duration={1000}>
+
+<Row className="justify-content-center">
+  {dataBundlesvoice.map((bundle) => (
+
+    <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
+      <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
+        <img src={bundle.image} alt={bundle.text} className="" />
+          <div className="plus-button" style={{background: "#00bf63"}}>
+            <FaPlus />
+        </div>
+      </Card>
+    </Col>
+
+  ))}
+</Row>
+</Fade>
 
       {/* Popup Modal */}
       <Modal show={show} onHide={() => setShow(false)} centered>

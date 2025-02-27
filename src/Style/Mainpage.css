@@ -354,11 +354,22 @@ margin-top: 15%;
   .bundle-image {
     height: 200px;
   }
+
+}
+
+@media (max-width: 991px) {
+    .bundle-image {
+      height: 400px;
+    }
+    .bundle-card {
+      margin-bottom: 1000px;
+      height: 300px;
+    }
 }
 
 @media (max-width: 576px) {
   .bundle-card {
-    margin-bottom: 15px;
+    margin-bottom: 1500px;
     height: 230px;
   }
 

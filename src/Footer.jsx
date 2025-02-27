@@ -23,8 +23,8 @@ const Footer = () => {
             <img
               src={logobackless}
               alt="Logo"
-              className="mb-3"
-              width={250}
+              className="mb-3 logo"
+              width={100}
             />
             {/* Social Media Icons */}
             <div className="d-flex justify-content-center">
@@ -88,7 +88,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/termsconditions" className="text-black  text-decoration-none">
+                <a href="/Power2Sell" className="text-black  text-decoration-none">
                   Terms and Conditions
                 </a>
               </li>
