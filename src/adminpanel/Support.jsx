@@ -17,7 +17,7 @@ const BlogsList = () => {
 
   useEffect(() => {
     axios
-      .get(`https://icellmobile.co.za:30001/Blogposts?page=${page}&limit=4`)
+      .get(`http://icellmobile.co.za:30001/Blogposts?page=${page}&limit=4`)
       .then((response) => {
         console.log("API Response:", response.data); // Debugging API Response
         if (response.data && Array.isArray(response.data.blogs)) {
@@ -104,7 +104,7 @@ const BlogsList = () => {
                   className="img-fluid rounded"
                   src={
                     blog.blogImage
-                      ? `https://icellmobile.co.za:30001/uploads/${blog.blogImage}`
+                      ? `http://icellmobile.co.za:30001/uploads/${blog.blogImage}`
                       : "default-placeholder.jpg"
                   }
                   alt={blog.title}
