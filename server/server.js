@@ -286,6 +286,6 @@ app.use(notifyRoutes);
 
 
 // Start server
-app.listen(30001, () => {
+app.listen(30001, "0.0.0.0" ,() => {
   console.log("Server is running on port 30001");
 });
