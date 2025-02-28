@@ -10,7 +10,7 @@ function BlogTable() {
 
   const fetchAllBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:30001/AllBlogs");
+      const response = await axios.get("https://icellmobile.co.za:30001/AllBlogs");
       setBlogs(response.data); // Set all blogs
     } catch (error) {
       console.error("Error fetching all blogs:", error);
@@ -24,7 +24,7 @@ function BlogTable() {
   const onDelete = async (blog) => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
-        await axios.delete(`http://localhost:30001/Blogpost/${blog._id}`);
+        await axios.delete(`https://icellmobile.co.za:30001/Blogpost/${blog._id}`);
         fetchAllBlogs();
       } catch (error) {
         console.error("Error deleting blog:", error);

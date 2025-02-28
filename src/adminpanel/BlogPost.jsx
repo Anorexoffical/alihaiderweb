@@ -48,7 +48,7 @@ function BlogPost() {
     formData.append("body", body);
     if (blogImage) formData.append("blogImage", blogImage);
 
-    axios.post("http://localhost:30001/Blogpost", formData, {
+    axios.post("https://icellmobile.co.za:30001/Blogpost", formData, {
       headers: { "Content-Type": "multipart/form-data" }
     })
     .then(result => {
