@@ -15,7 +15,7 @@ const BlogDetail = () => {
 
     if (id) {
       axios
-        .get(`http://icellmobile.co.za:30001/Blogpost/${id}`)
+        .get(`https://icellmobile.co.za:30001/Blogpost/${id}`)
         .then((response) => {
           console.log("Blog data:", response.data); // Log the full response data
           setBlog(response.data);
@@ -52,7 +52,7 @@ const BlogDetail = () => {
         {/* Blog Image */}
         <img
           className="img-fluid rounded shadow mb-4"
-          src={blog.blogImage ? `http://icellmobile.co.za:30001/uploads/${blog.blogImage}` : "default-placeholder.jpg"}
+          src={blog.blogImage ? `https://icellmobile.co.za:30001/uploads/${blog.blogImage}` : "default-placeholder.jpg"}
           alt={blog.title}
         />
 

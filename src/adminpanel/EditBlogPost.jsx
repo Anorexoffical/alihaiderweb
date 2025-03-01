@@ -25,7 +25,7 @@ function EditBlogPost() {
 
   const fetchBlogDetails = async () => {
     try {
-      const response = await axios.get(`http://icellmobile.co.za:30001/Blogpost/${id}`);
+      const response = await axios.get(`https://icellmobile.co.za:30001/Blogpost/${id}`);
       const { postDate, category, username, occupation, title, body } = response.data;
       setFormData({
         postDate,
@@ -78,7 +78,7 @@ function EditBlogPost() {
     }
 
     try {
-      await axios.put(`http://icellmobile.co.za:30001/Blogpost/${id}`, updatedData, {
+      await axios.put(`https://icellmobile.co.za:30001/Blogpost/${id}`, updatedData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

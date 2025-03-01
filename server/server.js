@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const crypto = require("crypto");
+const https = require("https"); // Import the https module
 
 const BlogPostModel = require("./models/BlogPostModel");
 const UserModels = require("./models/userModels");
@@ -140,4 +141,14 @@ app.post("/payfast/initiate-payment", async (req, res) => {
 });
 
 app.use(notifyRoutes);
-app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+
+// Load SSL certificates
+const options = {
+  key: fs.readFileSync("../ssl/localhost.key"), // Path to private key
+  cert: fs.readFileSync("../ssl/localhost.crt"), // Path to certificate
+};
+
+// Create HTTPS server
+https.createServer(options, app).listen(PORT, "0.0.0.0", () => {
+  console.log(`HTTPS Server running on port ${PORT}`);
+});

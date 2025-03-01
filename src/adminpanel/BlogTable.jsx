@@ -10,7 +10,7 @@ function BlogTable() {
 
   const fetchAllBlogs = async () => {
     try {
-      const response = await axios.get("http://icellmobile.co.za:30001/AllBlogs");
+      const response = await axios.get("https://icellmobile.co.za:30001/AllBlogs");
       setBlogs(response.data); // Set all blogs
     } catch (error) {
       console.error("Error fetching all blogs:", error);
