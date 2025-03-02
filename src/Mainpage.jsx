@@ -606,7 +606,7 @@ const handleWhatsAppClick = () => {
 </div>
 
 <div className="container my-5 ">
-      <h2 className="text-center fw-bold mb-4">Features and Benefits of our appp</h2>
+      <h2 className="text-center fw-bold mb-4">Features and Benefits of our App</h2>
       <div className="accordion mobilecontianer">
         {faqs.map((faq, index) => (
           <div key={index} className="card mb-2 border-0">

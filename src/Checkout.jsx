@@ -306,7 +306,7 @@ const Checkout = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:30001/payfast/initiate-payment", {
+      const response = await fetch("https://icellmobile.co.za/api/payfast/initiate-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderDetails),

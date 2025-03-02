@@ -28,7 +28,7 @@ const BlogsList = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetching blogs:", err);
+        console.error("Error fetching blogs:", err);    
         setError("Failed to load blogs.");
         setLoading(false);
       });

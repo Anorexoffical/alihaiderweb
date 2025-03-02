@@ -30,7 +30,7 @@ const Login = () => {
       return;
     }
 
-    axios.post("https://icellmobile.co.za:30001/user", { userName, password }) // Corrected port
+    axios.post("https://icellmobile.co.za/api/user", { userName, password }) // Corrected port
     .then(result => {
       sessionStorage.setItem('userName', userName);
       navigate('/BlogPost'); // Redirect to the main app page
