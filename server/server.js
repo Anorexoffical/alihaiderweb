@@ -5,7 +5,6 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const crypto = require("crypto");
-const https = require("https"); // Import the https module
 
 const BlogPostModel = require("./models/BlogPostModel");
 const UserModels = require("./models/userModels");
@@ -21,7 +20,11 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://icellmobile.co.za", // Allow only your production domain
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(uploadDir));
@@ -121,9 +124,9 @@ app.post("/payfast/initiate-payment", async (req, res) => {
     const orderID = `${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
     const merchant_id = "26879017";
     const merchant_key = "l6ylebkxwezf5";
-    const return_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/success";
-    const cancel_url = "https://e70d-118-107-131-17.ngrok-free.app/payfast/cancel";
-    const notify_url = "http://icellmobile.co.za/payfast/notifyurl";
+    const return_url = "https://icellmobile.co.za/payfast/success";
+    const cancel_url = "https://icellmobile.co.za/payfast/cancel";
+    const notify_url = "https://icellmobile.co.za/payfast/notifyurl";
     
     const paymentData = {
       merchant_id, merchant_key, return_url, cancel_url, notify_url,
@@ -142,13 +145,7 @@ app.post("/payfast/initiate-payment", async (req, res) => {
 
 app.use(notifyRoutes);
 
-// Load SSL certificates
-const options = {
-  key: fs.readFileSync("../ssl/localhost.key"), // Path to private key
-  cert: fs.readFileSync("../ssl/localhost.crt"), // Path to certificate
-};
-
-// Create HTTPS server
-https.createServer(options, app).listen(PORT, "0.0.0.0", () => {
-  console.log(`HTTPS Server running on port ${PORT}`);
+// Start the server (No SSL, since it will be handled by Nginx or a reverse proxy)
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
