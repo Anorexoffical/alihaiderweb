@@ -24,7 +24,7 @@ function BlogTable() {
   const onDelete = async (blog) => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
-        await axios.delete(`http://icellmobile.co.za/api/Blogpost/${blog._id}`);
+        await axios.delete(`https://icellmobile.co.za/api/Blogpost/${blog._id}`);
         fetchAllBlogs();
       } catch (error) {
         console.error("Error deleting blog:", error);

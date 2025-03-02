@@ -67,7 +67,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="/Support" className="text-black  text-decoration-none">
-                  Support
+                  Blogs
                 </a>
               </li>
             </ul>
