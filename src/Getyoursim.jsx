@@ -103,12 +103,10 @@ const ExampleContent = () => (
     UNBEATABLE PRICES, MAXIMUM VALUE!    </h2>
     <div className="col-12 col-md-8">
       <p className="mb-4 fs-5 text-white">
-      Why pay more when you can get premium connectivity at the lowest cost? With iCell Mobile, enjoy super-fast data speeds, crystal-clear calls, and seamless nationwide coverage—all at prices that no other provider can match!
-
+      Why overpay when you can enjoy premium connectivity at the lowest cost? With iCell Mobile, get lightning-fast data, crystal-clear calls, and seamless nationwide coverage—all at prices no other provider can match!
       </p>
       <p className="mb-4 fs-5 text-white">
-    Whether you need a starter pack or a high-data plan, we’ve got the most affordable and flexible options to keep you connected anytime, anywhere—without breaking the bank! 
-      </p>
+      From starter packs to high-data plans, we offer the most affordable and flexible options to keep you connected anytime, anywhere—without breaking the bank!      </p>
      
     </div>
   </div>
@@ -245,7 +243,7 @@ const itamlimitnotification = () => {
     {
       id: 2,
       title: "10GB SIM Card Starter Pack R259",
-      subtitle: "R 259.00",
+      subtitle: "R 659.00",
       discount:20,
       image: eSIM4,
     },
@@ -284,7 +282,7 @@ const itamlimitnotification = () => {
         <TextParallaxContent
           imgUrl={getyoursimmain}
           subheading="ICell Mobile SIM cards are here!"
-          heading="Get your Amandla Mobile SIM and choose from 6GB to 55GB SIM card starter packs! Delivery is FREE across the country."
+          heading="Get your iCell Mobile SIM and choose from 6GB to 55GB starter packs. Plus, enjoy FREE delivery nationwide!."
         >
           <ExampleContent />
         </TextParallaxContent>

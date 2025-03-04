@@ -64,7 +64,7 @@ function Contact() {
                                     </div>
                                     <div className="d-flex align-items-center">
                                         <FiMapPin className="icon" />
-                                        <h5 className="text-white ml-3 mb-0">Nic Peshawar, Pakistan</h5>
+                                        <h5 className="text-white ml-3 mb-0">ICell Mobile, Shop 134, cnr Johannesburg and Athol Rds, Highlands North, Johannesburg</h5>
                                     </div>
                                 </div>
                             </div>

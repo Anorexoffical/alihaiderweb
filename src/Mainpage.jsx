@@ -130,10 +130,10 @@ const Mainpage = () => {
     };
   
     const faqs = [
-      { question: "Recharge your data/airtime effortlessly", answer: "Easily top up your data or airtime in just a few clicks." },
-      { question: "Monitor and control your usage", answer: "Keep track of your data and spending with detailed insights." },
-      { question: "Earn BONUS data rewards", answer: "Get extra data as a reward for consistent usage." },
-      { question: "Shop and transact seamlessly", answer: "Enjoy smooth and secure transactions through our app." },
+      { question: "Top Up Your Data & Airtime with Ease!", answer: "Recharge effortlessly and stay connected anytime, anywhere." },
+      { question: "Track & Manage Your Usage with Ease!", answer: " Monitor Your Data & Spending with In-Depth Insights!" },
+      { question: "Get Rewarded with BONUS Data!", answer: "Enjoy Extra Data Rewards for Staying Connected!" },
+      { question: "Seamless Shopping & Transactions!", answer: "Enjoy smooth and secure transactions through our app." },
       { question: "Keep your number or choose a new one", answer: "Flexibility to retain your existing number or get a new one." },
       { question: "Access the app data-FREE", answer: "Use the app without consuming your data balance." },
     ];
@@ -231,9 +231,9 @@ const handleWhatsAppClick = () => {
               <h1 className="main-heading">
                               <span className="mainword"> iCell Mobile</span>
 
-                – YOUR SIM. YOUR SPEED. YOUR CONNECTION. 
+               – Stay Connected, Stay Ahead 
               </h1>
-              <p className="main-paragraph">Stay connected with iCell Mobile – your trusted network for seamless SIM, data, and packages, designed for ultimate convenience and speed.</p>
+              <p className="main-paragraph">Experience reliable connectivity with iCell Mobile – your go-to network for fast SIM activation, high-speed data, and flexible packages tailored to your needs.</p>
               <button className="btn  startbutton" onClick={contextnav}>Get Started</button>
             </div>
         </div>
@@ -267,22 +267,22 @@ const handleWhatsAppClick = () => {
         <Fade direction="left" duration={1500}>
 
           <h2 className="ceo-heading">
-            Why Switch to <span className="brandname">ICELL Mobile?</span>
+          Why Go with <span className="brandname">iCell Mobile?</span> 
           </h2>
           <h5 className="ceoheading2">
-            Where Connectivity Meets Champions: Icell Mobile!
+          Unleash the Power of Seamless Connectivity!
           </h5>
           <ul className="features-list">
             <li>
-              Enjoy substantial savings on data and airtime{" "}
-              <span className="highlight1">(up to 50% or more per month)</span>
+        <span className="highlight1">(Save up to 50% or more)</span> 
+             on data and airtime every month{" "}
             </li>
-            <li>  <span className="highlight1">Experience</span> effortless RICA and SIM activation for quick setup</li>
-            <li>Seamlessly  <span className="highlight1">keep your current number</span> or get a new one</li>
-            <li>Access data bundles that <span className="highlight1"> NEVER</span> expire, ensuring constant connectivity</li>
-            <li>Receive daily <span className="highlight1"> FREE data</span> to stay connected without worries</li>
-            <li>Enjoy the  <span className="highlight1"> most affordable rates for SMS and voice calls</span></li>
-            <li> <span className="highlight1">No contracts! No Monthly fees! No credit checks!</span></li>
+            <li>  Get <span className="highlight1">hassle-free SIM activation</span>  and quick RICA registration</li>
+            <li><span className="highlight1">Keep your number</span> or switch to a new one effortlessly</li>
+            <li>Enjoy <span className="highlight1"> data bundles that never expire </span>  – stay connected anytime</li>
+            <li>Receive <span className="highlight1"> FREE daily data </span>  to keep you online without extra costs</li>
+            <li>Benefit from the <span className="highlight1"> lowest rates on calls and SMS</span></li>
+            <li> <span className="highlight1">No contracts. No monthly fees. No credit checks.</span></li>
           </ul>
           <button className="btn mt-4 startbutton" onClick={getursim} >Get your sim </button>
           </Fade>
@@ -361,9 +361,10 @@ const handleWhatsAppClick = () => {
       <Container className="py-5 text-center">
       <Fade direction="down" duration={1000}>
 
-      <h1 className="packgheading">Don't worry!</h1>
+      <h1 className="packgheading">No Worries! Stay Connected</h1>
       <h2 className="packheading2">30-day Data Deals!</h2>
-      <p>Only available in-app or on USSD: *136#</p>
+      <p>Available exclusively in-app or via USSD: *Dial 136# to grab yours now!
+      Next</p>
 </Fade>
 
 
@@ -373,7 +374,7 @@ const handleWhatsAppClick = () => {
 <Row className="justify-content-center">
   {dataBundles.map((bundle) => (
 
-    <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
+    <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4 ">
       <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
         <img src={bundle.image} alt={bundle.text} className="" />
           <div className="plus-button">
@@ -410,8 +411,8 @@ const handleWhatsAppClick = () => {
     <Container className="py-5 text-center">
     <Fade direction="down" duration={1000}>
 
-      <h1 className="packgheading">Score Big with Our NEVER-EXPIRING BUNDLES      </h1>
-      <p>Stay connected longer with data that never runs out! #UntilUntil</p>
+      <h1 className="packgheading">Win Big with Our NEVER-EXPIRING BUNDLES!      </h1>
+      <p>Stay online without limits – your data lasts as long as you need!</p>
 </Fade>
 
     <Fade direction="top" duration={1000}>
@@ -606,7 +607,8 @@ const handleWhatsAppClick = () => {
 </div>
 
 <div className="container my-5 ">
-      <h2 className="text-center fw-bold mb-4">Features and Benefits of our App</h2>
+      <h2 className="text-center fw-bold mb-4">Features & Benefits of the iCell Mobile App
+      </h2>
       <div className="accordion mobilecontianer">
         {faqs.map((faq, index) => (
           <div key={index} className="card mb-2 border-0">

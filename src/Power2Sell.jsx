@@ -28,8 +28,7 @@ const Power2Sell = () => {
           Join the <span className="mainword2">iCell Mobile</span> Reseller Network Today!
           </h1>
           <p className="lead power2sellparg">
-            Partner with us to bring affordable, high-quality mobile services to South Africa. Apply now, grow your business, and enjoy continuous earnings!
-          </p>
+          Partner with us to deliver affordable, high-quality mobile services across South Africa. Apply now, expand your business, and enjoy continuous earnings! 📱          </p>
         </div>
       </div>
 
@@ -37,30 +36,29 @@ const Power2Sell = () => {
       <div className="py-5 ">
         <div className="container">
           <h2 className="text-center mb-5 section-heading">
-            Why Become an  <span className="mainword2">Icell Mobile</span> Reseller?
+          Why Partner with <span className="mainword2">iCell Mobile</span> as a Reseller?
           </h2>
           <div className="row g-4">
             <div className="col-lg-4">
               <div className="card shadow h-100 text-center p-4 cardspower">
-                <h3 className="mb-3">Earn Additional Revenue</h3>
+                <h3 className="mb-3">Boost Your Earnings with iCell Mobile!</h3>
                 <p>
-                As an iCell Mobile reseller, you’ll earn a continuous income from every sale. With attractive commissions, the more you sell, the more you earn, ensuring a steady revenue stream as your business expands.                </p>
+                As an iCell Mobile reseller, enjoy continuous income on every sale. With competitive commissions, the more you sell, the more you earn—creating a steady and growing revenue stream for your business! 💰</p>              </div>
+            </div>
+
+            <div className="col-lg-4">
+              <div className="card shadow h-100 text-center p-4 cardspower">
+                <h3 className="mb-3">Expand Your Business with iCell Mobile</h3>
+                <p>
+                Partnering with iCell Mobile gives you the opportunity to grow your business by offering affordable, high-demand mobile services. Whether you're an entrepreneur or a small business owner, you'll have the resources, support, and flexibility to succeed! 📈             </p>
               </div>
             </div>
 
             <div className="col-lg-4">
               <div className="card shadow h-100 text-center p-4 cardspower">
-                <h3 className="mb-3">Grow Your Business</h3>
+                <h3 className="mb-3">Empowering Entrepreneurs & Small Businesses</h3>
                 <p>
-                Partnering with iCell Mobile allows you to grow your business by providing affordable mobile services. Whether you're an entrepreneur or a small business owner, you'll have the resources and flexibility to thrive                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4">
-              <div className="card shadow h-100 text-center p-4 cardspower">
-                <h3 className="mb-3">Support for Entrepreneurs</h3>
-                <p>
-                iCell Mobile is committed to empowering entrepreneurs and small businesses. We offer comprehensive support, training, and resources to help you succeed and grow your business.                </p>
+                At iCell Mobile, we’re dedicated to helping entrepreneurs and small businesses thrive. Enjoy comprehensive support, training, and resources to grow your business with confidence! 🚀📈     </p>
               </div>
             </div>
           </div>
@@ -72,22 +70,22 @@ const Power2Sell = () => {
         <div className="row align-items-center g-4">
           {/* Text Section */}
           <div className="col-lg-6">
-            <h2 className="work-heading">How it works</h2>
-            <p className="ceoparagraph mt-3">
-            Thank you for your interest in becoming an iCell Mobile reseller!  
-            <br />
-            <br />
-            We’re excited about the opportunity to partner with motivated individuals and businesses to expand access to affordable, high-quality mobile services. As an iCell Mobile reseller, you’ll play a key role in this mission while also building a steady income and growing your business.  
-            <br />
-            <br />
-            At iCell Mobile, we are committed to empowering entrepreneurs and small businesses. Our platform provides the tools and support you need to succeed while helping communities stay connected. To get started, please fill out the form with accurate details—this will help us assess your eligibility and suitability as an iCell Mobile reseller.  
-            <br />
-            <br />
-            Transparency and trust are at the core of our partnerships. All resellers are required to follow the guidelines outlined in our Terms and Conditions. Once your application is submitted, our team will review it within 5-7 business days and provide you with the next steps.  
-            <br />
-            <br />
-            We look forward to building a successful partnership with you!  
-          </p>
+          <h2 className="work-heading">How It Works</h2>
+        <p className="ceoparagraph mt-3">
+          Thank you for your interest in becoming an iCell Mobile reseller!
+          <br />
+          <br />
+          We’re excited to team up with passionate individuals and businesses to bring affordable, high-quality mobile services to more people. As a reseller, you’ll have the chance to grow your business while helping your community stay connected.
+          <br />
+          <br />
+          At iCell Mobile, we support entrepreneurs by providing the tools and guidance needed for success. To get started, just fill out the form with accurate details—this helps us review your application properly.
+          <br />
+          <br />
+          We believe in honesty and trust. That’s why all resellers must follow our Terms and Conditions. Once you submit your application, our team will review it within 5-7 business days and let you know the next steps.
+          <br />
+          <br />
+          We can’t wait to work with you!
+        </p>
             <button className="btn mt-4 applybtn"  onClick={() => navigate("/Contactus")}>
               Apply Today →
             </button>

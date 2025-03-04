@@ -172,6 +172,35 @@ p {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Feature List */
+.features-listesim {
+  list-style: none;
+  padding: 0;
+}
+
+.features-listesim li {
+  padding-left: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+/* Round Bullet Instead of Tick */
+.features-listesim li::before {
+  content: "●"; /* Round bullet */
+  color: #545151;
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.highlight2{
+  font-weight: 800;
+  color: #000000;
+}
+
 .custom-arrow:hover {
   transform: scale(1.1);
   background-color: rgba(0, 0, 0, 1);

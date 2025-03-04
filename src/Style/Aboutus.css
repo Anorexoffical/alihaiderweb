@@ -72,6 +72,7 @@
 .ceoparagraph {
     margin: 1rem 10%;
     color: rgb(0, 0, 0);
+    margin-bottom: 30px;
   }
 
 
@@ -105,6 +106,25 @@
 @media (max-width: 1024px) {
     .main-title {
       font-size: 2rem;
+    }
+  }
+  .ceoheading{
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 1% 8% 0;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+
+  }
+  
+  @media (max-width: 911px) {
+    .ceoheading{
+      font-weight: 600;
+      font-size: 1.5rem;
+      padding: 1% 8% 0;
+      line-height: 1.1;
+      color: rgb(0, 0, 0);
+  
     }
   }
   

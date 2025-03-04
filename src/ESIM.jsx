@@ -96,7 +96,7 @@ const ESIM = ({ addToCart }) => {
     {
       id: 1,
       title: "eSIM with 3GB Data 7Days",
-      subtitle: "R 9.00",
+      subtitle: "R 39.00",
       discount: 40,
       image: sim3g2,
     },
@@ -143,6 +143,14 @@ const ESIM = ({ addToCart }) => {
     navigate("/productlist");
   };
 
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+270769675814';
+    const message = encodeURIComponent('Hi! I m interested in your services. Can you provide more details?');
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappURL, '_blank');
+  };
+
   return (
     <>
       <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
@@ -155,8 +163,7 @@ const ESIM = ({ addToCart }) => {
           <div className="col-lg-12 text-center text-lg-start px-4">
             <h1 className="main-heading">Revolutionize Your Connectivity Experience</h1>
             <p className="main-paragraph">
-              Stay connected with iCell Mobile – your trusted network for seamless SIM, data, and packages,
-              designed for ultimate convenience and speed.
+            Stay connected with iCell Mobile—your reliable network for seamless SIM activation, high-speed data, and flexible packages, all designed for maximum convenience and performance.
             </p>
           </div>
         </div>
@@ -170,11 +177,13 @@ const ESIM = ({ addToCart }) => {
           </div>
 
           <div className="col-lg-6 col-md-12 product-info text-center text-lg-start">
-            <h1 className="product-title">Icell Mobile eSIM + 3GB Data <br></br>(7-Days)</h1>
+            <h1 className="product-title">iCell Mobile eSIM + 3GB Data (7 Days) <br></br></h1>
             <ul className="features-list">
               <li>
-                Enjoy substantial savings on data and airtime{" "}
-                <span className="highlight1">(up to 50% or more per month)</span>
+
+                                <span className="highlight1">Save up to 50%</span>
+
+              or more on data and airtime every month{" "}
               </li>
               <li>
                 <span className="highlight1">Fully digital</span>, no physical card required.
@@ -197,7 +206,7 @@ const ESIM = ({ addToCart }) => {
             </ul>
 
             <div className="price-container">
-              <span className="discounted-price">R 9.00</span>
+              <span className="discounted-price">R 39.00</span>
               <span className="original-price">R 314.00</span>
             </div>
 
@@ -232,20 +241,44 @@ const ESIM = ({ addToCart }) => {
 
       {/* Other SIM Container */}
       <div className="carousel-container1 container-fluid py-5">
-        <div className="text-center mb-5">
-          <h1 className="mb-3 display-4 fw-bold serviceheading">Introducing Icell Mobile eSIM</h1>
-          <h3>Revolutionize Your Connectivity Experience</h3>
-          <p className="esimpara text-center mx-auto" style={{ maxWidth: "1200px", lineHeight: "1.5" }}>
-            Say hello to the future with <strong>Icell Mobile eSIM</strong>! Effortless and seamless, our eSIM technology is designed to redefine the way you stay connected.
-            If your device supports eSIM, activation is instant—no waiting, no physical SIM swaps. Enjoy all the benefits of a traditional SIM, but entirely digital and pre-installed, making connectivity faster and more convenient.
-            <br /><br />
-            Getting started is as easy as 1-2-3. First, check if your device supports eSIM technology. Then, choose from our eSIM Starter Packs: <strong>3GB, 10GB, or 25GB</strong>. Finally, complete RICA verification over WhatsApp, scan your eSIM QR code, and voilà—you're connected!
-            <br /><br />
-            If your device isn’t eSIM-compatible, don’t worry! <strong>Our physical SIM cards are coming soon.</strong> At Icell Mobile, we ensure that no one is left behind.
-            <br /><br />
-            Join the digital revolution today and experience a smarter, faster, and hassle-free way to stay connected with <strong>Icell Mobile eSIM</strong>.
-          </p>
-        </div>
+      <div className="text-center mb-10 px-5 lg:px-0">
+      <h1 className="mb-4 text-4xl md:text-5xl font-bold text-gray-900 serviceheading">
+        Introducing Icell Mobile eSIM
+      </h1>
+      <h3 className="text-xl md:text-2xl text-gray-700">
+        Revolutionize Your Connectivity Experience
+      </h3>
+      <p className="esimpara text-lg text-gray-600 mx-auto mt-4 max-w-4xl leading-relaxed">
+        Say hello to the future with <strong>Icell Mobile eSIM!</strong> A fast, seamless, and fully digital way to stay
+        connected. If your device supports eSIM, activation is instant—no waiting, no physical SIM swaps. Enjoy all the
+        benefits of a traditional SIM, but pre-installed and hassle-free for ultimate convenience.
+      </p>
+      <div className="mt-6 text-left max-w-3xl mx-auto">
+        <p className="text-xl font-semibold text-gray-800">Getting started is simple:</p>
+        <ul className="mt-3 space-y-3 text-lg text-gray-700">
+          <li className="flex items-center space-x-3">
+            <span className="text-2xl">1️⃣</span>
+            <span>Check eSIM compatibility on your device</span>
+          </li>
+          <li className="flex items-center space-x-3">
+            <span className="text-2xl">2️⃣</span>
+            <span>Choose from our eSIM Starter Packs: 3GB, 10GB, or 25GB</span>
+          </li>
+          <li className="flex items-center space-x-3">
+            <span className="text-2xl">3️⃣</span>
+            <span>Complete RICA verification via WhatsApp, scan your eSIM QR code, and you're connected!</span>
+          </li>
+        </ul>
+      </div>
+      <p className="mt-6 text-lg text-gray-600 max-w-4xl mx-auto">
+        Not eSIM-compatible? No worries! Our <strong>physical SIM cards</strong> are coming soon to keep everyone
+        connected.
+      </p>
+      <p className="mt-6 text-lg font-medium text-gray-800 max-w-4xl mx-auto">
+        Join the digital revolution today and experience a smarter, faster, and hassle-free way to stay connected with
+        <strong> Icell Mobile eSIM</strong>.
+      </p>
+    </div>
 
         <Slider {...settings}>
           {cards.map((card) => (
@@ -281,7 +314,7 @@ const ESIM = ({ addToCart }) => {
             <div>
               <h6 className="step-title">Step 1:</h6>
               <h2 className="step-heading">Check compatibility</h2>
-              <p>Check that your mobile device supports eSIM. You can follow the simple guide below to check.</p>
+              <p>Ensure your device supports eSIM before getting started. Follow the simple guide below to verify compatibility. ✅📱</p>
             </div>
           </div>
         </div>
@@ -309,7 +342,7 @@ const ESIM = ({ addToCart }) => {
             <div>
               <h6 className="step-title">Step 3:</h6>
               <h2 className="step-heading">RICA on WhatsApp</h2>
-              <p>Easily activate & RICA your eSIM over WhatsApp. Send the word “RICA” to 0769675814 over WhatsApp to get started. Only need your ID/Passport</p>
+              <p>Activate and RICA your eSIM effortlessly! 📲 Simply send "RICA" to  <span onClick={handleWhatsAppClick} style={{ cursor: "pointer" }}>+27 0769675814 </span> on WhatsApp to get started. All you need is your ID or Passport! ✅</p>
             </div>
           </div>
         </div>
@@ -323,7 +356,7 @@ const ESIM = ({ addToCart }) => {
             <div>
               <h6 className="step-title">Step 4:</h6>
               <h2 className="step-heading">Activate your eSIM</h2>
-              <p>You will receive your eSIM via email. Once RICA is completed, simply scan your QR code and your eSIM will activate on your phone automatically.</p>
+              <p>After completing RICA, you'll receive your eSIM via email. Simply scan the QR code, and your eSIM will activate automatically on your device! 📱🚀</p>
             </div>
           </div>
         </div>

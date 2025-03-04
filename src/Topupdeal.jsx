@@ -4,27 +4,34 @@ import Navbar from "./Navbar";
 import { Container, Row, Col, Dropdown, Card } from "react-bootstrap";
 import "./Style/Topupdeal.css";
 import Footer from "./Footer.jsx"
-import neverexp1 from "./assets/neverexp1.png"
-import neverexp2 from "./assets/neverexp2.png"
-import neverexp3 from "./assets/neverexp3.png"
-import neverexp4 from "./assets/neverexp4.png"
-import neverexp5 from "./assets/neverexp5.png"
-import neverexp6 from "./assets/neverexp6.png"
-import neverexp7 from "./assets/neverexp7.png"
-import neverexp8 from "./assets/neverexp8.png"
-import neverexp9 from "./assets/neverexp9.png"
-import neverexp10 from "./assets/neverexp10.png"
-import neverexp11 from "./assets/neverexp11.png"
-import neverexp12 from "./assets/neverexp12.png"
-import neverexp13 from "./assets/neverexp13.png"
-import neverexp14 from "./assets/neverexp14.png"
-import neverexp15 from "./assets/neverexp15.png"
-import neverexp16 from "./assets/neverexp16.png"
-import neverexp17 from "./assets/neverexp17.png"
-import neverexp18 from "./assets/neverexp18.png"
-import neverexp19 from "./assets/neverexp19.png"
-import neverexp20 from "./assets/neverexp20.png"
-import neverexp21 from "./assets/neverexp21.png"
+import neverexp1 from "./assets/neverexp1.webp"
+import neverexp2 from "./assets/neverexp2.webp"
+import neverexp3 from "./assets/neverexp3.webp"
+import neverexp4 from "./assets/neverexp4.webp"
+import neverexp5 from "./assets/neverexp5.webp"
+import neverexp6 from "./assets/neverexp6.webp"
+import neverexp7 from "./assets/neverexp7.webp"
+import neverexp8 from "./assets/neverexp8.webp"
+import neverexp9 from "./assets/neverexp9.webp"
+import neverexp10 from "./assets/neverexp10.webp"
+import neverexp11 from "./assets/neverexp11.webp"
+import neverexp12 from "./assets/neverexp12.webp"
+import neverexp13 from "./assets/neverexp13.webp"
+import neverexp14 from "./assets/neverexp14.webp"
+import neverexp15 from "./assets/neverexp15.webp"
+import neverexp16 from "./assets/neverexp16.webp"
+import neverexp17 from "./assets/neverexp17.webp"
+import neverexp18 from "./assets/neverexp18.webp"
+import neverexp19 from "./assets/neverexp19.webp"
+import neverexp20 from "./assets/neverexp20.webp"
+import neverexp21 from "./assets/neverexp21.webp"
+
+import neverexp22 from "./assets/neverexp22.webp"
+
+import neverexp23 from "./assets/neverexp23.webp"
+
+import neverexp24 from "./assets/neverexp24.webp"
+import neverexp25 from "./assets/neverexp25.webp"
 
 
 
@@ -37,20 +44,28 @@ const dataBundles = [
     { id: 5, category: "nonexpire", image: neverexp5, text: "2 GB Data", price: "R79" },
     { id: 6, category: "nonexpire", image: neverexp6, text: "3 GB Data", price: "R99" },
     { id: 7, category: "nonexpire", image: neverexp7, text: "7.5 GB Data", price: "R189" },
-    { id: 8, category: "nonexpire", image: neverexp8, text: "7.5 GB Data", price: "R189" },
+    { id: 8, category: "nonexpire", image: neverexp8, text: "11 GB Data", price: "R239" },
     { id: 9, category: "30day", image: neverexp9, text: "1 GB Data", price: "R42" },
-    { id: 10, category: "30day", image: neverexp10, text: "6 GB Data", price: "R159" },
-    { id: 11, category: "30day", image: neverexp11, text: "25 GB Data", price: "R309" },
-    { id: 12, category: "nonexpire", image: neverexp12, text: "7.5 GB Data", price: "R189" },
-    { id: 13, category: "7day", image: neverexp13, text: "250 MB Data", price: "R12" },
-    { id: 14, category: "7day", image: neverexp14, text: "1 GB Data", price: "R34" },
-    { id: 15, category: "7day", image: neverexp15, text: "2 GB Data", price: "R64" },
-    { id: 16, category: "nonexpire", image: neverexp16, text: "3 GB Data", price: "R89" },
-    { id: 17, category: "7day", image: neverexp17, text: "7.5 GB Data", price: "R189" },
-    { id: 18, category: "1day", image: neverexp18, text: "1 GB Data", price: "R19" },
-    { id: 19, category: "1day", image: neverexp19, text: "500 MB Data", price: "R10" },
-    { id: 20, category: "other", image: neverexp20, text: "7.5 GB Data", price: "R189" },
-    { id: 21, category: "other", image: neverexp21, text: "7.5 GB Data", price: "R189" },
+    { id: 10, category: "30day", image: neverexp10, text: "5 GB Data", price: "R129" },
+    { id: 11, category: "30day", image: neverexp11, text: "6 GB Data", price: "R159" },
+    { id: 12, category: "30day", image: neverexp12, text: "11 GB Data", price: "R5199" },
+    { id: 13, category: "30day", image: neverexp13, text: "15 MB Data", price: "R239" },
+    { id: 14, category: "30day", image: neverexp14, text: "25 GB Data", price: "R309" },
+    { id: 15, category: "30day", image: neverexp15, text: "50 GB Data", price: "R519" },
+    { id: 16, category: "7day", image: neverexp16, text: "250 MB Data", price: "R12" },
+    { id: 17, category: "7day", image: neverexp17, text: "1 GB Data", price: "R34" },
+    { id: 18, category: "7day", image: neverexp18, text: "2 GB Data", price: "R64" },
+    { id: 19, category: "7day", image: neverexp19, text: "3 GB Data", price: "R89" },
+    { id: 20, category: "7day", image: neverexp20, text: "4 GB Data", price: "R109" },
+
+    { id: 21, category: "1day", image: neverexp22, text: "1 GB Data", price: "R19" },
+    { id: 22, category: "1day", image: neverexp21, text: "500 MB Data", price: "R10" },
+    
+    { id: 23, category: "nonexpire", image: neverexp23, text: "1 GB Data", price: "R49" },
+
+
+    { id: 24, category: "other", image: neverexp24, text: "voice rate ", price: "R0.69" },
+    { id: 25, category: "other", image: neverexp25, text: "SMS rate ", price: "R0.25" },
    
 
   ];
@@ -73,7 +88,7 @@ const Topupdeal = () => {
         <Navbar />
         <div className="text-center text-white overlay">
           <h1 className="topupdealheading">
-          Experience <span style={{color:"#31bd1c"}}> 5G Connectivity</span> Nationwide
+          Experience <span style={{color:"#31bd1c"}}>5G Connectivity</span>  Nationwide!
           </h1>
           
         </div>
@@ -86,7 +101,7 @@ const Topupdeal = () => {
         <Container className="my-4">
       <h1 className="text-center">Affordable Data Bundles</h1>
       <p className="text-center">
-      We've got the most affordable data and voice top-up prices on the market! Starting from just <span className="impword"> R1 for 30MB, and up to R349 for 25GB!</span> Choose from expiring data bundles or NEVER-expiring bundles—something for everyone. Top-up anytime by tapping the "Top-Up" button on the app's home screen or by dialing  <span className="impword">*136# </span>on your device!
+      We've got the most affordable data and voice top-up prices on the market! Starting from just <span className="impword"> R1 for 30MB, and up to R349 for 25GB!</span> Choose from expiring data bundles or NEVER-expiring bundles—something for everyone. Top-up anytime by tapping the "Top-Up" button on the app's home screen or by <span className="impword">*136# </span>on your device!
       </p>
 
       <div className="d-flex justify-content-end mb-3">

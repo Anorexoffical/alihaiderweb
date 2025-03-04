@@ -64,8 +64,7 @@ useEffect(() => {
 
           <h2 className="text-danger text-uppercase">Our Story</h2>
           <h1 className="main-title">
-             Our Journey: Powering the  <span className="maintex">Digital Revolution </span> 
-          </h1>
+          Our Journey: Empowering the Future Through <span className="maintex">Digital Transformation</span>          </h1>
         </div>
 
         {/* Main Content */}
@@ -89,8 +88,7 @@ useEffect(() => {
           <Fade direction="right" duration={1500}>
 
             <p className="text-dark mb-4 text-justify">
-            Founded in 2024, iCell Mobile was born with a mission to revolutionize mobile communication by making it affordable, reliable, and accessible to all. Our name, "iCell," represents the power of connectivity, putting control back into the hands of the people. We believe that communication is not just a privilege but a fundamental right. With iCell Mobile, you get the power of cost-effective airtime, data that won’t break the bank, and innovative technology designed to keep you ahead.
-            </p>
+            Founded in 2024, iCell Mobile set out to transform mobile communication—making it affordable, reliable, and accessible for everyone. Our name, "iCell," symbolizes the strength of connectivity, empowering users with control over their communication. We believe staying connected is not a privilege but a fundamental right. With iCell Mobile, you enjoy budget-friendly airtime, cost-effective data, and cutting-edge technology designed to keep you ahead.            </p>
 
             {/* Stats Section */}
             <div className="row row-cols-2 mb-4">
@@ -117,7 +115,7 @@ useEffect(() => {
       {/* CEO Message */}
       <div className="row g-4  py-5 ">
         {/* Text Section */}
-        <div className="col-lg-6">
+        <div className="col-lg-5 col-md-5 col-sm-12">
         <Fade direction="left" duration={1500}>
 
           <h1 className="ceoheading"> <span className='mainwordabout2'>Our Vision:</span>Connecting the Unconnected </h1>
@@ -127,13 +125,15 @@ useEffect(() => {
         </div>
 
         {/* Image Section */}
-        <div className="col-lg-6">
+        <div className="col-lg-6 col-md-6 col-sm-12">
         <Fade direction="right" duration={1500}>
 
           <img
             src={mission}
             alt="Creative Design"
             className="img-fluid rounded shadow"
+            width={800}
+
           />
 
           </Fade>
@@ -167,11 +167,11 @@ useEffect(() => {
         <div className="col-lg-6 col-sm-12 col-md-6">
         <Fade direction="right" duration={1500}>
 
-          <h1 className="ceoheading"> <span className='mainwordabout2'>Our Mission:</span> Empowering People, One Connection at a Time</h1>
+          <h1 className="ceoheading"> <span className='mainwordabout2'>Our Mission:</span> Connecting People, Empowering Lives</h1>
           <p className="ceoparagraph">
-          Our mission is to break barriers and provide seamless connectivity that empowers individuals and communities. We are dedicated to providing customers with tools and services that enhance their digital experience, continuously advancing technology to deliver cutting-edge mobile solutions, upholding transparency, honesty, and ethical business practices, and prioritizing our customers’ needs to ensure top-tier service and satisfaction. At iCell Mobile, we are committed to delivering high-quality, affordable mobile services that keep communities connected and thriving.        
-
+          At iCell Mobile, we strive to make connectivity seamless, affordable, and accessible for everyone. Our commitment lies in providing innovative mobile solutions for a better digital experience, continuously evolving technology to keep you ahead, and ensuring transparency, trust, and ethical practices. With a customer-first approach, we prioritize top-tier service and reliability, keeping communities connected and empowered—because communication should be for everyone.
      </p>
+     
      </Fade>
      </div>
       </div>
@@ -185,9 +185,9 @@ useEffect(() => {
       <div className="col-md-6 col-xl-6 col-sm-12 bestservices">
       <Fade direction="down" duration={1500}>
 
-        <h2 className='bestservicesh'>We provide the best  <span className='mainwordabout'>network performance. </span></h2>
+        <h2 className='bestservicesh'>Unmatched Network Performance at  <span className='mainwordabout'>Market-Leading Prices </span></h2>
         <p className='bestservicesp'> 
-        We have optimized our backend infrastructure to ensure that our SIM cards and data services deliver
+        We’ve optimized our backend infrastructure to ensure our SIM cards and data services deliver seamless connectivity, lightning-fast speeds, and unbeatable reliability. Along with top-tier performance, we offer highly competitive pricing, giving you the best value on airtime, data, and mobile services. Stay connected without overspending—because premium quality shouldn’t come at a premium cost.
         </p>
 
         </Fade>
@@ -223,8 +223,8 @@ useEffect(() => {
       <div className="col-md-6 col-xl-6 col-sm-12 bestservices2">
       <Fade direction="down" duration={1500}>
 
-        <h2 className='bestservicesh'> <span className='mainwordabout2'>70+% signal strength </span> and reliability every time you connect</h2>
-        <p className='bestservicesp'> Highly in-demand telecom features at budget-friendly rates, compared to other network providers in the market.</p>
+        <h2 className='bestservicesh'> <span className='mainwordabout2'>70+% signal strength </span> & Affordable Connectivity</h2>
+        <p className='bestservicesp'> Enjoy 70%+ signal strength and reliability every time you connect. Get highly in-demand telecom features at budget-friendly rates, offering better value compared to other network providers in the market.</p>
      </Fade>
      </div>
       {/* <!-- Right Column - Image --> */}

@@ -3,6 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaTiktok, FaYoutube } from "react-i
 import logobackless from "./assets/logobackless.png"
 import googlelogo from "./assets/googlelogo.webp"
 import qrcode from "./assets/qrcode.png"
+import appstore from "./assets/appstore.png"
 
 const Footer = () => {
 
@@ -28,13 +29,13 @@ const Footer = () => {
             />
             {/* Social Media Icons */}
             <div className="d-flex justify-content-center">
-              <a href="#" className="text-light me-3">
+              <a href="https://www.facebook.com/share/1BQ2beiVNr/?mibextid=qi2Omg" className="text-light me-3">
                 <FaFacebook size={24} />
               </a>
               <a href="#" className="text-light me-3">
                 <FaTwitter size={24} />
               </a>
-              <a href="#" className="text-light me-3">
+              <a href="https://www.instagram.com/icellmobile.co?igsh=ZjVhdW40OG4zY3dy" className="text-light me-3">
                 <FaInstagram size={24} />
               </a>
               <a href="#" className="text-light me-3">
@@ -105,8 +106,17 @@ const Footer = () => {
                 alt="Google Play"
                 width={150}
               />
+               
               </a>
-              
+              <a href="https://qr.codes/5ueV8I">
+
+              <img
+              src={appstore}
+              alt="Google Play"
+              width={130}
+              />
+
+              </a>
             
             </div>
             <h5 className="mt-4">Scan QR and download Application</h5>
@@ -122,7 +132,7 @@ const Footer = () => {
           <div className="col-md-6 text-center text-md-start">
             <p>
               WhatsApp:<span onClick={handleWhatsAppClick} style={{ cursor: "pointer" }} > 0769675814 </span><br />
-              icellmobileweb@gmail.com
+              support@icellmobile.co.za
             </p>
           </div>
           <div className="col-md-6 text-center text-md-end">
