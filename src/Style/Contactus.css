@@ -72,7 +72,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(249, 249, 249, 0.093);
+    background: rgba(45, 238, 45, 0.297);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -90,5 +90,12 @@
     .headingofcont{
         font-size: 3.5rem;
         font-weight: 500;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .smalltext{
+        font-size: 1rem;
     }
 }

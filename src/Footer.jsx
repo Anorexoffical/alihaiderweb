@@ -108,7 +108,7 @@ const Footer = () => {
               />
                
               </a>
-              <a href="https://qr.codes/5ueV8I">
+              <a href="https://apps.apple.com/za/app/icell-mobile/id6738908389.">
 
               <img
               src={appstore}

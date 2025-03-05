@@ -54,18 +54,36 @@ function Contact() {
                                 {/* Contact Info Overlay */}
                                 <div className="contact-overlay">
                                     <div className="d-flex align-items-center mb-3">
-                                        <FiPhone className="icon" />
-                                        <h5 className="text-white ml-3 mb-0">+27 0769675814</h5>
+                                        <FiPhone className="icon "  />
+                                        <h5 className="text-white ml-3 mb-0 smalltext">+27 0769675814</h5>
                                     </div>
                                     <div className="d-flex align-items-center mb-3">
                                         <FiMail className="icon" />
-                                        <h5 className="text-white ml-3 mb-0">icellmobileweb@gmail.com
+                                        <h5 className="text-white ml-3 mb-0 smalltext">icellmobileweb@gmail.com
                                         </h5>
+                                   
+
                                     </div>
+                                    <div className="d-flex align-items-center mb-3">
+                                        <FiMail className="icon" />
+                                     
+                                      <h5 className="text-white ml-3 mb-0 smalltext">contact@icellmobile.co.za
+                                      </h5>
+
+                                    </div>
+
                                     <div className="d-flex align-items-center">
                                         <FiMapPin className="icon" />
-                                        <h5 className="text-white ml-3 mb-0">ICell Mobile, Shop 134, cnr Johannesburg and Athol Rds, Highlands North, Johannesburg</h5>
+                                        <h5 className="text-white ml-3 mb-0 smalltext">ICell Mobile, Shop 134,  cnr</h5>
+                                        <br></br>
                                     </div>
+
+
+                                    <div className="d-flex align-items-center ">
+                                        <h5 className="text-white smalltext text-white ml-3 mb-0">  Johannesburg and Athol Rds, Highlands North, Johannesburg</h5>
+                                    </div>
+
+
                                 </div>
                             </div>
 

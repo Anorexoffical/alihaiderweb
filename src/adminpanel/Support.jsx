@@ -75,7 +75,7 @@ const BlogsList = () => {
       <div className="mainblogheading">
         <h1 style={{ paddingTop: "1px" }}></h1>
         <Navbar />
-        <h1 className="blogheading">Hi! Welcome to our Blogs </h1>
+        <h1 className="blogheading">Hi! How can we help? </h1>
       </div>
       <div className="py-5 bg-light">
         <h1 className="text-center supportheading">Support</h1>

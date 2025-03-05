@@ -68,7 +68,7 @@ function Navbar() {
           <li><Link to="/Topupdeal" onClick={toggleSidebar}>Top-up Deals</Link></li>
           <li><Link to="/ESIM" onClick={toggleSidebar}>eSIM</Link></li>
           <li><Link to="/Power2Sell" onClick={toggleSidebar}>Power2Sell</Link></li>
-          <li><Link to="/Support" onClick={toggleSidebar}>Blogs</Link></li>
+          <li><Link to="/Support" onClick={toggleSidebar}>Support</Link></li>
           <li className="callformeeting">
             <Link to="/Contactus" onClick={toggleSidebar}>
               <span className="meeting">Contact Us</span>
