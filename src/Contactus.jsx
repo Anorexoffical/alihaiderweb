@@ -59,18 +59,12 @@ function Contact() {
                                     </div>
                                     <div className="d-flex align-items-center mb-3">
                                         <FiMail className="icon" />
-                                        <h5 className="text-white ml-3 mb-0 smalltext">icellmobileweb@gmail.com
+                                        <h5 className="text-white ml-3 mb-0 smalltext">contact@icellmobile.co.za
                                         </h5>
                                    
 
                                     </div>
-                                    <div className="d-flex align-items-center mb-3">
-                                        <FiMail className="icon" />
-                                     
-                                      <h5 className="text-white ml-3 mb-0 smalltext">contact@icellmobile.co.za
-                                      </h5>
-
-                                    </div>
+                                 
 
                                     <div className="d-flex align-items-center">
                                         <FiMapPin className="icon" />
