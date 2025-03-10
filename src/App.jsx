@@ -21,6 +21,8 @@ const ESIM = lazy(() => import('./ESIM'));
 const Productlist = lazy(() => import('./Productlist'));
 const Mainpage = lazy(() => import('./Mainpage'));
 const Checkout = lazy(() => import('./Checkout'));
+const Store = lazy(() => import('./Store'));
+
 
 const Login = lazy(() => import('./Login '));
 
@@ -66,9 +68,9 @@ function App() {
           <Route path="/BlogDetail/:id" element={<BlogDetail />} />
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path="/Productlist" element={<Productlist />} />
-          <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/Store" element={<Store />} />
 
-          checkout
+
           {/* Pass addToCart as a prop to ESIM */}
           <Route path="/ESIM" element={<ESIM addToCart={addToCart} />} />
 

@@ -1,0 +1,26 @@
+.store-page {
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(900deg, #ffffff, #ffffff); /* Gradient background */
+    color: white; /* Text color */
+  }
+  
+  .coming-soon {
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 20px;
+  }
