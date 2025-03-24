@@ -36,10 +36,6 @@
 
 
 
-.carousel-container {
-
-
-}
 
 .mainclass{
   color: rgb(0, 0, 0);
@@ -50,25 +46,13 @@
   background-color: rgb(18, 18, 18);
 }
 
-.carousel-card {
-  margin-top: 150px;
-  position: relative;
-  padding: 1rem;
-  border-radius: 20px;
-  overflow: hidden;
-}
+
 .serviceheading{
   font-size: 3.5rem;
   font-weight: 800;
 }
 
-.carousel-image {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
+
 
 .carousel-image:hover {
   transform: scale(1.05);
