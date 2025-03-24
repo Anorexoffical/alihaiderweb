@@ -7,8 +7,8 @@ import { useEffect } from "react";
 import { Fade } from "react-awesome-reveal";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import slide1 from "./assets/slider1.png";
 import slide2  from "./assets/slider2.png";
@@ -24,50 +24,31 @@ import mainpackg4 from "./assets/mainpackg4.png"
 
 
 
-import mainpackg6 from "./assets/maingpackg6.png"
-import mainpackg7 from "./assets/maingpackg7.png"
-import mainpackg8 from "./assets/maingpackg8.png"
+
+import mainpackg6 from "./assets/mainpackg6.png"
+import mainpackg7 from "./assets/mainpackg7.png"
+import mainpackg8 from "./assets/mainpackg8.png"
+
+import features1 from "./assets/features1.png"
+import features2 from "./assets/features2.png"
+import features3 from "./assets/features3.png"
 
 
 
+import  voice from "./assets/voice.png"
+import  sms from "./assets/sms.png"
 
-import  voice from "./assets/voice.webp"
 import { useNavigate } from "react-router-dom";
 
+import image from "./assets/image.png";
 
-
-import { FaWhatsapp } from "react-icons/fa";
 
 
 import Navbar from "./Navbar";
 import { useState } from "react";
 
-import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { FaPlus } from "react-icons/fa";
 
 
-
-const dataBundles = [
-    { id: 1, text: "5GB Data", price: "*136#", duration: "30 Days", image: mainpackg2  },
-    { id: 2, text: "11GB Data", price: " *136#", duration: " 30 Days ,Data bundle only available from 18 Dec to 8 Jan 2025!", image:mainpackg3},
-    { id: 3, text: "15GB Data", price: "*136#", duration: "30 Days", image: mainpackg1 },
-    { id: 4, text: "25GB Data", price: " *136#", duration: "30 Days", image:  mainpackg4  },
-
-
-  ];
-
-const dataBundles1gb = [
-  { id: 1, text: "1GB Data", price: "@ R49 that NEVER expires! Top up in our app Or dial: *136#", duration: "full day , You get BONUS 100MB for FREE when you top-up in our app!", image: mainpackg6 },
-  { id: 2, text: "3GB Data", price: "@ R99 that NEVER expires! Top up in our app Or dial: *136#", duration: "full day , You get BONUS 100MB for FREE when you top-up in our app!", image:mainpackg7 },
-  { id: 3, text: "11GB Data", price: "@ R239 that NEVER expires! Top up in our app Or dial: *136#", duration: "full day , You get BONUS 100MB for FREE when you top-up in our app!", image: mainpackg8 },
-
-];
-
-const dataBundlesvoice = [
-  { id: 1, text: "R0.25 per SMS", price: " to any network. NEVER Expires", duration: "Top up in our app Or dial: *136# Buy any of these vouchers: OTT Voucher, 1Voucher, BluVoucher Redeem: Dial *136*0*vouchercode#", image: voice },
-  { id: 2, text: "R0.69 per/min", price: "Top up in our app Or dial: *136#,Buy any of these vouchers: OTT Voucher, 1Voucher, BluVoucher,Redeem: Dial *136*0*vouchercode#", duration: "30 Days", image:voice },
-  
-];
 
 
 
@@ -97,46 +78,12 @@ const Mainpage = () => {
   }, []);
 
 
-  const [quantity, setQuantity] = useState(1);
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
 
  
   
 
-    const [show, setShow] = useState(false);
-    const [selectedBundle, setSelectedBundle] = useState(null);
-  
-    const handleShow = (bundle) => {
-      setSelectedBundle(bundle);
-      setShow(true);
-    }
 
-
-    // for question
-
-    const [openIndex, setOpenIndex] = useState(null);
-
-    const toggleAnswer = (index) => {
-      setOpenIndex(openIndex === index ? null : index);
-    };
-  
-    const faqs = [
-      { question: "Top Up Your Data & Airtime with Ease!", answer: "Recharge effortlessly and stay connected anytime, anywhere." },
-      { question: "Track & Manage Your Usage with Ease!", answer: " Monitor Your Data & Spending with In-Depth Insights!" },
-      { question: "Get Rewarded with BONUS Data!", answer: "Enjoy Extra Data Rewards for Staying Connected!" },
-      { question: "Seamless Shopping & Transactions!", answer: "Enjoy smooth and secure transactions through our app." },
-      { question: "Keep your number or choose a new one", answer: "Flexibility to retain your existing number or get a new one." },
-      { question: "Access the app data-FREE", answer: "Use the app without consuming your data balance." },
-    ];
 
 //for the nav 
     const navigate = useNavigate();
@@ -186,19 +133,185 @@ const aboutnav = () =>{
       navigate("/productlist");
     };
 
- const cards = [
-    {
-      id: 1,
-      title: "6GB SIM Card Starter Pack",
-      subtitle: "R 209.00",
-      quantity: 1,
-      image: eSIM2,
+
+
+// this section is about the packages 
+
+  // this is about the our proceesss
+
+
+  const [activeIndex, setActiveIndex] = useState(0); // Track the currently active timeline item
+    const timelineRef = useRef(null);
+  
+    // Define the data directly within this component
+    const data = [
+      {
+        title: "30 days packages",
+        content: "📲 Available only in-app or via USSD. Dial 136# to get yours now!",
+        images: [
+          mainpackg1,
+          mainpackg2,
+        ],
+      },
       
-    }
-  ];
+      {
+        title: "24 hours packages ",
+        content: "Stay connected without limits—your data never expires!",
+        images: [
+          mainpackg6,
+          mainpackg6,
+        ],
+      },
+      {
+        title: "Our Voice & SMS Rate",
+        content: "Skip the bundles! With iCell, your voice calls and SMS are charged directly from your airtime at a flat rate—simple and hassle-free!",
+        images: [
+          voice,
+          sms,
+        ],
+      },
+    ];
+  
+
+
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
+  
+      const items = timelineRef.current.querySelectorAll(".timeline-item");
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of viewport
+  
+      items.forEach((item, index) => {
+        const rect = item.getBoundingClientRect();
+        const itemTop = window.scrollY + rect.top; // Calculate position in the document
+  
+        if (scrollPosition >= itemTop && scrollPosition < itemTop + rect.height) {
+          setActiveIndex(index);
+        }
+      });
+    };
+  
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+  
+      // Trigger scroll on mount to set the initial active item
+      handleScroll();
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+  
 
 
 
+
+
+
+
+
+
+// this if togggle for the buy sim
+
+const accordionData = [
+  {
+    title: "iCell is Limitless",
+    answer:
+      "Break free from restrictions with endless connectivity, unlimited calls, and expansive data plans designed for your lifestyle.",
+  },
+  {
+    title: "iCell is Hassle-Free",
+    answer:
+      "No confusing contracts, no hidden fees—just simple, transparent plans that put you in control",
+  },
+  {
+    title: "iCell is Honest",
+    answer:
+      "What you see is what you get—clear pricing, no surprises, and complete transparency in every plan.",
+  },
+  {
+    title: "iCell is Future-Ready",
+    answer:
+      "Experience innovation with cutting-edge technology, seamless digital solutions, and a network built for the future.",
+  },
+];
+
+
+// stay connect 
+
+
+
+useEffect(() => {
+  const scrollers = document.querySelectorAll(".scroller");
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", true);
+
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      // Duplicate content for seamless animation
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
+}, []);
+
+
+
+//testmonials 
+
+  const [activeSection, setActiveSection] = useState("Collaborative Editing");
+  const sections = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.getAttribute("data-section"));
+          }
+        });
+      },
+      {
+        root: null, // Use the viewport as the root
+        threshold: 0.5, // Trigger when 50% of the element is visible
+        rootMargin: "0px 0px -50% 0px", // Trigger a bit earlier to match the layout
+      }
+    );
+  
+    sections.current.forEach((section) => {
+      if (section instanceof Element) {
+        observer.observe(section);
+      }
+    });
+  
+    return () => {
+      sections.current.forEach((section) => {
+        if (section instanceof Element) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
+
+
+const getImageForSection = () => {
+  switch (activeSection) {
+    case "Collaborative Editing":
+      return mainpackg6;
+    case "Real-Time Updates":
+      return mainpackg7;
+    case "Streamlined Productivity":
+      return mainpackg8;
+
+    default:
+      return "https://via.placeholder.com/400x250?text=Default+Image";
+  }
+};
 
 
 // whatps
@@ -252,62 +365,101 @@ const handleWhatsAppClick = () => {
 
 
 
-
-      {/* CEO Message Section */}
-
-      
-      <div className="container my-5">
-
-
-      <div className="row align-items-center">
-        {/* Text Section */}
-
-        <div className="col-lg-6 text-section">
-
-        <Fade direction="left" duration={1500}>
-
-          <h2 className="ceo-heading">
-          Why Go with <span className="brandname">iCell Mobile?</span> 
-          </h2>
-          <h5 className="ceoheading2">
-          Unleash the Power of Seamless Connectivity!
-          </h5>
-          <ul className="features-list">
-            <li>
-        <span className="highlight1">(Save up to 50% or more)</span> 
-             on data and airtime every month{" "}
-            </li>
-            <li>  Get <span className="highlight1">hassle-free SIM activation</span>  and quick RICA registration</li>
-            <li><span className="highlight1">Keep your number</span> or switch to a new one effortlessly</li>
-            <li>Enjoy <span className="highlight1"> data bundles that never expire </span>  – stay connected anytime</li>
-            <li>Receive <span className="highlight1"> FREE daily data </span>  to keep you online without extra costs</li>
-            <li>Benefit from the <span className="highlight1"> lowest rates on calls and SMS</span></li>
-            <li> <span className="highlight1">No contracts. No monthly fees. No credit checks.</span></li>
-          </ul>
-          <button className="btn mt-4 startbutton" onClick={getursim} >Get your sim </button>
-          </Fade>
-
+{/* {/* buy sim component  */}
+<div className="why-onic-container">
+      <h2 className="text-center1">Why choose us </h2>
+      <div className="onic-content">
+        {/* Left Side Image */}
+        <div className="image-container">
+          <img src={eSIM} alt="Happy User" className="onic-image" />
         </div>
 
+        {/* Right Side Accordion */}
+        <div className="accordion-container">
+          {accordionData.map((item, index) => (
+            <div key={index} className="accordion-item active">
+              <div className="accordion-title accordiontitle">{item.title}</div>
+              <div className="accordion-content">{item.answer}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        {/* Image Section */}
-        <div className="col-lg-6 text-center">
+      {/* Button */}
+      <div className="text-center1 mt-3">
+        <button className="see-plans-btn" onClick={getursim}>Get Your sim  </button>
+      </div>
+    </div>
 
-        <Fade direction="right" duration={500}>
 
-          <img
-            src={eSIM}
-            alt="Creative Design"
-            className="img-fluid rounded shadow image-section"
-          />
 
-          </Fade>
+
+
+
+
+    {/* dont warry stay connect  */}
+
+   
+
+    <div className="scroll-container">
+      {/* Left Section: Scrollable Text */}
+      <div className="text-section">
+        <div
+          className="text-block"
+          data-section="Collaborative Editing"
+          ref={(el) => {
+            if (el) sections.current[0] = el;
+          }}
+        >
+          <h2 className="clienttestimonailmain" >No limits, just connection       </h2>
+       <Fade direction="left"   damping={5000} duration={1000} >
+          
+          <h2 className="clienttestimonail">Stayonnected with Ease – 1GB Data for Just R49  </h2>
+          <p className="clienttestimonailparagrph">
+          Perfect for light users, our 1GB Data Plan keeps you connected without breaking the bank. Whether you're checking emails, scrolling social media, or sending quick messages, this affordable plan ensures smooth browsing and uninterrupted communication. Stay online effortlessly at just R49—ideal for your daily essentials!  
+          </p>
+         </Fade>
         </div>
 
+        <div
+          className="text-block"
+          data-section="Real-Time Updates"
+          ref={(el) => {
+            if (el) sections.current[1] = el;
+          }}
+        >
+
+<Fade direction="left"   damping={5000} duration={1000} >
+          <h2 className="clienttestimonail">More Data, More Freedom – 3GB Plan for R99 </h2>
+          <p className="clienttestimonailparagrph">
+          Need more data for streaming, video calls, or work on the go? Our 5GB Data Plan offers the perfect balance of affordability and flexibility. At just R99, you can enjoy extended browsing, stay active on social media, and even watch your favorite content without interruptions. Say goodbye to data worries and embrace seamless connectivity! 
+          </p>
+          </Fade>
+        </div>
+        <div
+          className="text-block"
+          data-section="Streamlined Productivity"
+          ref={(el) => {
+            if (el) sections.current[2] = el;
+          }}
+        >
+          <Fade direction="left"   damping={5000} duration={1000} >
+
+          <h2 className="clienttestimonail" >Power Up Your Connection – 11GB for R239          </h2>
+          <p className="clienttestimonailparagrph">
+          For heavy data users who demand the best, our 11GB Data Plan delivers uninterrupted speed and performance. Whether it's HD streaming, gaming, or working remotely, this plan gives you the freedom to do it all at just *R239*. Stay connected longer, experience faster browsing, and enjoy hassle-free digital life with iCell!
+          </p>
+          </Fade>
+        </div>
       </div>
 
+      {/* Right Section: Dynamic Image */}
+      <div className="image-section">
+        <div className="static-image">
+          <img src={getImageForSection()} alt={activeSection} />
+        </div>
       </div>
-
+    </div>
 
 
 
@@ -358,281 +510,127 @@ const handleWhatsAppClick = () => {
     </div>
 
 
-      <Container className="py-5 text-center">
-      <Fade direction="down" duration={1000}>
-
-      <h1 className="packgheading">No Worries! Stay Connected</h1>
-      <h2 className="packheading2">30-day Data Deals!</h2>
-      <p>Available exclusively in-app or via USSD: *Dial 136# to grab yours now!
-      Next</p>
-</Fade>
-
-
-
-      <Fade direction="top" duration={1000}>
-
-<Row className="justify-content-center">
-  {dataBundles.map((bundle) => (
-
-    <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4 ">
-      <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
-        <img src={bundle.image} alt={bundle.text} className="" />
-          <div className="plus-button">
-            <FaPlus />
-        </div>
-      </Card>
-    </Col>
-
-  ))}
-</Row>
-</Fade>
       
 
-      {/* Popup Modal */}
-      <Modal show={show} onHide={() => setShow(false)} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedBundle?.text}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Get {selectedBundle?.text} for just {selectedBundle?.price}. Enjoy high-speed internet
-            access for {selectedBundle?.duration}.
-          </p>
-        </Modal.Body>
-      </Modal>
-    </Container>
+
+{/* this is infinte loop for the new packages  */}
 
 
+<div className="timeline-container" ref={timelineRef}>
+      <div className="timeline-header">
+        <h2 className="timeline-title headingforprocess">Unlimited Data, Zero Expiry – Stay Connected Always! </h2>
+        <p className="timeline-description">
+        Say goodbye to data expiry! With iCell’s Never-Expiring Bundles, your data stays with you as long as you need it. Browse, stream, and connect at your own pace—no more rushing!  
 
-
-    {/* this is about data in 1gb  (Score Big)*/}
-
-
-    <Container className="py-5 text-center">
-    <Fade direction="down" duration={1000}>
-
-      <h1 className="packgheading">Win Big with Our NEVER-EXPIRING BUNDLES!      </h1>
-      <p>Stay online without limits – your data lasts as long as you need!</p>
-</Fade>
-
-    <Fade direction="top" duration={1000}>
-
-      <Row className="justify-content-center">
-        {dataBundles1gb.map((bundle) => (
-
-          <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
-            <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
-              <img src={bundle.image} alt={bundle.text} className="" />
-                <div className="plus-button">
-                  <FaPlus />
-              </div>
-            </Card>
-          </Col>
-
-        ))}
-      </Row>
-      </Fade>
-
-
-      {/* Popup Modal */}
-      <Modal show={show} onHide={() => setShow(false)} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedBundle?.text}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Get {selectedBundle?.text} in-app or dial {selectedBundle?.price}. Enjoy high-speed internet
-            access for {selectedBundle?.duration}.
-          </p>
-        </Modal.Body>
-      </Modal>
-    </Container>
-
-
-
-
-    {/* this is about data in voice */}
-
-
-    {/* this is about data in 1gb  (Score Big)*/}
-
-
-    <Container className="py-5 text-center">
-    <Fade direction="down" duration={1000}>
-
-      <h1 className="packgheading">Our Voice & SMS Rate      </h1>
-      <p>You no longer need to buy voice/SMS bundles. With us, it gets charged directly from your airtime at a flat rate!</p>
-</Fade>
-
-
-
-
-
-
-      <Fade direction="top" duration={1000}>
-
-<Row className="justify-content-center">
-  {dataBundlesvoice.map((bundle) => (
-
-    <Col key={bundle.id} xs={12} sm={6} md={6} lg={3} className="mb-4">
-      <Card className=" text-white  cardcolor"   onClick={() => handleShow(bundle)}>
-        <img src={bundle.image} alt={bundle.text} className="" />
-          <div className="plus-button" style={{background: "#00bf63"}}>
-            <FaPlus />
-        </div>
-      </Card>
-    </Col>
-
-  ))}
-</Row>
-</Fade>
-
-      {/* Popup Modal */}
-      <Modal show={show} onHide={() => setShow(false)} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedBundle?.text}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Get {selectedBundle?.text} for just {selectedBundle?.price}. Enjoy high-speed internet
-            access for {selectedBundle?.duration}.
-          </p>
-        </Modal.Body>
-      </Modal>
-    </Container>
-
-
-
-
-          {/* buy new sim */}
-
-
-          <div id="hero-section" className="container-fluid px-0 position-relative">
-  <div className="row g-0">
-
-    <div className="col-lg-12">
-    <Fade direction="left" duration={2000}>
-
-      <img 
-        src={mainbackgroundimg} 
-        alt="5G Network" 
-        className="hero-image img-fluid" 
-      />
-      </Fade>
-      <div className="hero-overlay">
-        <div className="hero-content text-center">
-          <h1 className="hero-title connectivity">
-          Experience Connectivity  
-            5G
-            Nationwide
-          </h1>
-        </div>
+        </p>
       </div>
-    </div>
-  </div>
-</div>
 
-<div className="container-fluid content-container py-5">
-  <div className="row product-container align-items-center">
-    
-    <div className="col-xl-6 col-md-6 col-sm-12 text-center">
-    <Fade direction="left" duration={2000}>
-
-      <img src={eSIM2} className="product-image img-fluid" alt="Product" />
-      </Fade>
-    </div>
-
-    <div className="col-xl-6 col-md-6 col-sm-12 product-info">
-    <Fade direction="right" duration={2000}>
-
-      <h1 className="product-title">6GB SIM Card Starter Pack</h1>
-      </Fade>
-      <Fade direction="right" duration={2000}>
-
-      <div className="price-container d-flex flex-column text-center">
-        <span className="discounted-price">R 209.00</span>
-        <span className="original-price">R 314.00</span>
-      </div>
-</Fade>
-
-
-
-
-      <div className="quantity-controls d-flex align-items-center gap-2 mt-3">
-      <div className="d-flex align-items-center custombtn ">
-
-  <button className="btn" onClick={decreaseQuantity }> &lt;</button>
-  <p className="quantity-number mx-3 my-0">{quantity}</p>
-
-  <button className="btn" onClick={increaseQuantity}>&gt;</button>
-</div>
-  <button className="btn  add-to-cart" onClick={() => handleAddToCart(cards[0])}>Add to Cart</button>
-</div>
-      
-      <hr className="divider" />
-
-      <div className="action-buttons d-flex justify-content-between align-items-center">
-      <button className="btn whatsappbtn" onClick={() => handleWhatsAppClick()}> <FaWhatsapp /></button>        
-      <p className="view-detail m-0" onClick={() => navigate("/Getyoursim")} >View Detail →</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-{/* about the application  */}
-<h1 className="gheading">5G Connectivity Nationwide</h1>
-
-<div id="hero-section" className="container-fluid px-0 position-relative">
-  <div className="row g-0">
-    <div className="col-lg-12">
-    <Fade direction="up" duration={1500}>
-
-      <img 
-        src={productimg} 
-        alt="5G Network" 
-        className="hero-image img-fluid" 
-      />
-      </Fade>
-      <div className="hero-overlay">
-        <div className="hero-content text-center">
-        
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div className="container my-5 ">
-      <h2 className="text-center fw-bold mb-4">Features & Benefits of the iCell Mobile App
-      </h2>
-      <div className="accordion mobilecontianer">
-        {faqs.map((faq, index) => (
-          <div key={index} className="card mb-2 border-0">
+      {data.length > 0 ? (
+        <div className="timeline">
+          {data.map((item, index) => (
             <div
-              className="card-header bg-white d-flex justify-content-between align-items-center p-3"
-              onClick={() => toggleAnswer(index)}
-              style={{ cursor: "pointer" }}
+              key={index}
+              className={`timeline-item ${activeIndex === index ? "active" : ""}`}
             >
-              <h6 className="m-0 fw-bold">{faq.question}</h6>
-               <div className={`transition-transform ${openIndex === index ? "rotate-180" : ""}`}>
-                  <FaPlus />
-                </div>
-
-            </div>
-            {openIndex === index && (
-              <div className="card-body p-3">
-                <p className="m-0">{faq.answer}</p>
+              <div className="timeline-marker">
+                <div className="marker-circle"></div>
               </div>
-            )}
-          </div>
-        ))}
-      </div>
-   
+              <div className="timeline-content">
+                <h3 className="timeline-year">{item.title}</h3>
+                <p className="timeline-description">{item.content}</p>
+                <div className="timeline-images">
+                  {item.images.map((img, imgIndex) => (
+                    <img
+                      key={imgIndex}
+                      src={img}
+                      alt={`Timeline image ${imgIndex + 1}`}
+                      className="timeline-image"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No data available to display.</p>
+      )}
     </div>
+  
+
+
+
+
+
+
+
+
+
+
+{/* {/* buy sim component  */}
+<div className="banner container-fluid text-white text-center">
+      <div className="row align-items-center">
+        <div className="col-md-6 text-content">
+          <h1>
+            <span className="highlight">Grab the Liberty Plan – Up to 50% Off!</span>
+          </h1>
+          <p className="offer-text">
+          <span className="highlight-circle">6GB</span>  SIM Card Starter Pack !
+          </p>
+          <p className="offer-text">
+          Only  Grab this deal before it’s gone! Originally ,<span className="highlight-box">R314</span> now only   <span className="highlight-box">R209</span> for a limited time!
+          </p>
+          <button className="btn btn-lg see-plans-btn">Add to cart </button>
+        </div>
+        <div className="col-md-6 image-content">
+          <img src={eSIM2} alt="Promo" className="promo-image" />
+        </div>
+      </div>
+    </div>
+
+
+
+
+{/* this is the about the application */}
+  
+<div className="container py-5">
+<h1 className="featureheading">Recharge Made Simple</h1>
+<p className="featurepargraph">
+Never run out of data or airtime again! With iCell’s easy top-up options, you can reload anytime, anywhere in just a few taps. Stay connected, stream, chat, and browse without interruptions.</p>
+
+
+      <div className="row text-center">
+        <div className="col-md-4">
+          <div className="plan-card p-4">
+            <h3>Shop & Pay with Confidence – Transactions.
+            </h3>
+            <p>Experience hassle-free shopping and secure payments with iCell’s smooth transaction system. Whether you're buying data, airtime, or making online purchases, our app ensures fast, safe, and effortless transactions every time.!</p>
+            <img src={features1} alt="Manage Plan" className="img-fluid" />
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="plan-card p-4">
+            <h3>Stay in Control
+            </h3>
+            <p>Keep an eye on your data and airtime with real-time tracking and detailed insights. With iCell, you can monitor your usage, manage spending, and stay on top of your connectivity without any hassle.
+            Know more, save more – take charge of your data today!</p>
+            <img src={features2}  alt="Track Usage" className="img-fluid" />
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="plan-card p-4">
+            <h3>More Data, More Rewards            </h3>
+            <p>Stay connected and enjoy extra data rewards just for using iCell! Whether you're browsing, streaming, or chatting, we make sure you get more value with every top-up Stay connected, get rewarded – it's that simple!</p>
+            <img src={features3}  alt="Manage Addons" className="img-fluid" />
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+
 <Footer></Footer>
 
     </>

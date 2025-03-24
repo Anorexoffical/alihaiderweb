@@ -65,9 +65,9 @@ function Navbar() {
           <li><Link to="/" onClick={toggleSidebar}>Home</Link></li>
           <li><Link to="/Aboutus" onClick={toggleSidebar}>About Us</Link></li>
           <li><Link to="/Getyoursim" onClick={toggleSidebar}>Get your SIM</Link></li>
-          <li><Link to="/Topupdeal" onClick={toggleSidebar}>Top-up Deals</Link></li>
+          <li><Link to="/Topupdeal" onClick={toggleSidebar}>best deals</Link></li>
           <li><Link to="/ESIM" onClick={toggleSidebar}>eSIM</Link></li>
-          <li><Link to="/Power2Sell" onClick={toggleSidebar}>Power2Sell</Link></li>
+          <li><Link to="/Power2Sell" onClick={toggleSidebar}>Grow with iCell</Link></li>
           <li><Link to="/Support" onClick={toggleSidebar}>Support</Link></li>
           <li><Link to="/Store" onClick={toggleSidebar}>Store</Link></li>
 

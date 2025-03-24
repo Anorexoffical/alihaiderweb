@@ -55,7 +55,7 @@ p {
 }
 
 /* this is for the service container */
-.carousel-container1 {
+.carousel-container {
   width: 100vw;
   height: 150vh;
   margin: 0 auto;
@@ -248,4 +248,70 @@ p {
 
  
 }
+
+
+/* this is the esim */
+
+.container {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 200px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgb(233, 233, 233);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 40%;
+  border:0.5px rgb(6, 197, 25);
+  margin: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #ddd;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-desc {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 

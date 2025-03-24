@@ -122,122 +122,7 @@ margin-top: 15%;
 
 
 
-/* ceo image  */
 
-.ceo-heading{
-  line-height:1;
-    font-size: 2.9rem;
-  font-weight: 600;
-  margin-top: 40px;
-}
-.brandname{
-  background: linear-gradient(to right, #000000, #42cd2c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-}
-.ceoheading2{
-  margin-top: 40px;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-.highlight1{
-  font-weight: 800;
-  color: #000000;
-}
-
-
-.packgheading{
-  line-height:1;
-    font-size: 3.4rem;
-  font-weight: 600;
-  margin-top: 40px;
-
-}
-.packheading2{
-
-  margin-top: 20px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 30px;
-
-}
-
-
-
-
-
-
-/* Feature List */
-.features-list {
-  list-style: none;
-  padding: 0;
-}
-
-.features-list li {
-  padding-left: 25px;
-  margin-bottom: 10px;
-  position: relative;
-  font-size: 1.1rem;
-}
-
-/* Round Bullet Instead of Tick */
-.features-list li::before {
-  content: "●"; /* Round bullet */
-  color: #545151;
-  font-size: 0.9rem;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  top: 2px;
-}
-
-/* Button Styling */
-.btn-danger {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.btn-danger:hover {
-  background-color: #1fcb50;
-}
-
-/* Image Section */
-.image-section {
-  max-width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-  .text-section {
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .features-list li {
-    text-align: left;
-    padding-left: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ceo-heading {
-    font-size: 1.8rem;
-  }
-
-  .ceoheading2 {
-    font-size: 1.2rem;
-  }
-
-  .features-list li {
-    font-size: 1rem;
-    padding-left: 30px;
-  }
-}
 
 
 
@@ -381,313 +266,665 @@ margin-top: 15%;
   }
 }
 
+/* // this component is about new packages  */
 
-/* this is for the card desinging  */
 
 
-/* SIM Packages Styling */
 
-/* SIM Packages Styling */
-.bundle-card {
-  position: relative;
-  overflow: hidden;
-  padding: 0; /* Removed padding */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-  height: 400px;
-}
 
-.bundle-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
 
-.bundle-image {
+/* Timeline Container */
+.timeline-container {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px; /* Matched card's border-radius */
-  transition: transform 0.3s ease-in-out;
-}
-
-.bundle-card:hover .bundle-image {
-  transform: scale(1.1);
-}
-
-.plus-button {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: white;
+  background-color: rgb(246, 246, 246);
   color: black;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  font-family: Arial, sans-serif;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+.headingforprocess{
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000000;
+  margin-top: 100px;
+}
+
+.timeline-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.timeline-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-description {
+  font-size: 16px;
+  color: #555;
+  max-width: 400px;
+}
+
+/* Timeline Section */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 100px; /* Add padding for bottom spacing */
+}
+
+.timeline-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  align-items: flex-start;
+  margin-bottom: 120px;
+  position: relative;
+  opacity: 0.4; /* Make inactive items less visible */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.plus-button:hover {
-  transform: rotate(90deg) scale(1.2);
+.timeline-item.active {
+  opacity: 1;
+  transform: scale(1.05); /* Slightly enlarge active item */
 }
 
-.bundle-text{
-  text-align: center;
-  margin-top: 40px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: white;
-}
-.connectivity{
-  color: black!important;
-  font-weight: 800!important;
-  font-size: 4.5rem!important;
+.timeline-marker {
+  position: relative;
+  min-width: 50px;
+  height: 50px;
+  margin-right: 20px;
 }
 
-
-.cardcolor{
-  background: linear-gradient(135deg, #f1f1f1, #cfcfcf);
-}
-
-
-
-
-
-
-.hero-image {
-  object-fit: cover;
-  width: 100%;
-  height: 70vh;
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
-}
-
-.hero-overlay {
+.marker-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border: 4px solid #ddd;
+  border-radius: 50%;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* Beautified Line */
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 2px;
   height: 100%;
+  background: linear-gradient(to bottom, #ff5733, #900c3f, #581845);
+  z-index: 0;
+}
+
+.timeline-content {
+  background: #222121;
+  border-radius: 8px;
+  padding: 40px;
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff; /* Corrected color */
 }
 
-.hero-title {
-  font-size: 3rem;
+.timeline-year {
+  font-size: 24px;
   font-weight: bold;
-  color: white;
+  margin-bottom: 10px;
+  color: #d30d0d;
 }
 
-.highlight {
-  color: #4e9af1;
+.timeline-content p {
+  font-size: 16px;
+  color: #929292;
 }
 
-
-
-
-
-
-/* add to cart */
-
-
-
-.content-container {
-  background: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}.product-image {
-  border-radius: 50px;
-  height: 700px;
-}
-
-.product-title {
-  margin-left: 60px;
-  font-size: 2.5rem;
-  font-weight: bold;
-
-}
-
-.price-container {
+.timeline-images {
+  display: flex;
+  gap: 15px; /* Increased spacing */
   margin-top: 15px;
 }
 
-.discounted-price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #d32f2f;
-}
-.text-center{
-
-}
-
-.original-price {
-  font-size: 1.5rem;
-  color: #757575;
-  text-decoration: line-through;
-}
-.custombtn {
-    border: 2px solid black;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .quantity-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .quantity-controls button {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-  
-  .add-to-cart {
-    flex-grow: 1;
-    text-align: center;
-    padding: 10px;
-  }
-  .quantity-number {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-.quantity-controls button {
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
+.timeline-image {
+  width: 300px; /* Increased width */
+  height: 350px; /* Increased height */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  object-fit: cover;
+  margin-left: 40px;
 }
 
-.quantity-number {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Active Marker */
+.timeline-item.active .marker-circle {
+  background-color: #ff0000;
+  border-color: #000000;
 }
 
-.add-to-cart {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-marker {
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-images {
+    flex-wrap: wrap;
+  }
+
+  .timeline-image {
+    width: 100%;
+    max-width: 120px; /* Slightly smaller for mobile */
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+/* this section is about the compare imgs  */
+
+
+.comparison-container {
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
   background-color: black;
-  border-radius: 25px;
-  color: white;
-}
-.add-to-cart:hover{
-  background-color: rgb(29, 29, 29);
-  color: white;
-
-
-}
-
-.divider {
-  margin: 20px 0;
+  border-radius: 12px;
+  z-index: 1; /* Ensure the container is above other elements */
+  box-shadow: 
+    0 12px 24px rgba(255, 255, 255, 0.15), /* Bright outer shadow */
+    0 8px 16px rgba(255, 0, 0, 0.2), /* Subtle red tint shadow */
+    0 4px 6px rgba(236, 3, 3, 0.1); /* Soft inner shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.whatsappbtn {
-  color:  #25D366;
-  font-size: 2rem;  /* Adjust the size */
-  border: none;
-  border-radius: 50px;
+
+.comparison-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #c9c9c9;
+}
+
+.comparison-paragraph {
+  font-size: 16px;
+  color: #cbcbcb;
+  margin-bottom: 20px;
+}
+
+.comparison-slider {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 16px rgb(164, 8, 8), 
+    0 6px 12px rgb(220, 20, 20), 
+    0 4px 6px rgb(0, 0, 0),
+    0 4px 40px rgba(0, 0, 0, 0.3); /* Added blurred shadow */
+  transition: transform 0.88s ease, box-shadow 0.88s ease;
+}
+
+.comparison-slider:hover {
+  transform: scale(1.03);
+  box-shadow: 
+    0 8px 16px rgb(164, 8, 8), 
+    0 6px 12px rgb(220, 20, 20), 
+    0 4px 6px rgb(0, 0, 0),
+    0 12px 40px rgba(0, 0, 0, 0.5); /* Enhanced blur on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* this component is about packege  */
+
+/* Container */
+.scroll-container {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 200vh; /* Long height for scrolling */
+  padding: 0 5%;
+  background-color: rgb(238, 238, 238); /* Dark background */
+  color: rgb(0, 0, 0);
+  border-top-left-radius: 55px;
+  border-top-right-radius: 55px;
+
+}
+.clienttestimonailmain{
+  text-align: center;
+  padding-top: 40px;
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+.clienttestimonail{
+padding-top: 40px;
+font-size: 2.4rem;
+font-weight: 900;
+color: rgb(45, 45, 45);
+
+
+}
+.clienttestimonailparagrph{
+
+  color: rgb(0, 0, 0);
 }
 
-.view-detail {
+
+.clienttestimonailmain {
+  background: linear-gradient(to right, #00bf63, #00bf63, #00bf63);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.secondtest{
+  padding-top: 40px;
+}
+
+/* Text Section */
+.text-section {
+  flex: 1;
+  max-width: 50%; /* Left section width */
+}
+
+.text-block {
+  margin-bottom: 100px; /* Spacing between text blocks */
+}
+
+.text-block h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.text-block p {
   font-size: 1.2rem;
-  color: #007bff;
-  cursor: pointer;
+  line-height: 1.6;
 }
 
-
-.custombtn {
-  border: 2px solid black;
-  border-radius: 50px;
+/* Image Section */
+.image-section {
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  max-width: 50%; /* Right section width */
+  position: sticky;
+  top: 20%; /* Keeps the image in view */
+}
+
+.static-image img {
+  width: 450px; /* Increase the width to make the image larger */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scroll-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .text-section {
+    max-width: 100%;
+  }
+
+  .image-section {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .static-image img {
+    width: 300px;
+  }
+}
+@media (max-width: 395px) {
+ .clienttestimonailmain{
+  font-size: 2.5rem;
+
+ }
+}
+
+
+
+
+
+
+
+
+/* this component is about buy sim */
+
+/* General Styling */
+.text-center1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.why-onic-container {
+  background-color: #00bf63;
+  color: black;
+  padding: 5%;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 1400px;
+  min-height: 80vh;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.quantity-controls button {
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
+/* Content Wrapper */
+.onic-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.quantity-number {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Left Side Image */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
 }
 
+.onic-image {
+  width: 100%;
+  max-width: 450px;
+  max-height: 500px;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
 
-/* use mobile application */
-.gheading{
-  text-align: center;
-  margin-top: 100px;
-  font-size: 4.4rem;
-  font-weight: 700;
-
-}
-.transition-transform {
-  transition: transform 0.3s ease-in-out;
-}
-.rotate-180 {
-  transform: rotate(180deg);
-}
-.mobilecontianer{
-  border: 0.5px solid rgb(124, 124, 124);
-  border-radius: 25px;
+/* Right Side Accordion */
+.accordion-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
   padding: 10px;
 }
 
+.accordion-title {
+  font-size: 1.9rem;
+  font-weight: 900;
+  text-align: center;
+}
 
+.accordion-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border-radius: 20px; /* Ensures rounded corners for all */
+}
+
+.accordion-item.active {
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* Keeps rounded corners when active */
+}
+
+.accordion-content {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 20px; /* Ensures rounded corners for content */
+}
+
+.accordion-item.active .accordion-content {
+  opacity: 1;
+}
+
+/* Button */
+.see-plans-btn {
+  background-color: #00ff08;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.see-plans-btn:hover {
+  background-color: #00d716;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-onic-container {
+    padding: 4%;
+  }
+  .onic-content {
+    flex-direction: column;
+  }
+  .image-container {
+    max-width: 70%;
+  }
+  .accordion-container {
+    width: 90%;
+  }
+}
 
 @media (max-width: 768px) {
-  .product-title {
-    font-size: 2rem;
+  .why-onic-container {
+    padding: 3%;
+    min-height: auto;
   }
-  .quantity-controls button {
-    width: 40px;
-    height: 40px;
+  .onic-image {
+    max-width: 350px;
+    max-height: 450px;
   }
-  .discounted-price {
-    font-size: 1.8rem;
+  .accordion-item {
+    font-size: 16px;
+    padding: 15px;
   }
-  .original-price {
+  .accordion-content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-onic-container {
+    width: 95%;
+    padding: 2%;
+  }
+  .onic-image {
+    max-width: 300px;
+    max-height: 400px;
+  }
+  .see-plans-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .accordion-container {
+    width: 100%;
+  }
+}
+
+/* use mobile application */
+
+.featureheading{
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-top: 40px;
+  text-align: center;
+  color: rgb(45, 45, 45);
+}
+
+.featurepargraph{
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(45, 45, 45);
+}
+.plan-card {
+  background: #f7f7f7;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 30px;
+  color: rgb(45, 45, 45);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .plan-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plan-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile Layout - Full Width Cards */
+@media (max-width: 576px) {
+  .plan-card {
+    padding: 15px;
+  }
+  .plan-card h3 {
     font-size: 1.2rem;
   }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .bundle-image {
-    height: 150px; /* Adjusted height for medium screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .bundle-image {
-    height: 120px; /* Adjusted height for small screens */
-  }
-  .connectivity{
-    color: black!important;
-    font-weight: 800!important;
-    font-size: 2.5rem!important;
-  }
-  .gheading{
-    
-    font-size: 2.5rem!important;
-
+  .plan-card p {
+    font-size: 0.9rem;
   }
 }
 
 
-/* Responsive Grid */
-@media (max-width: 1024px) {
-  .bundle-card {
-    margin-bottom: 20px;
-    height: 390px;
-  }
+/* buy sim section  */
+
+
+.banner {
+  background-color: rgb(214, 214, 214);
+  padding: 50px 20px;
+  border-radius: 30px;
+  width: 95%;
+  margin-top: 30px;
 }
 
+.text-content h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.highlight {
+  color: rgb(45, 45, 45);
+
+}
+
+.light {
+  font-weight: lighter;
+}
+
+.offer-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.highlight-circle {
+  background: rgb(211, 6, 6);
+  color: black;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.highlight-box {
+  background: rgb(211, 6, 6);
+  color: black;
+  padding: 3px 8px;
+  font-weight: bold;
+  border-radius: 10px;
+
+}
+
+.promo-image {
+  max-width: 50%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 25px;
+}
+
+.background-shape {
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  border: 4px solid rgb(17, 255, 0);
+  border-radius: 10px;
+  right: 10%;
+  top: 20%;
+  z-index: 1;
+}

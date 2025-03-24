@@ -18,6 +18,8 @@ import checkass2 from "./assets/checkass2.png";
 import checkass3 from "./assets/checkass3.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from "framer-motion";
+
 
 const CustomArrow = ({ className, style, onClick, direction }) => {
   return (
@@ -144,6 +146,53 @@ const ESIM = ({ addToCart }) => {
   };
 
 
+  //this if for the esim
+
+  const accordionData = [
+    {
+      title: "⚡ Instant Setup & Activation",
+      answer:
+        "Instant Setup & Activation – No waiting for a physical SIM—simply scan a QR code and activate within minutes",
+    },
+    {
+      title: "🔄 Seamless Network Switching",
+      answer:
+        "Seamless Network Switching – Easily switch between multiple carriers without changing SIM cards, perfect for travelers and business users.",
+    },
+    {
+      title: "📦 More Storage, More Convenience",
+      answer:
+        "More Storage, More Convenience – Free up your SIM slot for an extra number or international SIM while keeping your primary number active.",
+    },
+    {
+      title: "🛡️ Stronger Durability & Reliability",
+      answer:
+        "Stronger Durability & Reliability – Since eSIMs are embedded in your device, they’re immune to physical damage, loss, or theft.",
+    },
+  ];
+
+
+  // featere of our application 
+  const FeatureCard = ({ title, description, tag, image }) => (
+    <motion.div className="card" whileHover={{ scale: 1.05 }}>
+      <img src={image} alt={title} className="card-img" />
+      <span className="card-tag">{tag}</span>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-desc">{description}</p>
+    </motion.div>
+  );
+  
+
+
+  const features = [
+    { title: "Verify Your Device", description: "Before you begin, check if your smartphone supports eSIM technology. Head to your device settings or visit our support page for a quick compatibility check. ✅📱",  image:checkass },
+    { title: " Get Your eSIM Instantly", description: "Purchase your eSIM plan and receive your unique activation details straight to your email—no waiting, no hassle.", image:imag1 },
+    { title: "Register & Verify", description: "Seamless digital registration! Simply verify your identity through our secure online process using your ID or passport. No paperwork, just a few taps. 🛡️📲",  image:checkass2 },
+
+    { title: "Scan & Connect", description: "Once verified, your eSIM QR code will be sent instantly. Just scan it with your phone, and you're connected—no physical SIM required! 🚀📶",  image:checkass3 },
+
+  ];
+
   const handleWhatsAppClick = () => {
     const phoneNumber = '+270769675814';
     const message = encodeURIComponent('Hi! I m interested in your services. Can you provide more details?');
@@ -161,83 +210,48 @@ const ESIM = ({ addToCart }) => {
         {/* Hero Section */}
         <div className="row align-items-center">
           <div className="col-lg-12 text-center text-lg-start px-4">
-            <h1 className="main-heading">Revolutionize Your Connectivity Experience</h1>
+            <h1 className="main-heading">Transform the Way You Connect with iCell Mobile!</h1>
             <p className="main-paragraph">
-            Stay connected with iCell Mobile—your reliable network for seamless SIM activation, high-speed data, and flexible packages, all designed for maximum convenience and performance.
+            Experience a new era of connectivity with iCell Mobile—your trusted network for instant SIM activation, ultra-fast data, and tailored packages that fit your lifestyle.
             </p>
           </div>
         </div>
       </div>
 
       {/* Product Section */}
-      <div className="container-fluid content-container py-5">
-        <div className="row product-container align-items-center">
-          <div className="col-lg-6 col-md-12 text-center">
-            <img src={sim3g} className="product-image img-fluid" alt="Product" />
-          </div>
+ 
+ 
+ {/* {/* buy sim component  */}
+ <div className="why-onic-container">
+       <h2 className="text-center1">The Future of Connectivity!       </h2>
+       <div className="onic-content">
+         {/* Left Side Image */}
+         <div className="image-container">
+           <img src={imag1} alt="Happy User" className="onic-image" />
+         </div>
+ 
 
-          <div className="col-lg-6 col-md-12 product-info text-center text-lg-start">
-            <h1 className="product-title">iCell Mobile eSIM + 3GB Data (7 Days) <br></br></h1>
-            <ul className="features-list">
-              <li>
 
-                                <span className="highlight1">Save up to 50%</span>
-
-              or more on data and airtime every month{" "}
-              </li>
-              <li>
-                <span className="highlight1">Fully digital</span>, no physical card required.
-              </li>
-              <li>
-                Please ensure that your device is <span className="highlight1">eSIM compatible</span> before ordering.
-              </li>
-              <li>
-                Access to all our <span className="highlight1">non-expiring</span> and expiring specials!
-              </li>
-              <li>
-                Easily manage your usage and <span className="highlight1">recharge safely</span> within our App.
-              </li>
-              <li>
-                Experience better nationwide connectivity with our reliable <span className="highlight1">eSIM technology</span>.
-              </li>
-              <li>
-                <span className="highlight1">Includes 3GB of Data valid for 7 days from activation.</span>
-              </li>
-            </ul>
-
-            <div className="price-container">
-              <span className="discounted-price">R 39.00</span>
-              <span className="original-price">R 314.00</span>
-            </div>
-
-            <div className="quantity-controls d-flex justify-content-center justify-content-lg-start align-items-center gap-2 mt-3">
-              <div className="d-flex align-items-center custombtn">
-                <button className="btn" onClick={decreaseQuantity}>
-                  &lt;
-                </button>
-                <p className="quantity-number mx-3 my-0">{quantity}</p>
-                <button className="btn" onClick={increaseQuantity}>
-                  &gt;
-                </button>
-              </div>
-              <button className="btn add-to-cart" onClick={() => handleAddToCart(cards[0])}>
-                Add to Cart
-              </button>
-            </div>
-
-            <hr className="divider" />
-
-            <div className="action-buttons d-flex justify-content-between align-items-center">
-              <button className="btn whatsappbtn">
-                <FaWhatsapp />
-              </button>
-              <p className="view-detail m-0" onClick={() => navigate("/details-page")}>
-                View Detail →
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+         {/* Right Side Accordion */}
+         <div className="accordion-container">
+           {accordionData.map((item, index) => (
+             <div key={index} className="accordion-item active">
+               <div className="accordion-title accordiontitle">{item.title}</div>
+               <div className="accordion-content">{item.answer}</div>
+             </div>
+           ))}
+         </div>
+       </div>
+ 
+       {/* Button */}
+       <div className="text-center1 mt-3">
+         <button className="see-plans-btn">Add to cart </button>
+       </div>
+     </div>
+ 
+ 
+ 
+ 
 
       {/* Other SIM Container */}
       <div className="carousel-container1 container-fluid py-5">
@@ -246,38 +260,45 @@ const ESIM = ({ addToCart }) => {
         Introducing Icell Mobile eSIM
       </h1>
       <h3 className="text-xl md:text-2xl text-gray-700">
-        Revolutionize Your Connectivity Experience
+      Experience Next-Gen Connectivity with iCell Mobile eSIM!
+
       </h3>
       <p className="esimpara text-lg text-gray-600 mx-auto mt-4 max-w-4xl leading-relaxed">
-        Say hello to the future with <strong>Icell Mobile eSIM!</strong> A fast, seamless, and fully digital way to stay
-        connected. If your device supports eSIM, activation is instant—no waiting, no physical SIM swaps. Enjoy all the
-        benefits of a traditional SIM, but pre-installed and hassle-free for ultimate convenience.
+      Say goodbye to traditional SIM cards and hello to the future with iCell Mobile eSIM! This fast, seamless, and fully digital solution lets you stay connected effortlessly—no physical SIM swaps, no waiting. If your device supports eSIM, activation is instant for the ultimate convenience.
+
       </p>
       <div className="mt-6 text-left max-w-3xl mx-auto">
-        <p className="text-xl font-semibold text-gray-800">Getting started is simple:</p>
+        <p className="text-xl font-semibold text-gray-800">Getting Started is Easy:        </p>
         <ul className="mt-3 space-y-3 text-lg text-gray-700">
           <li className="flex items-center space-x-3">
             <span className="text-2xl">1️⃣</span>
-            <span>Check eSIM compatibility on your device</span>
+            <span>No More Physical SIM Cards – Enjoy a completely digital experience with instant activation.
+            </span>
           </li>
           <li className="flex items-center space-x-3">
             <span className="text-2xl">2️⃣</span>
-            <span>Choose from our eSIM Starter Packs: 3GB, 10GB, or 25GB</span>
+            <span> Quick & Hassle-Free Setup – No waiting, just scan your eSIM QR code and get connected in minutes.
+            </span>
           </li>
           <li className="flex items-center space-x-3">
             <span className="text-2xl">3️⃣</span>
-            <span>Complete RICA verification via WhatsApp, scan your eSIM QR code, and you're connected!</span>
+            <span>Use Dual SIM Functionality – Keep your primary number while using eSIM for extra flexibility.
+            </span>
+          </li>
+
+          <li className="flex items-center space-x-3">
+            <span className="text-2xl">4️⃣ </span>
+            <span>Reliable Nationwide Coverage – Stay connected anywhere with strong and stable network performance.
+
+            </span>
           </li>
         </ul>
       </div>
       <p className="mt-6 text-lg text-gray-600 max-w-4xl mx-auto">
-        Not eSIM-compatible? No worries! Our <strong>physical SIM cards</strong> are coming soon to keep everyone
+      Not eSIM-compatible? No worries! Our <strong>physical SIM cards</strong> are coming soon to keep everyone
         connected.
       </p>
-      <p className="mt-6 text-lg font-medium text-gray-800 max-w-4xl mx-auto">
-        Join the digital revolution today and experience a smarter, faster, and hassle-free way to stay connected with
-        <strong> Icell Mobile eSIM</strong>.
-      </p>
+    
     </div>
 
         <Slider {...settings}>
@@ -303,65 +324,16 @@ const ESIM = ({ addToCart }) => {
         </Slider>
       </div>
 
-      {/* New Card Section */}
-      <div className="container my-5 newcards">
-        {/* Step 1 */}
-        <div className="row step-container">
-          <div className="col-md-4">
-            <img src={checkass} alt="Check Compatibility" className="img-fluid rounded imagcard" />
-          </div>
-          <div className="col-md-7 col-xl-7 col-sm-7 d-flex align-items-center">
-            <div>
-              <h6 className="step-title">Step 1:</h6>
-              <h2 className="step-heading">Check compatibility</h2>
-              <p>Ensure your device supports eSIM before getting started. Follow the simple guide below to verify compatibility. ✅📱</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Step 2 */}
-        <div className="row step-container flex-row-reverse">
-          <div className="col-md-4">
-            <img src={imag1} alt="Purchase eSIM" className="img-fluid rounded imagcard" />
-          </div>
-          <div className="col-md-7 col-xl-7 col-sm-7 align-items-center">
-            <div>
-              <h6 className="step-title">Step 2:</h6>
-              <h2 className="step-heading">Purchase your eSIM</h2>
-              <p>After you've purchased your eSIM Starter Pack, your eSIM and eSIM activation guide will be sent to your email address.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Step 3 */}
-        <div className="row step-container">
-          <div className="col-md-4">
-            <img src={checkass2} alt="Check Compatibility" className="img-fluid rounded imagcard" />
-          </div>
-          <div className="col-md-7 col-xl-7 col-sm-7 d-flex align-items-center">
-            <div>
-              <h6 className="step-title">Step 3:</h6>
-              <h2 className="step-heading">RICA on WhatsApp</h2>
-              <p>Activate and RICA your eSIM effortlessly! 📲 Simply send "RICA" to  <span onClick={handleWhatsAppClick} style={{ cursor: "pointer" }}>+27 0769675814 </span> on WhatsApp to get started. All you need is your ID or Passport! ✅</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Step 4 */}
-        <div className="row step-container flex-row-reverse">
-          <div className="col-md-4">
-            <img src={checkass3} alt="Purchase eSIM" className="img-fluid rounded imagcard" />
-          </div>
-          <div className="col-md-7 col-xl-7 col-sm-7 align-items-center">
-            <div>
-              <h6 className="step-title">Step 4:</h6>
-              <h2 className="step-heading">Activate your eSIM</h2>
-              <p>After completing RICA, you'll receive your eSIM via email. Simply scan the QR code, and your eSIM will activate automatically on your device! 📱🚀</p>
-            </div>
-          </div>
-        </div>
+ {/* New Card Section */}
+      <div className="container">
+     
+      <div className="grid">
+        {features.map((feature, i) => <FeatureCard key={i} {...feature} />)}
       </div>
+    </div>
 
+
+     
       <Footer />
     </>
   );

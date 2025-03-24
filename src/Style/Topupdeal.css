@@ -1,44 +1,336 @@
-.topupdealcontainer {
-    background-image: url("../assets/5Gimg.jpg");
-    width: 100%;    
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* This fixes the background image */
-}
-.topupdealheading {
-    color: #797777;
-    font-size: 3.5rem;
-    padding: 7% 8% 0;
-    line-height: 1.1;
-    text-align: center;
-    font-weight: 900;
-    
+
+
+.description {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  color: #000000; /* Neutral text color */
+  padding: 0 20px; /* Add padding for smaller screens */
 }
 
-.impword{   
-    color: #42cd2c;
-    font-weight: 600;
-}
-.filtercolor {
-    background-color: #42cd2c !important;
-    border-color: #42cd2c !important;
-    color: white !important;
+.head {
+  font-size: 4.5rem; /* Large font size for heading */
+  font-weight: 800; /* Bold text for emphasis */
+  color: #000000; /* Vibrant color for heading */
+  margin-bottom: 30px; /* Spacing below heading */
+
+background: linear-gradient(to right, #393939,#65cb65,#05c134, #4ab03d,#c74b4b,#973737e4, hsl(7, 78%, 45%));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
-.filtercolor:hover {
-    background-color: #39be24 !important;
-    border-color: #31bd1c !important;
-    color: white !important;
-}
-.priceclr{
-    color: #39be24;
+.description p {
+  font-size: 1.2rem; /* Slightly larger text for better readability */
+  line-height: 1.2; /* Increase line height for readability */
+  color: #000000; /* Neutral text color */
+  max-width: 800px; /* Limit width for readability */
+  margin: 0 auto; /* Center text block */
 }
 
-@media (max-width: 396px) {
-    .topupdealheading {
-        font-size: 2.5rem;
-        padding: 50% 8% 0;
 
-    }
+.after-panel{
+/* background-color: black; */
+font-size: 1.5rem; /* Slightly larger text for better readability */
+line-height: 1.8; /* Increase line height for readability */
+color: #000000; /* Neutral text color */
+max-width: 800px; /* Limit width for readability */
+margin: 0 auto; /* Center text block */
+
+
 }
+
+
+.panels-wrapper {
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  position: relative;
+  margin-top: 50px;
+  background-color: black;
+}
+.buttonstart{
+  display: inline-block;
+  padding: 10px 0px;
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 20px;
+  background:#00bf63;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+ 
+}
+.day1packg{
+  margin-top: 150px;
+}
+.day1packg1{
+  margin-top: 250px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel {
+  height: 700px;
+  position: sticky;
+  top: 0;
+  margin-top: 50px;
+  width: 35%;
+  border-radius: 40px;
+  margin-left: 30%;
+  box-shadow: 10px 10px 40px rgba(201, 37, 37, 0.2);
+  background: linear-gradient(145deg, rgb(243, 243, 243), rgb(255, 255, 255));
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+.panel:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.panel h1 {
+  font-size: 2.1rem;
+  color: #000000;
+  margin-left: 30px;
+  font-weight: 700;
+  padding-top: 20px;
+}
+.panel p {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0px 0;
+}
+
+.panel ul li {
+  font-size: 1.2rem;
+  color: #000000;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center; /* Ensures the text aligns with the icon */
+  margin-left: 35px;
+  position: relative; /* Needed for the tick icon positioning */
+  font-weight: 600;
+}
+
+.panel ul li::before {
+  content: "✔"; /* Tick icon */
+  color: #000000; /* Green color for the tick */
+  font-size: 1rem;
+  margin-right: 10px;
+  position: absolute;
+  left: -25px; /* Adjust position relative to the text */
+
+  margin-left: 20px;
+
+}
+
+.priceshow{
+
+  font-size: 3.4rem;
+  color: #000000;
+  font-weight: 900;
+}
+.line{
+  font-size: 4rem;
+  color: #000000;
+  height: 300px;
+  width:100%;
+
+  background-color: #000000;
+
+}
+
+
+.panel.red {
+  background-color: red;
+}
+
+.panel.orange {
+  background-color: orange;
+}
+
+.panel.purple {
+  background-color: purple;
+}
+
+.panel.gray {
+  background-color: gray;
+}
+
+.line {
+  height: 2px;
+  width: 90%;
+  margin: 15px auto;
+  background: linear-gradient(to right, #000000, #ff0000);
+  border-radius: 4px;
+}
+
+button:hover {
+  background: linear-gradient(to right, #580707, #d40000);
+  transform: translateY(-3px);
+}
+
+.clienttext{
+  height: 100vh;
+}
+.main-headingcli{
+  font-size: 2.5rem;
+  color: #000000;
+  font-weight: 800;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+}
+.animate-scroll{
+  height: 400px;
+  width: 2000px;
+  margin-top: 90px;
+}
+
+
+
+
+
+.items__wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 100px;
+  top: 30%;
+}
+
+.items__wrapper > .item {
+  font-size: 34px;
+  color: red;
+}
+
+.items__wrapper > .item.active {
+  font-size: 40px;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .panel {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .items__wrapper {
+    left: 50px;
+    top: 25%;
+  }
+
+  .items__wrapper > .item {
+    font-size: 30px;
+  }
+
+  .items__wrapper > .item.active {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .items__wrapper {
+    left: 20px;
+    top: 20%;
+  }
+
+  .items__wrapper > .item {
+    font-size: 28px;
+  }
+
+  .items__wrapper > .item.active {
+    font-size: 34px;
+  }
+  .panel h1 {
+    font-size: 1rem;
+    color: #000000;
+  
+  }
+
+.priceshow{
+
+  font-size: 2.4rem;
+  color: #000000;
+  font-weight: 900;
+}
+
+}
+
+@media (max-width: 480px) {
+  .panel {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .items__wrapper {
+    left: 10px;
+    top: 15%;
+  }
+
+  .items__wrapper > .item {
+    font-size: 24px;
+  }
+
+  .items__wrapper > .item.active {
+    font-size: 30px;
+  }
+
+  .head {
+    font-size: 1.5rem;
+
+  }
+  .day1packg{
+    margin-top: 100px;
+  }
+  .day1packg1{
+    margin-top: 200px;
+  
+  }
+}
+
+@media (max-width: 850px) {
+  .day1packg{
+    margin-top: 100px;
+  }
+  .day1packg1{
+    margin-top: 200px;
+  
+  }
+}
+
+
+

@@ -9,7 +9,7 @@ const Store = () => {
     <div className=" d-flex justify-content-center align-items-center">
       <div className="coming-soon text-center">
         <h1 className="display-1 fw-bold">Coming Soon</h1>
-        <p className="lead">Stay tuned for our  amazing product !</p>
+        <p className="lead">Stay tuned for our  amazing product!</p>
         <div className="spinner-border text-primary" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>

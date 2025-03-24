@@ -1,10 +1,14 @@
+
+
 import React from "react";
 import { FaHeadset, FaShippingFast, FaUsers, FaLock } from "react-icons/fa";
 import Navbar from "./Navbar";
-import power2sell2 from "./assets/power2sell2.png";
+import power2sell2 from "./assets/power2sell2.jpg";
 import { useNavigate } from "react-router-dom";
 import "./Style/powertosell.css";
 import Footer from "./Footer.jsx"
+import { FaCode, FaHandshake } from "react-icons/fa"; 
+import powertosell from "./assets/powertosell.png";
 
 const Power2Sell = () => {
 
@@ -16,125 +20,140 @@ const Power2Sell = () => {
   };
   const navigate = useNavigate();
 
+  
+  const contextnav = () =>{
+    navigate('/Contactus');
+  
+  
+  }
+
+
+  const cards = [
+    { title: "Turn Sales into Success with iCell Mobile!", text: "Step into a world of opportunity as an iCell Mobile reseller! Earn high commissions on every sale, turning each transaction into steady income. The more you sell, the more you grow—building a reliable and scalable revenue stream for your business. 💰" },
+    { title: "Unleash New Opportunities with iCell Mobile!", text: "Transform your business by offering high-demand, budget-friendly mobile services that keep customers coming back. As an iCell Mobile partner, you gain exclusive tools, expert guidance, and the flexibility to scale at your own pace—whether you're just starting out or looking to expand. 📈" },
+    { title: "Fueling Success", text: " We’re more than just a network—we’re your partner in growth. Whether you're an ambitious entrepreneur or a thriving small business, we equip you with expert training, valuable resources, and hands-on support to help you scale with confidence. 🚀📈" },
+    { title: "Your Growth, Our Commitment!", text: "We believe in empowering entrepreneurs with the tools to succeed. That’s why we provide ongoing training, marketing support, and a seamless operational framework to help you maximize your earning potential. With iCell Mobile, you’re not just selling a service—you’re building a brand, creating opportunities, and securing a brighter future." },
+    { title: "Turn Ambition into Action with iCell Mobile!", text: "Dream big and achieve more with iCell Mobile! Whether you're a solo entrepreneur or a small business owner, we provide you with a proven business model, cutting-edge technology, and a strong support network to help you grow. Take control of your success and build a thriving business with us." },
+  ];
+
+
   return (
     <>
-      {/* Main Blog Heading Section */}
-      <div className="powertosellmainheading">
-      <h1 style={{ paddingTop: "1px" }}></h1>
+   <div className="container-fluid main-containerofpower2sell ">
+  <div className="row">
+    <div className="col-12">
+      <Navbar />
+    </div>
+  </div>
 
-        <Navbar />
-        <div className="text-container text-white overlay">
-          <h1 className="powerheading">
-          Join the <span className="mainword2">iCell Mobile</span> Reseller Network Today!
-          </h1>
-          <p className="lead power2sellparg">
-          Partner with us to deliver affordable, high-quality mobile services across South Africa. Apply now, expand your business, and enjoy continuous earnings! 📱          </p>
-        </div>
+  {/* Main Section */}
+  <div className="row align-items-center main-section1  ">
+    {/* Text Section */}
+    <div className="col-md-6  col-md-6 col-sm-6 text-section1 ">
+      <h1 className="main-heading1">
+        <span className="mainword1">Partner with iCell Mobile</span>
+      </h1>
+      <p className="main-paragraph1">
+      Join us in bringing affordable, high-quality mobile services to more people. As a reseller, you’ll grow your business while keeping communities connected.
+      </p>
+      <button className="startbutton button" onClick={contextnav}>Become a partner</button>
+    </div>
+
+    {/* Image Section */}
+    <div className="col-md-6  col-md-6 col-sm-6 image-section1 ">
+      <img 
+        src={powertosell}
+        alt="Creative Design"
+        className="img-fluid rounded-lg shadow-md powertosellmainimage1"
+      />
+    </div>
+  </div>
+</div>
+
+{/* contect with us  */}
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* this is about card  */}
+
+
+    <div className="wrapper">
+      <div className="scroll-cards">
+        <h1 className="growyourbusiness">Grow Your Business with iCell Mobile!</h1>
+        {cards.map((card, index) => (
+          <article
+            key={index}
+            className="scroll-cards__item"
+            style={{ transform: `translate(${(index - 1) * 10}px, ${(index - 1) * 10}px)` }}
+          >
+            <h2>{card.title}</h2>
+            <p>{card.text}</p>
+          </article>
+        ))}
       </div>
+    </div>
 
-      {/* Why Become Section */}
-      <div className="py-5 ">
-        <div className="container">
-          <h2 className="text-center mb-5 section-heading">
-          Why Partner with <span className="mainword2">iCell Mobile</span> as a Reseller?
-          </h2>
-          <div className="row g-4">
-            <div className="col-lg-4">
-              <div className="card shadow h-100 text-center p-4 cardspower">
-                <h3 className="mb-3">Boost Your Earnings with iCell Mobile!</h3>
-                <p>
-                As an iCell Mobile reseller, enjoy continuous income on every sale. With competitive commissions, the more you sell, the more you earn—creating a steady and growing revenue stream for your business! 💰</p>              </div>
-            </div>
 
-            <div className="col-lg-4">
-              <div className="card shadow h-100 text-center p-4 cardspower">
-                <h3 className="mb-3">Expand Your Business with iCell Mobile</h3>
-                <p>
-                Partnering with iCell Mobile gives you the opportunity to grow your business by offering affordable, high-demand mobile services. Whether you're an entrepreneur or a small business owner, you'll have the resources, support, and flexibility to succeed! 📈             </p>
+
+
+
+    {/* this is the support section  */}
+
+    <div className="container my-5">
+      <div className="row align-items-center">
+        {/* Left Side - Text Section */}
+        <div className="col-lg-6 col-md-12">
+          <h1 className="title">How to Become an iCell Mobile Reseller – Your Path to Success!
+</h1>
+          <p className="subtitle">
+            <strong>The iCell Mobile Reseller Ecosystem</strong>
+          </p>
+
+          {/* Tech & Solution Partners in one row */}
+          <div className="row">
+            {/* Tech Partners */}
+            <div className="col-md-6 text-center">
+              <div className="icon-container">
+              <FaCode className="icon" /> {/* React Icon */}
               </div>
+              <h3 className="section-title">Sales Partners</h3>
+              <p className="section-text">
+              Sales Partners are individuals and businesses looking to generate income by selling iCell Mobile services, including airtime, data bundles, and SIM activations. Whether you're starting a side hustle or expanding your existing business, you’ll earn commissions on every sale while helping customers stay connected.
+              </p>
+            
             </div>
 
-            <div className="col-lg-4">
-              <div className="card shadow h-100 text-center p-4 cardspower">
-                <h3 className="mb-3">Empowering Entrepreneurs & Small Businesses</h3>
-                <p>
-                At iCell Mobile, we’re dedicated to helping entrepreneurs and small businesses thrive. Enjoy comprehensive support, training, and resources to grow your business with confidence! 🚀📈     </p>
+            {/* Solution Partners */}
+            <div className="col-md-6 text-center">
+              <div className="icon-container">
+              <FaHandshake className="icon" /> {/* React Icon */}
               </div>
+              <h3 className="section-title">Business Partners</h3>
+              <p className="section-text">
+              Business Partners go beyond sales, offering end-to-end mobile solutions. This includes setting up reseller networks, providing customer support, and integrating mobile services into their businesses. If you’re looking for long-term revenue and business expansion, this is the perfect model for you.              </p>
+              <button className="startbutton button" onClick={handleWhatsAppClick}>Apply Now</button>
+
             </div>
+
           </div>
         </div>
-      </div>
 
-      {/* CEO Message Section */}
-      <div className="container my-5 howitwork">
-        <div className="row align-items-center g-4">
-          {/* Text Section */}
-          <div className="col-lg-6">
-          <h2 className="work-heading">How It Works</h2>
-        <p className="ceoparagraph mt-3">
-          Thank you for your interest in becoming an iCell Mobile reseller!
-          <br />
-          <br />
-          We’re excited to team up with passionate individuals and businesses to bring affordable, high-quality mobile services to more people. As a reseller, you’ll have the chance to grow your business while helping your community stay connected.
-          <br />
-          <br />
-          At iCell Mobile, we support entrepreneurs by providing the tools and guidance needed for success. To get started, just fill out the form with accurate details—this helps us review your application properly.
-          <br />
-          <br />
-          We believe in honesty and trust. That’s why all resellers must follow our Terms and Conditions. Once you submit your application, our team will review it within 5-7 business days and let you know the next steps.
-          <br />
-          <br />
-          We can’t wait to work with you!
-        </p>
-            <button className="btn mt-4 applybtn"  onClick={() => navigate("/Contactus")}>
-              Apply Today →
-            </button>
-          </div>
-
-          {/* Image Section */}
-          <div className="col-lg-6">
-            <img src={power2sell2} alt="Creative Design" className="img-fluid rounded " />
-          </div>
+        {/* Right Side - Image */}
+        <div className="col-lg-6 col-md-12 text-center">
+          <img src={power2sell2} alt="Business Collaboration" className="ecosystem-image" />
         </div>
       </div>
-
-      {/* Features Section */}
-      <div className="container my-5">
-        <div className="row text-center">
-          <div className="col-md-3 d-flex flex-column align-items-center">
-            <FaHeadset size={40} className="mb-3  iconcolor" style={{color:"#3fbb2b"}}/>
-            <h5 className="fw-bold">Customer Care</h5>
-            <p className="text-muted">
-              Need any help? Please send us a WhatsApp on 
-              <a onClick={handleWhatsAppClick} className="text-decoration-none"   style={{ cursor: "pointer" }}  >
-               0769675814
-              </a>
-            </p>
-          </div>
-          <div className="col-md-3 d-flex flex-column align-items-center">
-            <FaShippingFast size={40} className="mb-3 iconcolor" />
-            <h5 className="fw-bold">Countrywide Shipping</h5>
-            <p className="text-muted">
-              Get a SIM shipped for FREE to your doorstep, or receive an eSIM sent to your email instantly!
-            </p>
-          </div>
-          <div className="col-md-3 d-flex flex-column align-items-center">
-            <FaUsers size={40} className="mb-3 iconcolor" />
-            <h5 className="fw-bold">Join a Community</h5>
-            <p className="text-muted">
-              Join a community where you save money every month! We've got your back!
-            </p>
-          </div>
-          <div className="col-md-3 d-flex flex-column align-items-center">
-            <FaLock size={40} className="mb-3 iconcolor" />
-            <h5 className="fw-bold">Secure Payment</h5>
-            <p className="text-muted">
-              Your payment information is processed securely.
-            </p>
-          </div>
-        </div>
-      </div>
-      <Footer></Footer>
+    </div>
+<Footer></Footer>
     </>
   );
 };
