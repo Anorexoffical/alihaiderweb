@@ -115,7 +115,7 @@ const ProductList = () => {
             </table>
             <div className="d-flex justify-content-between align-items-center border-top pt-3">
               <h4>Total: R {calculateTotal().toFixed(2)}</h4>
-              <button className=" callformeeting  checkout "onClick={() => navigate("/checkout")}>
+              <button className=" callformeeting  checkout "onClick={() => navigate("/Checkout")}>
                 Checkout
               </button>
             </div>

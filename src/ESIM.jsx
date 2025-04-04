@@ -124,26 +124,31 @@ const ESIM = ({ addToCart }) => {
       });
     };
 
-  const handleAddToCart = (product) => {
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
-  
-    if (existingItemIndex !== -1) {
-      // If item exists, increase quantity
-      cartItems[existingItemIndex].quantity += quantity;
-    } else {
-      // Prevent adding more than 4 unique items
-      if (cartItems.length >= 4) {
-        itamlimitnotification();
-        return;
+    const handleAddToCart = (product) => {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
+      
+      if (existingItemIndex !== -1) {
+        // If item exists, increase quantity
+        cartItems[existingItemIndex].quantity += 1; // Assuming quantity is 1 by default
+      } else {
+        // Prevent adding more than 4 unique items
+        if (cartItems.length >= 4) {
+          itamlimitnotification();
+          return;
+        }
+      
+        cartItems.push({ 
+          ...product, 
+          quantity: 1, // Default quantity
+          price: parseFloat(product.subtitle.replace("R ", "")) || 0, // Handle potential missing price
+          image: product.image // Include the image
+        });
       }
-  
-      cartItems.push({ ...product, quantity, price: parseFloat(product.subtitle.replace("R ", "")) });
-    }
-  
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    navigate("/productlist");
-  };
+      
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      navigate("/productlist");
+    };
 
 
   //this if for the esim
@@ -174,7 +179,7 @@ const ESIM = ({ addToCart }) => {
 
   // featere of our application 
   const FeatureCard = ({ title, description, tag, image }) => (
-    <motion.div className="card" whileHover={{ scale: 1.05 }}>
+    <motion.div className="cardesim" whileHover={{ scale: 1.05 }}>
       <img src={image} alt={title} className="card-img" />
       <span className="card-tag">{tag}</span>
       <h3 className="card-title">{title}</h3>
@@ -221,33 +226,44 @@ const ESIM = ({ addToCart }) => {
       {/* Product Section */}
  
  
- {/* {/* buy sim component  */}
- <div className="why-onic-container">
-       <h2 className="text-center1">The Future of Connectivity!       </h2>
-       <div className="onic-content">
-         {/* Left Side Image */}
-         <div className="image-container">
-           <img src={imag1} alt="Happy User" className="onic-image" />
-         </div>
- 
+       {/* end of the 2nd component  */}
+
+<div className="buy-sim-container">
+  <h2 className="buy-sim-text-center">The Future of Connectivity!</h2>
+  <div className="buy-sim-content">
+    {/* Left Side Image */}
+    <div className="buy-sim-image-container">
+      <img src={imag1} alt="Happy User" className="buy-sim-image" />
+    </div>
+
+    {/* Right Side Accordion */}
+    <div className="buy-sim-accordion-container">
+      {accordionData.map((item, index) => (
+        <div key={index} className="buy-sim-accordion-item active">
+          <div className="buy-sim-accordion-title accordiontitle">{item.title}</div>
+          <div className="buy-sim-accordion-content">{item.answer}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Button */}
+  <div className="buy-sim-text-center mt-3">
+    <button 
+      className="buy-sim-btn" 
+      onClick={() => handleAddToCart({
+        title: "6 GB ESIM", // or any other title you want
+        subtitle: "R 9.00", // adjust the price as needed
+        image: imag1 // include the image
+      })}
+    >
+      Add to Cart
+    </button>
+  </div>
+</div>
 
 
-         {/* Right Side Accordion */}
-         <div className="accordion-container">
-           {accordionData.map((item, index) => (
-             <div key={index} className="accordion-item active">
-               <div className="accordion-title accordiontitle">{item.title}</div>
-               <div className="accordion-content">{item.answer}</div>
-             </div>
-           ))}
-         </div>
-       </div>
- 
-       {/* Button */}
-       <div className="text-center1 mt-3">
-         <button className="see-plans-btn">Add to cart </button>
-       </div>
-     </div>
+
  
  
  
@@ -301,28 +317,54 @@ const ESIM = ({ addToCart }) => {
     
     </div>
 
-        <Slider {...settings}>
-          {cards.map((card) => (
-            <div key={card.id} className="carousel-card position-relative p-3">
-              <div className="image-container position-relative">
-                <div className="discount-badge position-absolute top-0 start-0 bg-danger text-white rounded px-2 py-1">
-                  {card.discount}% OFF
-                </div>
-                <img src={card.image} alt={card.title} className="carousel-image rounded w-100 img-fluid" />
-              </div>
+    {/* cards  */}
 
-              <div className="carousel-text position-absolute bottom-10 start-10 text-white p-2">
-                <span className="subtitle text-white mt-2">{card.subtitle}</span>
-                <h2 className="title h5 text-white mt-2">{card.title}</h2>
-              </div>
 
-              <button className="add-to-cart-btn" onClick={() => handleAddToCart(card)}>
-                Add to Cart
-              </button>
-            </div>
-          ))}
-        </Slider>
+
+
+
+      <Slider {...settings}>
+  {cards.map((card) => (
+    <div key={card.id} className="carousel-card-getsim position-relative p-3">
+      {/* Image Container (Relative for Proper Positioning) */}
+      <div className="image-containerget position-relative">
+        {/* Discount Badge on Image */}
+        <div className="discount-badgeget position-absolute top-0 start-0 bg-danger text-white rounded px-2 py-1">
+        {card.discount}% OFF
+          
+        </div>
+
+        <img
+          src={card.image}
+          alt={card.title}
+          className="carousel-imageget rounded w-100 img-fluid"
+        />
       </div>
+
+      <div className="carousel-text position-absolute bottom-10 start-10 text-white p-2">
+        <span className="subtitle small opacity-75">{card.subtitle}</span>
+        <h2 className="title h5 text-white mt-2">{card.title}</h2>
+      </div>
+
+      <button className="add-to-cart-btn"  onClick={() => handleAddToCart(card)}>Add to Cart</button>
+    </div>
+  ))}
+</Slider>
+
+      </div>
+
+
+      
+
+
+
+
+
+
+
+
+
+
 
  {/* New Card Section */}
       <div className="container">

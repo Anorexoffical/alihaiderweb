@@ -15,12 +15,9 @@ import slide2  from "./assets/slider2.png";
 import slide3 from "./assets/slider3.png";
 import eSIM from "./assets/esim.png"
 import eSIM2 from "./assets/esim2.png"
-import productimg from "./assets/productimg.png"
-import mainbackgroundimg from "./assets/mainbackgroundimg.png"
 import mainpackg1 from "./assets/mainpackg1.png"
 import mainpackg2 from "./assets/maingpackg2.png"
-import mainpackg3 from "./assets/mainpackg3.png"
-import mainpackg4 from "./assets/mainpackg4.png"
+
 
 
 
@@ -29,9 +26,9 @@ import mainpackg6 from "./assets/mainpackg6.png"
 import mainpackg7 from "./assets/mainpackg7.png"
 import mainpackg8 from "./assets/mainpackg8.png"
 
-import features1 from "./assets/features1.png"
-import features2 from "./assets/features2.png"
-import features3 from "./assets/features3.png"
+import features1 from "./assets/mobilefet1.png"
+import features2 from "./assets/mobilefet2.png"
+import features3 from "./assets/mobillefet3.png"
 
 
 
@@ -40,7 +37,6 @@ import  sms from "./assets/sms.png"
 
 import { useNavigate } from "react-router-dom";
 
-import image from "./assets/image.png";
 
 
 
@@ -106,36 +102,41 @@ const aboutnav = () =>{
 
 // add to cart 
 
-  const itamlimitnotification = () => {
-      toast.warn("You can only have 4 unique items in your cart at a time!", {
-        autoClose: 2000,
-      });
-    };
+const itamlimitnotification = () => {
+  toast.warn("You can only have 4 unique items in your cart at a time!", {
+    autoClose: 2000,
+  });
+};
 
-    const handleAddToCart = (product) => {
-      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    
-      const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
-    
-      if (existingItemIndex !== -1) {
-        cartItems[existingItemIndex].quantity += quantity;
-      } else {
-        // Prevent adding more than 4 unique items
-        if (cartItems.length >= 4) {
-          itamlimitnotification();
-          return;
-        }
-        
-        cartItems.push({ ...product, quantity, price: parseFloat(product.subtitle.replace("R ", "")) });
-      }
-    
-      localStorage.setItem("cart", JSON.stringify(cartItems));
-      navigate("/productlist");
-    };
+const handleAddToCart = (product) => {
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingItemIndex = cartItems.findIndex((item) => item.title === product.title);
+  
+  if (existingItemIndex !== -1) {
+    // If item exists, increase quantity
+    cartItems[existingItemIndex].quantity += 1; // Assuming quantity is 1 by default
+  } else {
+    // Prevent adding more than 4 unique items
+    if (cartItems.length >= 4) {
+      itamlimitnotification();
+      return;
+    }
+  
+    cartItems.push({ 
+      ...product, 
+      quantity: 1, // Default quantity
+      price: parseFloat(product.subtitle.replace("R ", "")) || 0, // Handle potential missing price
+      image: product.image // Include the image
+    });
+  }
+  
+  localStorage.setItem("cart", JSON.stringify(cartItems));
+  navigate("/productlist");
+};
 
 
 
-// this section is about the packages 
+
 
   // this is about the our proceesss
 
@@ -214,22 +215,22 @@ const aboutnav = () =>{
 
 const accordionData = [
   {
-    title: "iCell is Limitless",
+    title: "♾️ iCell is Limitless",
     answer:
       "Break free from restrictions with endless connectivity, unlimited calls, and expansive data plans designed for your lifestyle.",
   },
   {
-    title: "iCell is Hassle-Free",
+    title: "✨ iCell is Hassle-Free",
     answer:
       "No confusing contracts, no hidden fees—just simple, transparent plans that put you in control",
   },
   {
-    title: "iCell is Honest",
+    title: " 🤝 iCell is Honest",
     answer:
       "What you see is what you get—clear pricing, no surprises, and complete transparency in every plan.",
   },
   {
-    title: "iCell is Future-Ready",
+    title: "⚡ iCell is Future-Ready",
     answer:
       "Experience innovation with cutting-edge technology, seamless digital solutions, and a network built for the future.",
   },
@@ -359,13 +360,16 @@ const handleWhatsAppClick = () => {
       </div>
       </Fade>
 
-    
-
 </div>
 
+    {/* end of the main section  */}
 
 
-{/* {/* buy sim component  */}
+{/* start of the 2 buy sim component */}
+
+
+
+
 <div className="why-onic-container">
       <h2 className="text-center1">Why choose us </h2>
       <div className="onic-content">
@@ -393,15 +397,19 @@ const handleWhatsAppClick = () => {
 
 
 
+{/* end of the 2 buy sim component */} 
+
+
+{/* starting of the 3rd section */}
 
 
 
 
-    {/* dont warry stay connect  */}
+{/* dont warry stay connect  */}
 
    
 
-    <div className="scroll-container">
+<div className="scroll-container">
       {/* Left Section: Scrollable Text */}
       <div className="text-section">
         <div
@@ -414,7 +422,7 @@ const handleWhatsAppClick = () => {
           <h2 className="clienttestimonailmain" >No limits, just connection       </h2>
        <Fade direction="left"   damping={5000} duration={1000} >
           
-          <h2 className="clienttestimonail">Stayonnected with Ease – 1GB Data for Just R49  </h2>
+          <h2 className="clienttestimonail">Stay Connected with Ease – 1GB Data for Just R49  </h2>
           <p className="clienttestimonailparagrph">
           Perfect for light users, our 1GB Data Plan keeps you connected without breaking the bank. Whether you're checking emails, scrolling social media, or sending quick messages, this affordable plan ensures smooth browsing and uninterrupted communication. Stay online effortlessly at just R49—ideal for your daily essentials!  
           </p>
@@ -463,15 +471,14 @@ const handleWhatsAppClick = () => {
 
 
 
+{/* end of the 3rd section  */}
+
+
+{/* starting of the 4th section  */}
 
 
 
-
-
-
-{/* slider for the product  */}
-
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
       {/* Indicators */}
       
       <div className="carousel-indicators">
@@ -510,10 +517,11 @@ const handleWhatsAppClick = () => {
     </div>
 
 
-      
+{/* end of the 4th section  */}
 
 
-{/* this is infinte loop for the new packages  */}
+{/* starting of the 5th section */}
+
 
 
 <div className="timeline-container" ref={timelineRef}>
@@ -556,37 +564,49 @@ const handleWhatsAppClick = () => {
         <p>No data available to display.</p>
       )}
     </div>
-  
+
+{/* end of the 5th section */}
+
+
+
+{/* starting of the 6th section */}
 
 
 
 
-
-
-
-
-
-
-{/* {/* buy sim component  */}
 <div className="banner container-fluid text-white text-center">
-      <div className="row align-items-center">
-        <div className="col-md-6 text-content">
-          <h1>
-            <span className="highlight">Grab the Liberty Plan – Up to 50% Off!</span>
-          </h1>
-          <p className="offer-text">
-          <span className="highlight-circle">6GB</span>  SIM Card Starter Pack !
-          </p>
-          <p className="offer-text">
-          Only  Grab this deal before it’s gone! Originally ,<span className="highlight-box">R314</span> now only   <span className="highlight-box">R209</span> for a limited time!
-          </p>
-          <button className="btn btn-lg see-plans-btn">Add to cart </button>
-        </div>
-        <div className="col-md-6 image-content">
-          <img src={eSIM2} alt="Promo" className="promo-image" />
-        </div>
+    <div className="row align-items-center">
+      <div className="col-md-6 text-content">
+        <h1>
+          <span className="highlight">Grab the Liberty Plan – Up to 50% Off!</span>
+        </h1>
+        <p className="offer-text">
+          <span className="highlight-circle">6GB</span> SIM Card Starter Pack!
+        </p>
+        <p className="offer-text">
+          Only Grab this deal before it’s gone! Originally, <span className="highlight-box">R314</span> now only 
+          <span className="highlight-box">R209</span> for a limited time!
+        </p>
+        <button 
+          className="btn btn-lg see-plans-btn" 
+          onClick={() => handleAddToCart({ 
+            title: "6GB SIM Card Starter Pack", 
+            subtitle: "R 209",
+            image: eSIM2 // include the image
+          })}
+        >
+          Add to cart
+        </button>
+      </div>
+      <div className="col-md-6 image-content">
+        <img src={eSIM2} alt="Promo" className="promo-image" />
       </div>
     </div>
+  </div>
+
+{/* end of the 6 buy sim component */}
+
+{/* start of the 7th section */}
 
 
 
@@ -624,10 +644,11 @@ Never run out of data or airtime again! With iCell’s easy top-up options, you 
             <img src={features3}  alt="Manage Addons" className="img-fluid" />
           </div>
         </div>
-
-        
       </div>
     </div>
+
+
+
 
 
 

@@ -29,13 +29,11 @@ const Footer = () => {
             />
             {/* Social Media Icons */}
             <div className="d-flex justify-content-center">
-              <a href="https://www.facebook.com/share/1BQ2beiVNr/?mibextid=qi2Omg" className="text-light me-3">
+              <a href="https://www.facebook.com/share/1AD26sk8Kk/?mibextid=qi2Omg" className="text-light me-3">
                 <FaFacebook size={24} />
               </a>
-              <a href="#" className="text-light me-3">
-                <FaTwitter size={24} />
-              </a>
-              <a href="https://www.instagram.com/icellmobile.co?igsh=ZjVhdW40OG4zY3dy" className="text-light me-3">
+            
+              <a href="https://www.instagram.com/icellmobile.co.za?igsh=ZjVhdW40OG4zY3dy" className="text-light me-3">
                 <FaInstagram size={24} />
               </a>
               <a href="#" className="text-light me-3">
@@ -56,19 +54,32 @@ const Footer = () => {
                   Home
                 </a>
               </li>
+           
               <li>
-                <a href="/esim" className="text-black  text-decoration-none">
-                  eSIM
+                <a href="/Getyoursim" className="text-black  text-decoration-none">
+                Getyoursim
                 </a>
               </li>
               <li>
                 <a href="/Topupdeal" className="text-black  text-decoration-none">
-                  Deals
+                Best  Deals
+                </a>
+              </li>
+              
+              <li>
+                <a href="/esim" className="text-black  text-decoration-none">
+                ESIM
+                </a>
+              </li>
+             
+              <li>
+                <a href="/Support" className="text-black  text-decoration-none">
+                  Support
                 </a>
               </li>
               <li>
-                <a href="/Support" className="text-black  text-decoration-none">
-                  Blogs
+                <a href="/Store" className="text-black  text-decoration-none">
+                  Store
                 </a>
               </li>
             </ul>
@@ -88,11 +99,11 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/Power2Sell" className="text-black  text-decoration-none">
                   Terms and Conditions
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -108,11 +119,11 @@ const Footer = () => {
               />
                
               </a>
-              <a href="https://apps.apple.com/za/app/icell-mobile/id6738908389.">
+              <a href="https://apps.apple.com/za/app/icell-mobile/id6738908389">
 
               <img
               src={appstore}
-              alt="Google Play"
+              alt="App Store"
               width={130}
               />
 

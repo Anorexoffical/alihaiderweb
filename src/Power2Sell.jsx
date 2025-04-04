@@ -1,7 +1,6 @@
 
 
 import React from "react";
-import { FaHeadset, FaShippingFast, FaUsers, FaLock } from "react-icons/fa";
 import Navbar from "./Navbar";
 import power2sell2 from "./assets/power2sell2.jpg";
 import { useNavigate } from "react-router-dom";
@@ -56,7 +55,7 @@ const Power2Sell = () => {
       <p className="main-paragraph1">
       Join us in bringing affordable, high-quality mobile services to more people. As a reseller, you’ll grow your business while keeping communities connected.
       </p>
-      <button className="startbutton button" onClick={contextnav}>Become a partner</button>
+      <button className="startbutton buttonpower" onClick={contextnav}>Become a partner</button>
     </div>
 
     {/* Image Section */}
@@ -96,7 +95,7 @@ const Power2Sell = () => {
             style={{ transform: `translate(${(index - 1) * 10}px, ${(index - 1) * 10}px)` }}
           >
             <h2>{card.title}</h2>
-            <p>{card.text}</p>
+            <p className="paragraph">{card.text}</p>
           </article>
         ))}
       </div>
@@ -140,7 +139,7 @@ const Power2Sell = () => {
               <h3 className="section-title">Business Partners</h3>
               <p className="section-text">
               Business Partners go beyond sales, offering end-to-end mobile solutions. This includes setting up reseller networks, providing customer support, and integrating mobile services into their businesses. If you’re looking for long-term revenue and business expansion, this is the perfect model for you.              </p>
-              <button className="startbutton button" onClick={handleWhatsAppClick}>Apply Now</button>
+              <button className="startbutton buttonpower" onClick={handleWhatsAppClick}>Apply Now</button>
 
             </div>
 

@@ -1,8 +1,7 @@
 
-/* General Styles */
-/* .border {
-  border: 2px solid black;
-} */
+
+    /* {this is the main page 1 main container } */
+
 
 .main-container {
   height: 100vh;
@@ -71,565 +70,15 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.ourpartner{
-  font-size: 4.5rem;
-  margin-top: 250px;
-}
+/* end of first component */
 
 
-/* Infinite Scroll Styles */
-.scroller {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 20px 0;
-}
 
-.scroller__inner {
-  display: flex;
-  flex-wrap: nowrap;
-  animation: scroll 20s linear infinite;
-}
 
-.scroller__inner img {
-  max-height: 60px;
-  margin-right: 30px;
-}
-.sliderbtn{
-  background-color:#42cd2c;
-  color: rgb(0, 0, 0);
-  border-radius: 60px;
-  font-weight: 500;
-}
-.sliderbtn:hover{
-  background-color:#42cd2c;
-  color: rgb(255, 255, 255);
 
-}
 
-@keyframes scroll {
-  0% {
-      transform: translateX(0);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
-}
 
-.infinite-card{
-margin-top: 15%;
-}
-
-
-
-
-
-
-
-
-
-/* card desing slider */
-.carousel-img {
-  margin-top: 30px;
-  width: 98%;
-  margin-left: 1%;
-  border-radius: 25px;
-  height: 85vh;
-  object-fit: cover;
-}
-
-.text-container {
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.carousel-caption {
-  bottom: 20%;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .carousel-caption {
-    bottom: 10%;
-  }
-
-  .text-container h2 {
-    font-size: 1.5rem;
-  }
-
-  .text-container p {
-    font-size: 1rem;
-  }
-}
-.bundle-card {
-  background: linear-gradient(135deg, #000000, #000000);
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  padding: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-  height: 300px;
-}
-
-.bundle-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.bundle-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.bundle-card:hover .bundle-image {
-  transform: scale(1.1);
-}
-
-.plus-button {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: white;
-  color: black;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.plus-button:hover {
-  transform: rotate(90deg) scale(1.2);
-}
-
-.viewmorebtn {
-  position: absolute;
-  top: 80px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 30px;
-}
-
-/* Responsive Grid */
-@media (max-width: 1024px) {
-  .bundle-card {
-    margin-bottom: 20px;
-    height: 280px;
-  }
-}
-
-@media (max-width: 768px) {
-  .bundle-card {
-    margin-bottom: 1000px;
-    height: 300px;
-  }
-
-  .bundle-image {
-    height: 200px;
-  }
-
-}
-
-@media (max-width: 991px) {
-    .bundle-image {
-      height: 400px;
-    }
-    .bundle-card {
-      margin-bottom: 1000px;
-      height: 300px;
-    }
-}
-
-@media (max-width: 576px) {
-  .bundle-card {
-    margin-bottom: 1500px;
-    height: 230px;
-  }
-
-  .bundle-image {
-    height: 180px;
-  }
-  .main-heading {
-    font-size: 1.9rem;
-  }
-}
-
-/* // this component is about new packages  */
-
-
-
-
-
-
-/* Timeline Container */
-.timeline-container {
-  width: 100%;
-  background-color: rgb(246, 246, 246);
-  color: black;
-  font-family: Arial, sans-serif;
-  padding: 20px 10px;
-  box-sizing: border-box;
-}
-.headingforprocess{
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #000000;
-  margin-top: 100px;
-}
-
-.timeline-header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  padding: 0 20px;
-  text-align: left;
-}
-
-.timeline-title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.timeline-description {
-  font-size: 16px;
-  color: #555;
-  max-width: 400px;
-}
-
-/* Timeline Section */
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-bottom: 100px; /* Add padding for bottom spacing */
-}
-
-.timeline-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 120px;
-  position: relative;
-  opacity: 0.4; /* Make inactive items less visible */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.timeline-item.active {
-  opacity: 1;
-  transform: scale(1.05); /* Slightly enlarge active item */
-}
-
-.timeline-marker {
-  position: relative;
-  min-width: 50px;
-  height: 50px;
-  margin-right: 20px;
-}
-
-.marker-circle {
-  width: 20px;
-  height: 20px;
-  background-color: #007bff;
-  border: 4px solid #ddd;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 10px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-}
-
-/* Beautified Line */
-.timeline:before {
-  content: "";
-  position: absolute;
-  left: 30px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, #ff5733, #900c3f, #581845);
-  z-index: 0;
-}
-
-.timeline-content {
-  background: #222121;
-  border-radius: 8px;
-  padding: 40px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #ffffff; /* Corrected color */
-}
-
-.timeline-year {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #d30d0d;
-}
-
-.timeline-content p {
-  font-size: 16px;
-  color: #929292;
-}
-
-.timeline-images {
-  display: flex;
-  gap: 15px; /* Increased spacing */
-  margin-top: 15px;
-}
-
-.timeline-image {
-  width: 300px; /* Increased width */
-  height: 350px; /* Increased height */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-  object-fit: cover;
-  margin-left: 40px;
-}
-
-/* Active Marker */
-.timeline-item.active .marker-circle {
-  background-color: #ff0000;
-  border-color: #000000;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .timeline-item {
-    flex-direction: column;
-  }
-
-  .timeline-marker {
-    margin-bottom: 10px;
-  }
-
-  .timeline-content {
-    padding: 20px;
-  }
-
-  .timeline-images {
-    flex-wrap: wrap;
-  }
-
-  .timeline-image {
-    width: 100%;
-    max-width: 120px; /* Slightly smaller for mobile */
-    height: auto;
-  }
-}
-
-
-
-
-
-
-
-/* this section is about the compare imgs  */
-
-
-.comparison-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  background-color: black;
-  border-radius: 12px;
-  z-index: 1; /* Ensure the container is above other elements */
-  box-shadow: 
-    0 12px 24px rgba(255, 255, 255, 0.15), /* Bright outer shadow */
-    0 8px 16px rgba(255, 0, 0, 0.2), /* Subtle red tint shadow */
-    0 4px 6px rgba(236, 3, 3, 0.1); /* Soft inner shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.comparison-heading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #c9c9c9;
-}
-
-.comparison-paragraph {
-  font-size: 16px;
-  color: #cbcbcb;
-  margin-bottom: 20px;
-}
-
-.comparison-slider {
-  max-width: 500px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 
-    0 8px 16px rgb(164, 8, 8), 
-    0 6px 12px rgb(220, 20, 20), 
-    0 4px 6px rgb(0, 0, 0),
-    0 4px 40px rgba(0, 0, 0, 0.3); /* Added blurred shadow */
-  transition: transform 0.88s ease, box-shadow 0.88s ease;
-}
-
-.comparison-slider:hover {
-  transform: scale(1.03);
-  box-shadow: 
-    0 8px 16px rgb(164, 8, 8), 
-    0 6px 12px rgb(220, 20, 20), 
-    0 4px 6px rgb(0, 0, 0),
-    0 12px 40px rgba(0, 0, 0, 0.5); /* Enhanced blur on hover */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* this component is about packege  */
-
-/* Container */
-.scroll-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  min-height: 200vh; /* Long height for scrolling */
-  padding: 0 5%;
-  background-color: rgb(238, 238, 238); /* Dark background */
-  color: rgb(0, 0, 0);
-  border-top-left-radius: 55px;
-  border-top-right-radius: 55px;
-
-}
-.clienttestimonailmain{
-  text-align: center;
-  padding-top: 40px;
-  font-size: 3.5rem;
-  font-weight: 800;
-}
-.clienttestimonail{
-padding-top: 40px;
-font-size: 2.4rem;
-font-weight: 900;
-color: rgb(45, 45, 45);
-
-
-}
-.clienttestimonailparagrph{
-
-  color: rgb(0, 0, 0);
-}
-
-
-.clienttestimonailmain {
-  background: linear-gradient(to right, #00bf63, #00bf63, #00bf63);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.secondtest{
-  padding-top: 40px;
-}
-
-/* Text Section */
-.text-section {
-  flex: 1;
-  max-width: 50%; /* Left section width */
-}
-
-.text-block {
-  margin-bottom: 100px; /* Spacing between text blocks */
-}
-
-.text-block h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.text-block p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Image Section */
-.image-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 50%; /* Right section width */
-  position: sticky;
-  top: 20%; /* Keeps the image in view */
-}
-
-.static-image img {
-  width: 450px; /* Increase the width to make the image larger */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .scroll-container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .text-section {
-    max-width: 100%;
-  }
-
-  .image-section {
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  .static-image img {
-    width: 300px;
-  }
-}
-@media (max-width: 395px) {
- .clienttestimonailmain{
-  font-size: 2.5rem;
-
- }
-}
-
-
-
-
-
-
-
-
-/* this component is about buy sim */
+/* this 2nd component is about buy sim */
 
 /* General Styling */
 .text-center1 {
@@ -800,6 +249,432 @@ color: rgb(45, 45, 45);
   }
 }
 
+
+
+/* end of the 2nd component */
+
+
+/* start of the 3rd component */
+
+/* this component is about packege  */
+
+/* Container */
+.scroll-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 200vh; /* Long height for scrolling */
+  padding: 0 5%;
+  background-color: rgb(238, 238, 238); /* Dark background */
+  color: rgb(0, 0, 0);
+  border-top-left-radius: 55px;
+  border-top-right-radius: 55px;
+
+}
+.clienttestimonailmain{
+  text-align: center;
+  padding-top: 40px;
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+.clienttestimonail{
+padding-top: 40px;
+font-size: 2.4rem;
+font-weight: 900;
+color: rgb(45, 45, 45);
+
+
+}
+.clienttestimonailparagrph{
+
+  color: rgb(0, 0, 0);
+}
+
+
+.clienttestimonailmain {
+  background: linear-gradient(to right, #00bf63, #00bf63, #00bf63);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.secondtest{
+  padding-top: 40px;
+}
+
+/* Text Section */
+.text-section {
+  flex: 1;
+  max-width: 50%; /* Left section width */
+}
+
+.text-block {
+  margin-bottom: 100px; /* Spacing between text blocks */
+}
+
+.text-block h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.text-block p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 50%; /* Right section width */
+  position: sticky;
+  top: 20%; /* Keeps the image in view */
+}
+
+.static-image img {
+  width: 450px; /* Increase the width to make the image larger */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scroll-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .text-section {
+    max-width: 100%;
+  }
+
+  .image-section {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .static-image img {
+    width: 300px;
+  }
+}
+@media (max-width: 395px) {
+ .clienttestimonailmain{
+  font-size: 2.5rem;
+
+ }
+}
+
+
+/* end of the 3rd component */
+
+
+
+
+/* this is the 4th component */
+
+
+/* card desing slider */
+.carousel-img {
+  margin-top: 100px;
+  width: 98%;
+  margin-left: 1%;
+  border-radius: 25px;
+  height: 85vh;
+  object-fit: cover;
+  margin-bottom: 100px;
+}
+
+.text-container {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-caption {
+  bottom: 20%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 10%;
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+}
+
+
+/* For mobile & tablet */
+@media (max-width: 992px) {
+  .carousel-img {
+    margin-top: 50px;
+    height: auto; /* Let height adjust naturally */
+    max-height: 90vh; /* Prevent excessive stretching */
+    object-fit: contain;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .carousel-inner, .carousel-img {
+    display: none !important;
+  }
+}
+
+
+/* end of the 4th component */
+
+/* this is the 5th component */
+
+
+
+/* Timeline Container */
+.timeline-container {
+  width: 100%;
+  background-color: rgb(246, 246, 246);
+  color: black;
+  font-family: Arial, sans-serif;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+.headingforprocess{
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000000;
+  margin-top: 100px;
+}
+
+.timeline-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.timeline-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-description {
+  font-size: 16px;
+  color: #555;
+  max-width: 400px;
+}
+
+/* Timeline Section */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 100px; /* Add padding for bottom spacing */
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 120px;
+  position: relative;
+  opacity: 0.4; /* Make inactive items less visible */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: scale(1.05); /* Slightly enlarge active item */
+}
+
+.timeline-marker {
+  position: relative;
+  min-width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.marker-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border: 4px solid #ddd;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* Beautified Line */
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff5733, #900c3f, #581845);
+  z-index: 0;
+}
+
+.timeline-content {
+  background: #222121;
+  border-radius: 8px;
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff; /* Corrected color */
+}
+
+.timeline-year {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d30d0d;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  color: #929292;
+}
+
+.timeline-images {
+  display: flex;
+  gap: 15px; /* Increased spacing */
+  margin-top: 15px;
+}
+
+.timeline-image {
+  width: 300px; /* Increased width */
+  height: 350px; /* Increased height */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  object-fit: cover;
+  margin-left: 40px;
+}
+
+/* Active Marker */
+.timeline-item.active .marker-circle {
+  background-color: #ff0000;
+  border-color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-marker {
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-images {
+    flex-wrap: wrap;
+  }
+
+  .timeline-image {
+    width: 100%;
+    max-width: 120px; /* Slightly smaller for mobile */
+    height: auto;
+  }
+}
+
+
+/* end of the 5th component */
+
+
+/* this is the 6th component */
+
+
+
+/* buy sim section  */
+
+
+.banner {
+  background-color: rgb(214, 214, 214);
+  padding: 50px 20px;
+  border-radius: 30px;
+  width: 95%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.text-content h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.highlight {
+  color: rgb(45, 45, 45);
+
+}
+
+.light {
+  font-weight: lighter;
+}
+
+.offer-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.highlight-circle {
+  background: rgb(211, 6, 6);
+  color: black;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.highlight-box {
+  background: rgb(211, 6, 6);
+  color: black;
+  padding: 3px 8px;
+  font-weight: bold;
+  border-radius: 10px;
+
+}
+
+.promo-image {
+  margin-top: 40px;
+  max-width: 50%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 25px;
+}
+
+.background-shape {
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  border: 4px solid rgb(17, 255, 0);
+  border-radius: 10px;
+  right: 10%;
+  top: 20%;
+  z-index: 1;
+}
+
+
+
+
+/* end of the 6th component */ 
+
+/* this is the 7th component */
+
+
 /* use mobile application */
 
 .featureheading{
@@ -863,68 +738,4 @@ color: rgb(45, 45, 45);
   }
 }
 
-
-/* buy sim section  */
-
-
-.banner {
-  background-color: rgb(214, 214, 214);
-  padding: 50px 20px;
-  border-radius: 30px;
-  width: 95%;
-  margin-top: 30px;
-}
-
-.text-content h1 {
-  font-weight: bold;
-  font-size: 2.5rem;
-}
-
-.highlight {
-  color: rgb(45, 45, 45);
-
-}
-
-.light {
-  font-weight: lighter;
-}
-
-.offer-text {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.highlight-circle {
-  background: rgb(211, 6, 6);
-  color: black;
-  padding: 3px 8px;
-  border-radius: 10px;
-}
-
-.highlight-box {
-  background: rgb(211, 6, 6);
-  color: black;
-  padding: 3px 8px;
-  font-weight: bold;
-  border-radius: 10px;
-
-}
-
-.promo-image {
-  max-width: 50%;
-  height: auto;
-  position: relative;
-  z-index: 2;
-  border-radius: 25px;
-}
-
-.background-shape {
-  position: absolute;
-  width: 100px;
-  height: 120px;
-  border: 4px solid rgb(17, 255, 0);
-  border-radius: 10px;
-  right: 10%;
-  top: 20%;
-  z-index: 1;
-}
+/* end of the 7th component */

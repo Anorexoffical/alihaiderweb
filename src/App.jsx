@@ -69,7 +69,9 @@ function App() {
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path="/Productlist" element={<Productlist />} />
           <Route path="/Store" element={<Store />} />
+          <Route path="/Checkout" element={<Checkout />} />
 
+          
 
           {/* Pass addToCart as a prop to ESIM */}
           <Route path="/ESIM" element={<ESIM addToCart={addToCart} />} />

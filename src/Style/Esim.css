@@ -54,33 +54,375 @@ p {
   width: 300px;
 }
 
-/* this is for the service container */
 
 
 
-.carousel-container {
-  width: 100vw;
-  height: 150vh; /* Adjust as needed */
-  margin: 0 auto;
-  background-color: rgb(246, 246, 246);
-  margin-top: 200px;
-  position: relative;
 
+/* this 2nd component is about buy sim */
+
+/* General Styling */
+.text-center1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
 }
 
-.carousel-card {
+.why-onic-container {
+  background-color: #00bf63;
+  color: black;
+  padding: 5%;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 1400px;
+  min-height: 80vh;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content Wrapper */
+.onic-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Left Side Image */
+.image-container-esim {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.onic-image {
+  width: 100%;
+  max-width: 450px;
+  max-height: 500px;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right Side Accordion */
+.accordion-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.accordion-title {
+  font-size: 1.9rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.accordion-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border-radius: 20px; /* Ensures rounded corners for all */
+}
+
+.accordion-item.active {
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* Keeps rounded corners when active */
+}
+
+.accordion-content {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 20px; /* Ensures rounded corners for content */
+}
+
+.accordion-item.active .accordion-content {
+  opacity: 1;
+}
+
+/* Button */
+.see-plans-btn {
+  background-color: #00ff08;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.see-plans-btn:hover {
+  background-color: #00d716;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-onic-container {
+    padding: 4%;
+  }
+  .onic-content {
+    flex-direction: column;
+  }
+  .image-container-esim {
+    max-width: 70%;
+  }
+  .accordion-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-onic-container {
+    padding: 3%;
+    min-height: auto;
+  }
+  .onic-image {
+    max-width: 350px;
+    max-height: 450px;
+  }
+  .accordion-item {
+    font-size: 16px;
+    padding: 15px;
+  }
+  .accordion-content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-onic-container {
+    width: 95%;
+    padding: 2%;
+  }
+  .onic-image {
+    max-width: 300px;
+    max-height: 400px;
+  }
+  .see-plans-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .accordion-container {
+    width: 100%;
+  }
+}
+
+
+
+/* end of the 2nd component */
+
+/* this 2nd component is about buy sim */
+
+/* General Styling */
+.buy-sim-text-center {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.buy-sim-container {
+  background-color: #00bf63;
+  color: black;
+  padding: 5%;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 1400px;
+  min-height: 80vh;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content Wrapper */
+.buy-sim-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Left Side Image */
+.buy-sim-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.buy-sim-image {
+  width: 100%;
+  max-width: 450px;
+  max-height: 500px;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right Side Accordion */
+.buy-sim-accordion-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.buy-sim-accordion-title {
+  font-size: 1.9rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.buy-sim-accordion-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.buy-sim-accordion-item.active {
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.buy-sim-accordion-content {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 20px;
+}
+
+.buy-sim-accordion-item.active .buy-sim-accordion-content {
+  opacity: 1;
+}
+
+/* Button */
+.buy-sim-btn {
+  background-color: #00ff08;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.buy-sim-btn:hover {
+  background-color: #00d716;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .buy-sim-container {
+    padding: 4%;
+  }
+  .buy-sim-content {
+    flex-direction: column;
+  }
+  .buy-sim-image-container {
+    max-width: 70%;
+  }
+  .buy-sim-accordion-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .buy-sim-container {
+    padding: 3%;
+    min-height: auto;
+  }
+  .buy-sim-image {
+    max-width: 350px;
+    max-height: 450px;
+  }
+  .buy-sim-accordion-item {
+    font-size: 16px;
+    padding: 15px;
+  }
+  .buy-sim-accordion-content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buy-sim-container {
+    width: 95%;
+    padding: 2%;
+  }
+  .buy-sim-image {
+    max-width: 300px;
+    max-height: 400px;
+  }
+  .buy-sim-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .buy-sim-accordion-container {
+    width: 100%;
+  }
+}
+
+
+
+
+/* this is for the Esim buy  container */
+
+
+.carousel-card-esim {
   margin-top: 150px;
   position: relative;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 25px;
   overflow: hidden;
-  width: 350px; /* Set a fixed width or use percentage */
+  width: 30px; /* Set a fixed width or use percentage */
   height: 650px; /* Set a fixed height for the card */
 }
 
-.carousel-image {
-  width: 100%;
-  height: 100%; /* Make image fill the card */
+.carousel-imageget {
+  width: 0%;
+  height: 800px; /* Make image fill the card */
   object-fit: cover;
   border-radius: 20px;
   transition: transform 0.3s ease;
@@ -89,33 +431,24 @@ p {
 
 
 
-
-
-
-
-
-
-
-.mainclass {
+.mainclass{
   color: rgb(0, 0, 0);
   font-size: 6000px;
   font-weight: 900;
 }
-
-.mainback {
+.mainback{
   background-color: rgb(18, 18, 18);
 }
 
 
-
-.serviceheading {
+.serviceheading{
   font-size: 3.5rem;
   font-weight: 800;
 }
 
 
 
-.carousel-image:hover {
+.carousel-imageget:hover {
   transform: scale(1.05);
 }
 
@@ -124,19 +457,21 @@ p {
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: green;
-  color: white;
+  background-color:rgb(24, 206, 24);
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 25px;
+  font-weight: 600;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.carousel-card:hover .add-to-cart-btn {
+.carousel-card-getsim:hover .add-to-cart-btn {
   opacity: 1;
   transform: translateX(-50%) translateY(-10px);
 }
+
 
 .carousel-text {
   position: absolute;
@@ -155,13 +490,12 @@ p {
   font-weight: bold;
   margin-top: 0.5rem;
 }
-
-.image-container {
+.carousel-image-esim {
   position: relative;
   display: inline-block;
 }
 
-.discount-badge {
+.discount-badgeget {
   font-size: 14px;
   font-weight: bold;
   border-radius: 12px;
@@ -172,7 +506,6 @@ p {
   left: 10px; /* Adjust distance from left */
   z-index: 2; /* Ensure it stays above the image */
 }
-
 /* Custom Buttons */
 .custom-arrow {
   position: absolute;
@@ -192,35 +525,6 @@ p {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Feature List */
-.features-listesim {
-  list-style: none;
-  padding: 0;
-}
-
-.features-listesim li {
-  padding-left: 25px;
-  margin-bottom: 10px;
-  position: relative;
-  font-size: 1.1rem;
-}
-
-/* Round Bullet Instead of Tick */
-.features-listesim li::before {
-  content: "●"; /* Round bullet */
-  color: #545151;
-  font-size: 0.9rem;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  top: 2px;
-}
-
-.highlight2{
-  font-weight: 800;
-  color: #000000;
-}
-
 .custom-arrow:hover {
   transform: scale(1.1);
   background-color: rgba(0, 0, 0, 1);
@@ -233,41 +537,24 @@ p {
 .custom-arrow.right {
   right: 20px; /* Position the right button */
 }
-
-@media (max-width: 1000px) {
-  .serviceheading {
-      font-size: 2.1rem;
-  }
-
-  .main-heading {
-      font-size: 1.9rem;
-      padding: 50% 15% 0;
-      line-height: 1.1;
-      color: black;
-  }
-
-  .step-container {
-      flex-direction: column;
-  }
-
-  .step-container .col-md-4 {
-      margin-bottom: 20px;
-  }
-
-  .step-container .col-md-7 {
-      text-align: center;
-  }
-
-  .carousel-container1 {
-      height: auto;
-      margin-bottom: 100px;
-  }
-
-
-
-
- 
+.getyoursimcon{
+  background-color: rgb(246, 246, 246);
+ height: 200px;
 }
+
+@media (max-width: 400px) {
+  .serviceheading {
+    font-size: 2.1rem;
+  }
+
+}
+
+
+
+
+
+
+
 
 
 /* this is the esim */
@@ -291,7 +578,7 @@ p {
   flex-wrap: wrap;
 }
 
-.card {
+.cardesim {
   background: rgb(233, 233, 233);
   padding: 15px;
   border-radius: 10px;
@@ -302,7 +589,7 @@ p {
   margin: 10px;
 }
 
-.card:hover {
+.cardesim:hover {
   transform: scale(1.05);
 }
 
@@ -335,3 +622,177 @@ p {
 }
 
 
+
+
+
+
+/* this component is about buy sim */
+
+/* General Styling */
+.text-center1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.why-onic-container1 {
+  background-color: #00bf63;
+  color: black;
+  padding: 5%;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 1400px;
+  min-height: 80vh;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content Wrapper */
+.onic-content1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Left Side Image */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.onic-image {
+  width: 100%;
+  max-width: 450px;
+  max-height: 500px;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right Side Accordion */
+.accordion-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.accordion-title1{
+  font-size: 1.9rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.accordion-item1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border-radius: 20px; /* Ensures rounded corners for all */
+}
+
+.accordion-item1.active {
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* Keeps rounded corners when active */
+}
+
+.accordion-content1 {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 20px; /* Ensures rounded corners for content */
+}
+
+.accordion-item1.active .accordion-content1 {
+  opacity: 1;
+}
+
+/* Button */
+.see-plans-btn {
+  background-color: #00ff08;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.see-plans-btn:hover {
+  background-color: #00d716;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-onic-container1 {
+    padding: 4%;
+  }
+  .onic-content {
+    flex-direction: column;
+  }
+  .image-container {
+    max-width: 70%;
+  }
+  .accordion-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-onic-container1 {
+    padding: 3%;
+    min-height: auto;
+  }
+  .onic-image {
+    max-width: 350px;
+    max-height: 450px;
+  }
+  .accordion-item1 {
+    font-size: 16px;
+    padding: 15px;
+  }
+  .accordion-content1 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-onic-container1 {
+    width: 95%;
+    padding: 2%;
+  }
+  .onic-image {
+    max-width: 300px;
+    max-height: 400px;
+  }
+  .see-plans-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .accordion-container {
+    width: 100%;
+  }
+}

@@ -305,11 +305,11 @@ const itamlimitnotification = () => {
 
       <Slider {...settings}>
   {cards.map((card) => (
-    <div key={card.id} className="carousel-card position-relative p-3">
+    <div key={card.id} className="carousel-card-getsim position-relative p-3">
       {/* Image Container (Relative for Proper Positioning) */}
-      <div className="image-container position-relative">
+      <div className="image-containerget position-relative">
         {/* Discount Badge on Image */}
-        <div className="discount-badge position-absolute top-0 start-0 bg-danger text-white rounded px-2 py-1">
+        <div className="discount-badgeget position-absolute top-0 start-0 bg-danger text-white rounded px-2 py-1">
         {card.discount}% OFF
           
         </div>
@@ -317,7 +317,7 @@ const itamlimitnotification = () => {
         <img
           src={card.image}
           alt={card.title}
-          className="carousel-image rounded w-100 img-fluid"
+          className="carousel-imageget rounded w-100 img-fluid"
         />
       </div>
 

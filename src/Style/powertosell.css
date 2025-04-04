@@ -37,7 +37,7 @@
 }
 
 /* Buttons */
-.button {
+.buttonpower {
   padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -58,7 +58,7 @@
   border: none;
 }
 
-.button:hover {
+.buttonpower:hover {
   background-color: #fff;
   color: #000;
   transform: translateY(-2px);
@@ -72,7 +72,7 @@
   .main-paragraph1 {
       font-size: 1rem;
   }
-  .button {
+  .buttonpower {
       font-size: 1rem;
       padding: 0.75rem 1.5rem;
   }
@@ -149,7 +149,7 @@ h2 {
   font-weight: 700;
 }
 
-p {
+.paragraph {
   margin-top: 40px;
   font-size: 1rem;
   line-height: 1.5;

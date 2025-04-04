@@ -192,8 +192,8 @@ margin: 0 auto; /* Center text block */
   border-radius: 4px;
 }
 
-button:hover {
-  background: linear-gradient(to right, #580707, #d40000);
+.buttonstart:hover {
+  background: linear-gradient(to right, #0bc436, #087e29);
   transform: translateY(-3px);
 }
 
