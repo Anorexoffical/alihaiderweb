@@ -29,6 +29,9 @@ function Navbar() {
         <li>
           <Link to="/BlogTable">Recent Blogs</Link>
         </li>
+        <li>
+          <Link to="/Oderlist">OderList</Link>
+        </li>
         <li className="nav-item">
           <button
             className="btn deletebtn logout-btn"

@@ -18,13 +18,13 @@ function BlogPost() {
   const [blogImage, setBlogImage] = useState(null);
   const navigate = useNavigate();
 
-  // Check if the user is authenticated on component mount
-  useEffect(() => {
-    const isAuthenticated = sessionStorage.getItem('userName');
-    if (!isAuthenticated) {
-      navigate("/login"); // Redirect to login if not authenticated
-    }
-  }, [navigate]);
+  // // Check if the user is authenticated on component mount
+  // useEffect(() => {
+  //   const isAuthenticated = sessionStorage.getItem('userName');
+  //   if (!isAuthenticated) {
+  //     navigate("/login"); // Redirect to login if not authenticated
+  //   }
+  // }, [navigate]);
 
   const handleImageChange = (e) => {
     setBlogImage(e.target.files[0]);
