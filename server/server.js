@@ -10,6 +10,9 @@ const BlogPostModel = require("./models/BlogPostModel");
 const UserModels = require("./models/userModels");
 const notifyRoutes = require("./payment/notifyurl");
 
+const Order = require("./models/orderModel");
+
+
 const app = express();
 const PORT = 30001;
 const uploadDir = path.join(__dirname, "uploads");
@@ -21,7 +24,7 @@ if (!fs.existsSync(uploadDir)) {
 
 // Middleware
 app.use(cors({
-  origin: "https://icellmobile.co.za", // Allow only your production domain
+  origin: ["https://icellmobile.co.za","http://localhost:3000", "http://localhost:5173"], // Allow only your production domain
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true
 }));
@@ -144,6 +147,16 @@ app.post("/payfast/initiate-payment", async (req, res) => {
 });
 
 app.use(notifyRoutes);
+
+//fetch order data
+app.get("/orders", async (req, res) => {
+  try {
+    const orders = await Order.find().sort({ createdAt: -1 });
+    res.status(200).json(orders);
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching orders" });
+  }
+});
 
 // Start the server (No SSL, since it will be handled by Nginx or a reverse proxy)
 app.listen(PORT, "0.0.0.0", () => {
