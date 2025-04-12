@@ -22,7 +22,13 @@ const OrderSchema = new mongoose.Schema({
       subTotal: Number,
     },
   ],
+  deliveryStatus: {
+    type: String,
+    enum: ["Pending", "Delivered"],
+    default: "Pending",
+  },
   createdAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
+

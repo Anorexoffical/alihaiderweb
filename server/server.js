@@ -127,9 +127,15 @@ app.post("/payfast/initiate-payment", async (req, res) => {
     const orderID = `${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
     const merchant_id = "26879017";
     const merchant_key = "l6ylebkxwezf5";
+    //for sandbox test
+    // const merchant_id = "10036171";
+    // const merchant_key = "731ry9o3bmz2d";
     const return_url = "https://icellmobile.co.za/payfast/success";
     const cancel_url = "https://icellmobile.co.za/payfast/cancel";
     const notify_url = "https://icellmobile.co.za/payfast/notifyurl";
+    // const notify_url = "https://3a31-103-137-24-132.ngrok-free.app/payfast/notifyurl";
+
+    //https://3a31-103-137-24-132.ngrok-free.app
     
     const paymentData = {
       merchant_id, merchant_key, return_url, cancel_url, notify_url,
@@ -140,7 +146,10 @@ app.post("/payfast/initiate-payment", async (req, res) => {
       custom_str3: postalCode, custom_str4: phoneNO, custom_str5: selectedCountry,
     };
     paymentData.signature = generateSignature(paymentData);
+    //for sandbox testing  	https://sandbox.payfast.co.za/eng/process 
+    // res.json({ paymentUrl: `https://sandbox.payfast.co.za/eng/process?${Object.keys(paymentData).map(key => `${key}=${encodeURIComponent(paymentData[key])}`).join("&")}` });
     res.json({ paymentUrl: `https://www.payfast.co.za/eng/process?${Object.keys(paymentData).map(key => `${key}=${encodeURIComponent(paymentData[key])}`).join("&")}` });
+
   } catch (err) {
     res.status(500).json({ error: "Error initiating payment" });
   }
@@ -157,6 +166,44 @@ app.get("/orders", async (req, res) => {
     res.status(500).json({ error: "Error fetching orders" });
   }
 });
+
+//update the deliverystatus
+app.put("/orderstatusupdate/:id/deliver", async (req, res) => {
+  try {
+    const updatedOrder = await Order.findByIdAndUpdate(
+      req.params.id,
+      { deliveryStatus: "Delivered" },
+      { new: true }
+    );
+    res.status(200).json(updatedOrder);
+    console.log("updated status")
+  } catch (err) {
+    res.status(500).json({ error: "Failed to update delivery status" });
+  }
+});
+
+//for fromdate and todate functionality
+app.get("/orders/filterbydate", async (req, res) => {
+  const { fromDate, toDate } = req.query;
+    const from = new Date(fromDate);
+    const to = new Date(toDate);
+    to.setHours(23, 59, 59, 999);
+
+  try {
+    const orders = await Order.find({
+      createdAt: {
+        $gte: from,
+        $lte: to,
+      },
+    });
+
+    res.json(orders);
+  } catch (err) {
+    console.error("Error fetching filtered orders:", err);
+    res.status(500).send("Server error");
+  }
+});
+
 
 // Start the server (No SSL, since it will be handled by Nginx or a reverse proxy)
 app.listen(PORT, "0.0.0.0", () => {
