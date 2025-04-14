@@ -14,7 +14,7 @@ function Orderlist() {
   }, []);
 
   const fetchOrders = () => {
-    axios.get("http://localhost:30001/orders")
+    axios.get("https://icellmobile.co.za/api/orders")
 
     // wisal change the all localhost endpoint to this before deployment https://icellmobile.co.za/api/orders
       .then((res) => {
@@ -27,7 +27,7 @@ function Orderlist() {
 
   const updateDeliveryStatus = (orderId) => {
     axios
-      .put(`http://localhost:30001/orderstatusupdate/${orderId}/deliver`)
+      .put(`https://icellmobile.co.za/api/orderstatusupdate/${orderId}/deliver`)
       .then((res) => {
         fetchOrders(); // refresh the list after update
       })
@@ -43,7 +43,7 @@ function Orderlist() {
     }
   
     axios
-      .get(`http://localhost:30001/orders/filterbydate?fromDate=${fromDate}&toDate=${toDate}`)
+      .get(`https://icellmobile.co.za/api/orders/filterbydate?fromDate=${fromDate}&toDate=${toDate}`)
       .then((res) => {
         setOrders(res.data);
       })
