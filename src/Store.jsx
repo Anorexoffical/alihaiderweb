@@ -99,7 +99,7 @@ const Store = () => {
     {
       id: 1,
       name: 'The XO-BE43 ',
-      price: 29.99,
+      price: 799 ,
       description: 'Foldable Stereo Wireless Headphones offer superior sound quality and comfort with a sleek, foldable design for easy portability. Featuring Bluetooth connectivity, these headphones provide up to 30 hours of battery life for extended listening. With an impedance of 22Ω, they deliver clear and rich audio performance. Perfect for music lovers who want reliable, all-day listening without the hassle of wires.',
       imageUrl: product1,
       category: 'charger',
@@ -108,7 +108,7 @@ const Store = () => {
     {
       id: 2,
       name: 'Smart Watch Pro',
-      price: 199.99,
+      price: 399,
       description: 'Premium smart watch',
       imageUrl: product2,
       category: 'watches',
@@ -116,9 +116,9 @@ const Store = () => {
     },
     {
       id: 3,
-      name: 'Android Phone',
-      price: 299,
-      description: 'Latest Android model',
+      name: 'Hoco DES41 Wireless BT Headset',
+      price: 1099,
+      description: 'Introducing the Hoco DES41 Wireless BT Headset – a stylish audio companion with vibrant LED lights and a unique UFO-inspired design. Featuring Bluetooth V5.3, 10mm drivers, and Hi-Fi sound, it’s perfect for music, clear calls, and dynamic audio on the go.',
       imageUrl: product3,
       category: 'Android',
       isNew: false
@@ -126,7 +126,7 @@ const Store = () => {
     {
       id: 4,
       name: 'The BOROFONE J32',
-      price: 799,
+      price: 1499,
       description: 'Digital Display Power Bank offers a 22.5W fast charge with a massive 80,000mAh capacity to keep your devices powered for longer. It supports PD 3.0/2.0, QC 0/2.0, and AFC for superfast charging. With 6 outputs and 4 inputs, it’s perfect for charging multiple devices at once. The digital display shows real-time power status, ensuring convenience and reliability for all your charging needs.',
       imageUrl: product4,
       category: 'Air Buds',
@@ -135,7 +135,7 @@ const Store = () => {
     {
       id: 5,
       name: 'Leather Phone Cover',
-      price: 499,
+      price: 1499,
       description: 'Premium leather case',
       imageUrl: product5,
       category: 'Covers',
@@ -144,7 +144,7 @@ const Store = () => {
     {
       id: 6,
       name: 'The G6A LED',
-      price: 349,
+      price: 699,
       description: 'Wireless Charging Speaker combines 15W wireless fast charging with RGB lighting and a sunrise simulation wake-up light for a calming and dynamic experience. It offers 16 million customizable lighting modes, a dimmable alarm clock, and a natural sleep aid sound machine. With App control and the ability to *answer phone calls, its a versatile and stylish addition to any room, enhancing both relaxation and productivity. Plus, the app control is lifetime free',
       imageUrl: product6,
       category: 'Screen Protectors',
@@ -154,7 +154,7 @@ const Store = () => {
     {
       id: 7,
       name: 'The 2-in-1 USB-C',
-      price: 699,
+      price: 399,
       description: 'Hub Multi-function Adapter allows you to easily connect your USB-C computer to an HDTV-equipped display. It supports 4K resolution for high-definition viewing and offers seamless connectivity for both data transfer and video output. This compact adapter is perfect for expanding your workspace or enjoying multimedia content on a larger screen.',
       imageUrl: product7,
       category: 'Screen Protectors',
@@ -163,7 +163,7 @@ const Store = () => {
     {
       id: 8,
       name: ' The SUPER ELECTRONICS ',
-      price: 599,
+      price: 299,
       description: 'SE-L190 is a reliable Garmin Watch Charging Cable, designed for fast and efficient charging of your Garmin smartwatch. It offers a secure connection and ensures that your device stays powered up, so you re always ready for your next adventure. Compact and durable, it s the perfect replacement or backup cable for your Garmin watch.',
       imageUrl: product8,
       category: 'Screen Protectors',
@@ -175,7 +175,7 @@ const Store = () => {
     {
       id: 9,
       name: 'The LTE CPE LTE ',
-      price: 599,
+      price: 1099,
       description: 'Cat 300 is a high-performance LTE router designed to provide fast and reliable internet connectivity. With support for LTE Cat 300, it delivers high-speed data transfer for seamless browsing, streaming, and gaming. Ideal for home or office use, it ensures stable and efficient wireless internet access for multiple devices.',
       imageUrl: product9,
       category: 'Screen Protectors',
@@ -184,7 +184,7 @@ const Store = () => {
     {
       id: 10,
       name: 'Tempered Glass Screen Protector',
-      price: 999,
+      price: 399,
       description: 'Foldable Stereo Wireless Headphones offer superior sound quality and comfort with a sleek, foldable design for easy portability. Featuring Bluetooth connectivity, these headphones provide up to 30 hours of battery life for extended listening. With an impedance of 22Ω, they deliver clear and rich audio performance. Perfect for music lovers who want reliable, all-day listening without the hassle of wires.',
       imageUrl: product10,
       category: 'Screen Protectors',
@@ -192,7 +192,7 @@ const Store = () => {
     },    {
       id: 11,
       name: 'The XO-XJ01',
-      price: 799,
+      price: 599,
       description: 'Children s FL Camera is a fun and interactive camera designed for kids. Featuring a dual-lens camera, it allows children to take photos and videos from different angles with ease. The camera is built with safety and durability in mind, and it comes with CEFC certification for quality assurance. A perfect way to spark creativity and capture memories in a child-friendly design..',
       imageUrl: product11,
       category: 'Screen Protectors',
@@ -200,7 +200,7 @@ const Store = () => {
     },    {
       id: 12,
       name: 'The Yesido 2-in-1 ',
-      price: 1199,
+      price: 249,
       description: 'Metal Plate is designed for strong, secure mounting with any magnetic car phone holder. It includes both round and rectangular plates for versatile use with different phone sizes and cases. The sleek metal finish adds a premium touch without adding bulk. Easy to install and fully compatible with all magnetic mounts.',
       imageUrl: product12,
       category: 'Screen Protectors',
@@ -209,7 +209,7 @@ const Store = () => {
     {
       id: 13,
       name: 'Tempered Glass Screen Protector',
-      price: 19.99,
+      price: 299,
       description: 'Protects your screen from scratches',
       imageUrl: product13,
       category: 'Screen Protectors',
@@ -220,7 +220,7 @@ const Store = () => {
     {
       id: 14,
       name: 'Tempered Glass Screen Protector',
-      price: 19.99,
+      price: 699,
       description: 'Protects your screen from scratches',
       imageUrl: product14,
       category: 'Screen Protectors',
@@ -229,7 +229,7 @@ const Store = () => {
     {
       id: 15,
       name: 'The Yesido KHI C-223 ',
-      price: 19.99,
+      price: 299,
       description: 'Adapter Plug Kit is a versatile travel accessory designed to make your international trips easier. This kit includes multiple plug types to ensure compatibility with outlets in various countries, making it ideal for travelers. Compact and easy to use, it’s a must-have for anyone on the go. The MC25 model ensures safe and reliable charging and powering of your devices worldwide.',
       imageUrl: product15,
       category: 'Screen Protectors',
@@ -238,7 +238,7 @@ const Store = () => {
     {
       id: 16,
       name: 'Tempered Glass Screen Protector',
-      price: 19.99,
+      price: 599,
       description: 'Protects your screen from scratches',
       imageUrl: product16,
       category: 'Screen Protectors',
@@ -247,7 +247,7 @@ const Store = () => {
     {
       id: 17,
       name: 'The XO-SS12',
-      price: 19.99,
+      price: 799,
       description: 'Selfie Stick is a versatile and compact tool for capturing the perfect selfie. Equipped with a ring light, it ensures optimal lighting for your photos, even in low-light environments. Whether you re taking pictures or recording videos, this selfie stick provides stable support and enhances your content with adjustable lighting. Perfect for content creators and selfie enthusiasts!',
       imageUrl: product17,
       category: 'Screen Protectors',
@@ -257,7 +257,7 @@ const Store = () => {
     {
       id: 18,
       name: 'The XO-LP03',
-      price: 19.99,
+      price: 399,
       description: 'Anti-Loss Device is a compact and efficient solution for tracking your valuables. It uses global positioning to help you locate items through the Apple Find My network, providing real-time tracking. Perfect for keys, bags, or other essentials, it helps prevent loss and ensures you can easily find your belongings anytime.',
       imageUrl: product18,
       category: 'Screen Protectors',
@@ -266,7 +266,7 @@ const Store = () => {
     {
       id: 19,
       name: 'The BOROFONE H23',
-      price: 19.99,
+      price: 399,
       description: 'Mobile Phone Stand features a sleek, bright shell design that adds a touch of style to your desk or workspace. Its adjustable design allows for a comfortable viewing angle, making it ideal for watching videos, video calls, or browsing. Compact and durable, it’s the perfect hands-free accessory for your mobile phone, offering both convenience and a modern look.',
       imageUrl: product19,
       category: 'Screen Protectors',
@@ -275,7 +275,7 @@ const Store = () => {
     {
       id: 20,
       name: 'The BOROFONE BD9 ',
-      price: 19.99,
+      price: 999,
       description: 'Watch is a sleek and stylish smartwatch designed to offer a seamless blend of functionality and convenience. With its modern design, it provides features like fitness tracking, heart rate monitoring, and notifications, making it perfect for daily use. The BOROFONE BD9 is lightweight, comfortable to wear, and offers reliable performance to keep you connected throughout the day. Whether for fitness goals or staying on top of messages, this watch is a great companion for an active lifestyle.',
       imageUrl: product20,
       category: 'Screen Protectors',
@@ -284,7 +284,7 @@ const Store = () => {
      {
       id: 21,
       name: 'Tempered Glass Screen Protector',
-      price: 19.99,
+      price: 599,
       description: 'Protects your screen from scratches',
       imageUrl: product21,
       category: 'Screen Protectors',
@@ -303,7 +303,7 @@ const Store = () => {
     {
       id: 23,
       name: 'The J1011 Headphone',
-      price: 19.99,
+      price: 799,
       description: 'Headphone is a high-quality audio accessory designed for comfort and immersive sound. Featuring an ergonomic design, it offers a secure and comfortable fit for long listening sessions. With clear, rich sound and enhanced bass, the J1011 is perfect for music, podcasts, and calls. Whether for daily use or on-the-go, it provides a reliable and enjoyable listening experience.',
       imageUrl: product23,
       category: 'Screen Protectors',
@@ -312,7 +312,7 @@ const Store = () => {
     {
       id: 24,
       name: ' The BGD002 LED ',
-      price: 19.99,
+      price: 799,
       description: 'Soft Ring Light is a versatile lighting solution perfect for photography, broadcasting, and cosmetic applications. It features non-porous dimming to adjust brightness for optimal lighting conditions. Whether for makeup application, live streaming, or content creation, this ring light ensures smooth, even illumination. Its compact and portable design makes it easy to use in any setting, delivering professional-quality lighting for various needs.',
       imageUrl: product24,
       category: 'Screen Protectors',
@@ -321,7 +321,7 @@ const Store = () => {
     {
       id: 25,
       name: 'The Earldom EH103',
-      price: 19.99,
+      price: 1099,
       description: 'Live Broadcast Bracket is a professional setup designed to enhance your mobile live streaming experience. Featuring a three-color light source, it provides adjustable lighting for perfect visibility in any environment. With a height of 1800mm, it offers excellent flexibility and coverage for your broadcast. Whether you re streaming, recording, or creating content, this bracket acts as your mobile live full light station, ensuring high-quality lighting for all your needs.',
       imageUrl: product25,
       category: 'Screen Protectors',
@@ -331,7 +331,7 @@ const Store = () => {
     {
       id: 26,
       name: ' The Yesido SF15',
-      price: 19.99,
+      price: 699,
       description: 'Auto Tracking Tripod features AI-powered auto face tracking, allowing it to follow your movements without the need for an app. It offers 360-degree rotation for smooth and precise tracking, ensuring you stay in frame during video calls, streaming, or vlogging. The tripod is designed for convenience, providing hands-free operation and enhanced video quality. Perfect for content creators and those in need of stable, dynamic camera work.',
       imageUrl: product26,
       category: 'Screen Protectors',
@@ -340,7 +340,7 @@ const Store = () => {
     {
       id: 27,
       name: 'Tempered Glass Screen Protector',
-      price: 19.99,
+      price: 899,
       description: 'Protects your screen from scratches',
       imageUrl: product27,
       category: 'Screen Protectors',
@@ -349,7 +349,7 @@ const Store = () => {
     {
       id: 28,
       name: 'The LDNIO AW004 ',
-      price: 19.99,
+      price: 799,
       description: 'Wireless Desktop Charger features USBX4 output ports, allowing you to charge multiple devices simultaneously. With a powerful and efficient design, it supports wireless charging and ensures compatibility with various devices. Offering a one-year warranty, this charger provides reliable and fast charging with 32W output for quick power delivery. Its the perfect solution for a clutter-free desktop setup, delivering convenient and safe charging for all your devices.',
       imageUrl: product28,
       category: 'Screen Protectors',
