@@ -374,37 +374,44 @@ const Store = () => {
       });
     };
 
-const handleAddToCart = (product) => {
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingItemIndex = cartItems.findIndex((item) => item.name === product.name);
-  
-  if (existingItemIndex !== -1) {
-    // If item exists, increase quantity
-    cartItems[existingItemIndex].quantity += 1;
-  } else {
-    // Prevent adding more than 4 unique items
-    if (cartItems.length >= 4) {
-      itamlimitnotification();
-      return;
-    }
-  
-    cartItems.push({ 
-      title: product.name, // Using name as title to match your existing function
-      price: product.price, // Directly using the price property
-      quantity: 1, // Default quantity
-      image: product.imageUrl, // Using imageUrl from the product
-      subtitle: `R ${product.price.toFixed(2)}`, // Creating subtitle to match your existing format
-      // Include any other necessary fields from your original cart implementation
-      ...product // Spread the rest of the product properties
-    });
-  }
-  
-  localStorage.setItem("cart", JSON.stringify(cartItems));
-  // Optional: You might want to add a success notification here
-  // addToCartNotification();
-  navigate("/productlist");
-
-};
+    const handleAddToCart = (product) => {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItemIndex = cartItems.findIndex((item) => item.title === product.name);
+      
+      if (existingItemIndex !== -1) {
+        // If item exists, increase quantity
+        cartItems[existingItemIndex].quantity += 1;
+      } else {
+        // Prevent adding more than 4 unique items
+        if (cartItems.length >= 4) {
+          itamlimitnotification();
+          return;
+        }
+      
+        // Create a simplified cart item without spreading the entire product
+        const cartItem = { 
+          title: product.name, 
+          price: product.price,
+          quantity: 1,
+          image: product.imageUrl,
+          subtitle: `R ${product.price.toFixed(2)}`
+          // Only include necessary fields
+        };
+        
+        // Validate string lengths
+        if (cartItem.title.length > 255) {
+          cartItem.title = cartItem.title.substring(0, 255);
+        }
+        if (cartItem.subtitle && cartItem.subtitle.length > 255) {
+          cartItem.subtitle = cartItem.subtitle.substring(0, 255);
+        }
+        
+        cartItems.push(cartItem);
+      }
+      
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      navigate("/productlist");
+    };
 
   
 
