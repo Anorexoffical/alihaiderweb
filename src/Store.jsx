@@ -117,7 +117,7 @@ const Store = () => {
     {
       id: 3,
       name: 'Hoco DES41 Wireless BT Headset',
-      price: 1099,
+      price: 699,
       description: 'Introducing the Hoco DES41 Wireless BT Headset – a stylish audio companion with vibrant LED lights and a unique UFO-inspired design. Featuring Bluetooth V5.3, 10mm drivers, and Hi-Fi sound, it’s perfect for music, clear calls, and dynamic audio on the go.',
       imageUrl: product3,
       category: 'Android',
@@ -208,9 +208,9 @@ const Store = () => {
     },
     {
       id: 13,
-      name: 'Tempered Glass Screen Protector',
+      name: 'iStar 500W Party Speaker',
       price: 299,
-      description: 'Protects your screen from scratches',
+      description: 'Turn up the energy with the iStar IS-1202A 500W Party Speaker – your ultimate companion for unforgettable gatherings. Enjoy booming 500W sound with vibrant LED lights that bring the party to life. With built-in Bluetooth, FM radio, and a mic input for karaoke, it’s perfect for any celebration. Its rechargeable battery and portable design make it easy to party anywhere, anytime.',
       imageUrl: product13,
       category: 'Screen Protectors',
       isNew: true
@@ -283,9 +283,9 @@ const Store = () => {
     },
      {
       id: 21,
-      name: 'Tempered Glass Screen Protector',
+      name: 'Yesido Windshield Holde',
       price: 599,
-      description: 'Protects your screen from scratches',
+      description: 'The Yesido Windshield Holder is a long-leg universal holder designed for secure placement on your car s windshield. It features a foot pad for added stability, ensuring your phone stays in place even on bumpy roads. This holder provides a convenient, hands-free solution for navigation and calls, making it a must-have accessory for any driver. Its adjustable design fits most smartphones, offering both safety and ease of use',
       imageUrl: product21,
       category: 'Screen Protectors',
       isNew: true

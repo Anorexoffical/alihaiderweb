@@ -23,3 +23,10 @@ for new changes
 6 sudo systemctl restart nginx
 
 
+
+
+
+admin paneel 
+
+    userName: 'wisal',
+    password: '0000'
