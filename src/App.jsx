@@ -27,7 +27,7 @@ const Login = lazy(() => import('./Login '));
 
 // PrivateRoute componentconst Blogspost = lazy(() => import('./adminpanel/BlogPost'));
 const BlogPost = lazy(() => import('./adminpanel/BlogPost'));
-const Blogtable = lazy(() => import('./adminpanel/BlogTable'));
+const BlogTable = lazy(() => import('./adminpanel/BlogTable'));
 const EditBlogPost = lazy(() => import('./adminpanel/EditBlogPost'));
 const BlogDetail = lazy(() => import('./adminpanel/BlogDetail'));
 const Oderlist = lazy(() => import('./adminpanel/Oderlist'));
@@ -72,7 +72,6 @@ function App() {
           <Route path="/Store" element={<Store />} />
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/BlogPost" element={<BlogPost />} />
-          <Route path="/Oderlist" element={<Oderlist />} />
           
 
           {/* Pass addToCart as a prop to ESIM */}
@@ -81,9 +80,10 @@ function App() {
           <Route path="/Login" element={<Login />} />
 
           {/* Private Routes */}
-          {/* <Route path="/BlogPost" element={<PrivateRoute><BlogPost /></PrivateRoute>} /> */}
-          {/* <Route path="/Blogtable" element={<PrivateRoute><Blogtable /></PrivateRoute>} />
-          <Route path="/EditBlogPost/:id" element={<PrivateRoute><EditBlogPost /></PrivateRoute>} /> */}
+          <Route path="/BlogPost" element={<PrivateRoute><BlogPost /></PrivateRoute>} /> 
+           <Route path="/Blogtable" element={<PrivateRoute><BlogTable /></PrivateRoute>} />
+          <Route path="/EditBlogPost/:id" element={<PrivateRoute><EditBlogPost /></PrivateRoute>} />
+          <Route path="/Oderlist" element={<PrivateRoute><EditBlogPost /></PrivateRoute>} />
 
           {/* 404 Not Found Route */}
           <Route path="*" element={<NotFound />} />

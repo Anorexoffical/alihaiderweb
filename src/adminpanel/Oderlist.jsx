@@ -2,21 +2,29 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AdminNavbar from "./AdminNavbar";
 import "../Style/Blogpost.css";
+import { useNavigate } from "react-router-dom";
 
 function Orderlist() {
   const [orders, setOrders] = useState([]);
-
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
+  const navigate = useNavigate();
 
+  // Check admin session on component mount
   useEffect(() => {
+    const checkAdminSession = () => {
+      const adminSession = sessionStorage.getItem("adminSession");
+      if (!adminSession) {
+        navigate("/login"); // Redirect to login if no session
+      }
+    };
+
+    checkAdminSession();
     fetchOrders();
-  }, []);
+  }, [navigate]);
 
   const fetchOrders = () => {
     axios.get("https://icellmobile.co.za/api/orders")
-
-    // wisal change the all localhost endpoint to this before deployment https://icellmobile.co.za/api/orders
       .then((res) => {
         setOrders(res.data);
       })
@@ -51,11 +59,15 @@ function Orderlist() {
         console.error("Error filtering orders by date:", err);
       });
   };
-  
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("adminSession");
+    navigate("/login");
+  };
 
   return (
     <>
-      <AdminNavbar />
+      <AdminNavbar onLogout={handleLogout} />
       <div className="row mainbtns">
         <div className="col-6 col-sm-6 col-md-6">
           <input
@@ -106,7 +118,6 @@ function Orderlist() {
                   <td>{order.pf_payment_id}</td>
                   <td>{order.firstName} {order.lastName}</td>
                   <td>{order.email}</td>
-                  {/* <td>{new Date(order.createdAt).toLocaleString()}</td> */}
                   <td>
                     {new Date(order.createdAt).toISOString().replace("T", " ").substring(0, 19)}
                   </td>
